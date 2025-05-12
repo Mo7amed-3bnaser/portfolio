@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohamed Abdelnaser | Front-End Developer</title>
+    <meta name="description" content="Mohamed Abdelnaser is a skilled Front-End Developer specializing in responsive web design, interactive UI, and modern JavaScript frameworks.">
+    <meta name="keywords" content="Mohamed Abdelnaser, 3bnaser, Front-End Developer, Web Developer, HTML, CSS, JavaScript, React, Bootstrap, Egypt, Sohag, Portfolio, UI, UX">
+    <meta name="author" content="Mohamed Abdelnaser">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Mohamed Abdelnaser | Front-End Developer">
+    <meta property="og:description" content="Portfolio website showcasing front-end development projects and skills.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.mohamedabdelnaser.com">
+    <meta property="og:image" content="images/WhatsApp Image 2025-03-04 at 00.59.24_3f719b9b.jpg">
+    <link rel="canonical" href="https://www.mohamedabdelnaser.com">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome for icons -->
@@ -16,12 +26,33 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Loading Screen CSS -->
+    <link rel="stylesheet" href="css/loading.css">
+    <!-- Form CSS -->
+    <link rel="stylesheet" href="css/form.css">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-logo">
+            <span class="symbols">&lt;/</span>
+            <span>3bnaser</span>
+            <span class="symbols">&gt;</span>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar-loading"></div>
+        </div>
+        <div class="loading-text">LOADING</div>
+    </div>
+
     <!-- Top Navigation -->
     <nav class="side-nav">
         <div class="nav-logo">
-            <img src="images/WhatsApp Image 2025-03-04 at 00.59.24_3f719b9b.jpg" alt="Mohamed Abdelnaser">
+            <div class="logo">
+                <span class="symbols">&lt;/</span>
+                <span class="number">3</span><span class="text">bnaser</span>
+                <span class="symbols s2">&gt;</span>
+              </div>
         </div>
         <ul class="nav-links">
             <li><a href="#home" class="active"><i class="fas fa-home"></i> <span>Home</span></a></li>
@@ -30,14 +61,6 @@
             <li><a href="#projects"><i class="fas fa-project-diagram"></i> <span>Projects</span></a></li>
             <li><a href="#contact"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
         </ul>
-        <div class="nav-footer">
-            <div class="social-icons social-links">
-                <a href="https://www.instagram.com/m_3bdelnaser/profilecard/?igsh=ZG42NG93ZTl5NWIx" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/share/12CPZ2MdKTb/" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://github.com/Mo7amed-3bnaser" target="_blank" class="github"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/mohamed-abdelnaser/" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-        </div>
     </nav>
 
     <!-- Main Content -->
@@ -54,6 +77,12 @@
                             <div class="cta-buttons">
                                 <a href="#projects" class="btn btn-primary">View My Work</a>
                                 <a href="#contact" class="btn btn-outline">Contact Me</a>
+                            </div>
+                            <div class="social-icons social-links hero-social">
+                                <a href="https://www.instagram.com/m_3bdelnaser/profilecard/?igsh=ZG42NG93ZTl5NWIx" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/share/12CPZ2MdKTb/" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://github.com/Mo7amed-3bnaser" target="_blank" class="github"><i class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/mohamed-abdelnaser/" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
                     </div>
@@ -93,7 +122,7 @@
                                 <div class="col-md-6 mb-3">
                                     <div class="info-item">
                                         <i class="fas fa-phone"></i>
-                                        <span>+20 123 456 7890</span>
+                                        <span>+20 1551143537</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
@@ -111,7 +140,7 @@
                             </div>
                             <div class="mt-4">
                                 <a href="#contact" class="btn btn-primary me-3">Hire Me</a>
-                                <a href="#" class="btn btn-outline">Download CV</a>
+                                <a href="#" class="btn btn-outline" style="display: none;">Download CV</a>
                             </div>
                         </div>
                     </div>
@@ -328,6 +357,28 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="front" data-aos="flip-left" data-aos-delay="300">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <img src="images/Screenshot 2025-05-12 161844.png" alt="BigPizza" class="img-fluid">
+                                <div class="project-overlay">
+                                    <div class="project-links">
+                                        <a href="https://mo7amed-3bnaser.github.io/Rock-Paper-Scissors/" target="_blank"><i class="fas fa-link"></i></a>
+                                        <a href="https://github.com/Mo7amed-3bnaser/Rock-Paper-Scissors.git" target="_blank"><i class="fab fa-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Rock Paper Scissors</h3>
+                                <p>A fun and interactive "Rock, Paper, Scissors" game where users play against the computer with outcomes based on the classic game rules.</p>
+                                <div class="tech-stack">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -355,14 +406,14 @@
                                 <i class="fas fa-phone"></i>
                                 <div>
                                     <h4>Phone</h4>
-                                    <p>+20 123 456 7890</p>
+                                    <p>+20 1551143537</p>
                                 </div>
                             </div>
                             <div class="info-item">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <div>
                                     <h4>Location</h4>
-                                    <p>Cairo, Egypt</p>
+                                    <p>Sohag, Egypt</p>
                                 </div>
                      </div>                            
                                 <div class="social-links">
@@ -376,26 +427,27 @@
                     </div>
                     <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
                         <div class="contact-form">
-                            <form id="contactForm">
+                            <form id="my-form" action="https://formspree.io/f/xjkwageb" method="POST">
                                 <div class="row">
                                     <div class="col-md-6 mb-4">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                            <input type="text" class="form-control" name="name" placeholder="Your Name" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                                    <input type="text" class="form-control" name="subject" placeholder="Subject" required>
                                 </div>
                                 <div class="form-group mb-4">
-                                    <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                                    <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Send Message</button>
+                                <button type="submit" id="my-form-button" class="btn btn-primary">Send Message</button>
+                                <p id="my-form-status" class="form-status mt-3"></p>
                             </form>
                         </div>
                     </div>
@@ -433,7 +485,7 @@
                         <h4 class="footer-title">Contact Info</h4>
                         <div class="footer-contact">
                             <p><i class="fas fa-envelope me-2"></i> <a href="mailto:ghdkuzyuf@gmail.com">ghdkuzyuf@gmail.com</a></p>
-                            <p><i class="fas fa-phone me-2"></i> +20 123 456 7890</p>
+                            <p><i class="fas fa-phone me-2"></i> +20 1551143537</p>
                             <p><i class="fas fa-map-marker-alt me-2"></i> Sohag, Egypt</p>
                         </div>
                     </div>
@@ -454,11 +506,70 @@
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Typed.js for typing animation -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Typed.js for typing animation -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <!-- Custom JS -->
     <script src="js/script.js"></script>
+    
+    <!-- Formspree Form Handling Script -->
+    <script>
+        // Loading Screen Script
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loading-screen').classList.add('hidden');
+            }, 3000); // Hide after 3 seconds
+        });
+        
+        // Formspree Form Handling
+        var form = document.getElementById("my-form");
+        
+        async function handleSubmit(event) {
+            event.preventDefault();
+            var status = document.getElementById("my-form-status");
+            var button = document.getElementById("my-form-button");
+            var formElement = document.getElementById("my-form");
+            
+            // Add loading state
+            formElement.classList.add("form-submitting");
+            status.innerHTML = "Sending...";
+            
+            var data = new FormData(event.target);
+            try {
+                const response = await fetch(event.target.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    status.innerHTML = "Thanks for your message! I'll get back to you soon.";
+                    status.style.color = "#28a745";
+                    status.style.backgroundColor = "rgba(40, 167, 69, 0.1)";
+                    form.reset();
+                } else {
+                    const responseData = await response.json();
+                    if (Object.hasOwn(responseData, 'errors')) {
+                        status.innerHTML = responseData["errors"].map(error => error["message"]).join(", ");
+                    } else {
+                        status.innerHTML = "Oops! There was a problem submitting your form";
+                    }
+                    status.style.color = "#dc3545";
+                    status.style.backgroundColor = "rgba(220, 53, 69, 0.1)";
+                }
+            } catch (error) {
+                status.innerHTML = "Oops! There was a problem submitting your form";
+                status.style.color = "#dc3545";
+                status.style.backgroundColor = "rgba(220, 53, 69, 0.1)";
+            } finally {
+                formElement.classList.remove("form-submitting");
+            }
+        }
+        
+        form.addEventListener("submit", handleSubmit);
+    </script>
 </body>
 </html>
