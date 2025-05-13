@@ -201,22 +201,23 @@ a:hover {
 @media (max-width: 768px) {
     .side-nav {
         padding: 0 15px;
+        height: 50px; /* Even smaller header height for mobile */
     }
     
     .nav-toggle-btn {
         display: flex;
         position: fixed;
-        top: 15px;
+        top: 7px; /* Adjusted for smaller header */
         right: 10px;
-        width: 40px;
-        height: 40px;
+        width: 32px; /* Smaller button */
+        height: 32px; /* Smaller button */
         background-color: var(--primary-color);
         color: white;
         border: none;
         border-radius: 50%;
         align-items: center;
         justify-content: center;
-        font-size: 16px;
+        font-size: 12px; /* Smaller icon */
         cursor: pointer;
         z-index: 1001;
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
@@ -234,7 +235,7 @@ a:hover {
     
     .nav-links {
         position: fixed;
-        top: 70px;
+        top: 50px;
         left: 0;
         width: 100%;
         background-color: var(--darker-color);
@@ -290,26 +291,9 @@ a:hover {
   margin-left: -10px;
   height: 40px;
   width: auto;
+  position: relative;
 } 
 
-@media (max-width: 768px) {
-  .logo {
-        font-size: 18px;
-        padding: 3px 8px;
-        left: 10px;
-        position: absolute;
-    }
-  .logo .number {
-        font-size: 20px;
-        margin-top: -1px;
-    }
-  .logo .text {
-        font-size: 17px;
-    }
-  .logo .symbols {
-        font-size: 17px;
-    }
-}
 .logo span { 
   animation: colorChange 4s infinite alternate; 
 } 
@@ -318,18 +302,12 @@ a:hover {
     font-size: 38px; 
     animation: colorChange 4s infinite alternate;
     margin-top: -2px;
-  }
+}
 
-  .logo .text {
+.logo .text {
     font-size: 33px;
     animation: colorChange 4s infinite alternate;
-  }
-
-@keyframes colorChange { 
-    0% { color: #58a6ff; } 
-    50% { color: #79b8ff; } 
-    100% { color: #559ef1; } 
-  }
+}
 
 .logo .symbols { 
   font-size: 33px;
@@ -337,18 +315,41 @@ a:hover {
   animation: colorChangeGray 4s infinite alternate; 
 } 
 
-.s2{
-    position: absolute;
-    top: 12px;
-    left: 209px;
+.logo .symbols.s2 {
+  display: inline-block;
+  margin-left: 2px;
 }
 
-@media (max-width: 770px){
-.s2{
-    left: 169px;
-    top: -3px;
+@keyframes colorChange { 
+    0% { color: #58a6ff; } 
+    50% { color: #79b8ff; } 
+    100% { color: #559ef1; } 
 }
+
+/* Media query for smaller screens */ 
+@media (max-width: 768px) {
+  .logo {
+        font-size: 14px;
+        padding: 2px 5px;
+        left: 10px;
+        position: absolute;
+        top: 6px;
+    }
+  .logo .number {
+        font-size: 23px;
+        margin-top: 0;
+    }
+  .logo .text {
+        font-size: 20px;
+    }
+  .logo .symbols {
+        font-size: 21px;
+        position: relative;
+        top: 2px; 
+    }
 }
+
+/* Removed absolute positioning for .s2 */
 
 @keyframes colorChangeGray { 
   0% { color: #555; } 
@@ -654,7 +655,7 @@ section.section:last-child {
         height: 50px;
         bottom: 25px;
         font-size: 20px;
-        left: 50%;
+        left: 44%;
         transform: translateX(-50%);
     }
 }

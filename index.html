@@ -29,6 +29,21 @@
         <!-- Particles.js -->
         <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
         <!-- Custom CSS Files -->
+        <style>
+            .phone-link {
+                display: flex;
+                align-items: center;
+                color: var(--primary-color);
+                text-decoration: none;
+            }
+            .phone-link:hover {
+                color: var(--secondary-color);
+            }
+            .phone-icon {
+                margin-left: 5px;
+                font-size: 14px;
+            }
+        </style>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/loading.css">
         <link rel="stylesheet" href="css/form.css">
@@ -51,11 +66,13 @@
     <!-- Top Navigation -->
     <nav class="side-nav">
         <div class="nav-logo">
-            <div class="logo">
-                <span class="symbols">&lt;/</span>
-                <span class="number">3</span><span class="text">bnaser</span>
-                <span class="symbols s2">&gt;</span>
-              </div>
+            <a href="#index.html" class="logo-link">
+                <div class="logo">
+                    <span class="symbols">&lt;/</span>
+                    <span class="number">3</span><span class="text">bnaser</span>
+                    <span class="symbols s2">&gt;</span>
+                </div>
+            </a>
         </div>
         <ul class="nav-links">
             <li><a href="#home" class="active"><i class="fas fa-home"></i> <span>Home</span></a></li>
@@ -124,8 +141,7 @@
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <div class="info-item">
-                                        <i class="fas fa-phone"></i>
-                                        <span>+20 1551143537</span>
+                                        <a href="tel:+201551143537" class="phone-link"><i class="fas fa-phone phone-icon"></i> +20 1551143537</a>
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
@@ -488,7 +504,10 @@
                         <h4 class="footer-title">Contact Info</h4>
                         <div class="footer-contact">
                             <p><i class="fas fa-envelope me-2"></i> <a href="mailto:ghdkuzyuf@gmail.com">ghdkuzyuf@gmail.com</a></p>
-                            <p><i class="fas fa-phone me-2"></i> +20 1551143537</p>
+                            <p>
+                                <i class="fas fa-phone me-2"></i>
+                                <a href="tel:+201551143537">+20 1551143537</a>
+                              </p>
                             <p><i class="fas fa-map-marker-alt me-2"></i> Sohag, Egypt</p>
                         </div>
                     </div>

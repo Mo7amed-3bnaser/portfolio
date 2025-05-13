@@ -105,6 +105,13 @@
     position: relative;
 }
 
+/* Responsive styles for loading logo */
+@media (max-width: 768px) {
+    .loading-logo {
+        font-size: 22px;
+    }
+}
+
 .loading-logo span {
     display: inline-block; 
     animation: colorChange 4s infinite alternate;
