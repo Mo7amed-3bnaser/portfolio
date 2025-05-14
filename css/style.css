@@ -1603,11 +1603,19 @@ textarea.form-control {
     color: var(--primary-color);
     text-decoration: none;
     transition: var(--transition);
+    padding-left: 0;
 }
 
 .phone-link:hover {
     color: var(--secondary-color);
     text-decoration: none;
+}
+
+.phone-icon {
+    margin-right: 8px;
+    font-size: 18px;
+    color: var(--primary-color);
+    width: 30px;
 }
 
 /* تنسيق اسم المطور في الكوبي رايت */
