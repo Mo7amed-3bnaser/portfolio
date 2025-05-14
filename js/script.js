@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Back to top button functionality
-    const backToTopBtn = document.querySelector('.back-to-top');
+    const backToTopBtn = document.querySelector('.scroll-top-btn');
     
     window.addEventListener('scroll', function() {
         if (window.scrollY > 300) {
