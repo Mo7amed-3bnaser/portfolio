@@ -19,35 +19,55 @@
         <meta property="og:description" content="I'm Mohamed Abdelnaser, a Front-End Developer. This is my portfolio showcasing my latest projects, skills, and how to contact me.">
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://mo7amed-3bnaser.github.io/portfolio/">
-        <meta property="og:image" content="https://mo7amed-3bnaser.github.io/portfolio/images/3bnaser%20logo.png">
+        <meta property="og:image" content="https://mo7amed-3bnaser.github.io/portfolio/images/3bnaser logo.png">
         <!-- Canonical URL -->
         <link rel="canonical" href="https://mo7amed-3bnaser.github.io/portfolio/">
-        <!-- Preconnect to external domains -->
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font Awesome (moved to defer loading) -->
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+        <!-- Google Fonts (preconnect) -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preconnect" href="https://cdn.jsdelivr.net">
-        <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-        <!-- Critical CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <!-- AOS Animation Library (moved to defer loading) -->
+        <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+        <!-- Particles.js -->
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+        <!-- Custom CSS Files -->
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/loading.css">
-        <!-- Deferred CSS -->
-        <link rel="stylesheet" href="css/form.css" media="print" onload="this.media='all'">
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-        <!-- Deferred JavaScript -->
-        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
-        <!-- Preload Font Awesome -->
-        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-        <!-- Preload AOS -->
-        <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
+        <link rel="stylesheet" href="css/form.css">
+        <!-- Add critical CSS inline -->
+        <style>
+            /* Critical CSS styles */
+            .loading-screen {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #151515;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+                transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+            }
+            .loading-screen.hidden {
+                opacity: 0;
+                visibility: hidden;
+            }
+            /* Add more critical CSS as needed */
+        </style>
+        <!-- Preload Critical Resources -->
+        <link rel="preload" href="css/style.css" as="style">
+        <link rel="preload" href="js/script.js" as="script">
+        <link rel="preload" href="css/loading.css" as="style">
     </head>
     
 <body>
-    <!-- Preload critical images -->
-    <link rel="preload" as="image" href="images/3bnaser_logo_circle.ico">
     <!-- Loading Screen -->
     <div class="loading-screen" id="loading-screen">
         <div class="loading-logo">
@@ -97,10 +117,10 @@
                                 <a href="#contact" class="btn btn-outline">Contact Me</a>
                             </div>
                             <div class="social-icons social-links hero-social">
-                                <a href="https://www.instagram.com/m_3bdelnaser/profilecard/?igsh=ZG42NG93ZTl5NWIx" target="_blank" rel="noopener" aria-label="Instagram Profile" class="instagram"><i class="fab fa-instagram"></i></a>
-                                <a href="https://www.facebook.com/share/12CPZ2MdKTb/" target="_blank" rel="noopener" aria-label="Facebook Profile" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                                <a href="https://github.com/Mo7amed-3bnaser" target="_blank" rel="noopener" aria-label="GitHub Profile" class="github"><i class="fab fa-github"></i></a>
-                                <a href="https://www.linkedin.com/in/3bnaser?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" aria-label="LinkedIn Profile" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.instagram.com/m_3bdelnaser/profilecard/?igsh=ZG42NG93ZTl5NWIx" target="_blank" rel="noopener" class="instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/share/12CPZ2MdKTb/" target="_blank" rel="noopener" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://github.com/Mo7amed-3bnaser" target="_blank" rel="noopener" class="github"><i class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/3bnaser?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
                     </div>
@@ -121,7 +141,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
                         <div class="about-img">
-                            <img src="images/WhatsApp Image 2025-03-04 at 00.59.24_3f719b9b.jpg" alt="Mohamed Abdelnaser" class="img-fluid">
+                            <img src="images/WhatsApp Image 2025-03-04 at 00.59.24_3f719b9b.png" alt="Mohamed Abdelnaser" class="img-fluid lazy" width="600" height="600" loading="lazy">
                             <div class="img-overlay"></div>
                         </div>
                     </div>
@@ -286,11 +306,11 @@
                     <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="front" data-aos="flip-left" data-aos-delay="100">
                         <div class="project-card">
                             <div class="project-img">
-                                <img src="images/Screenshot 2025-05-07 031306.png" alt="AI Image Generator" class="img-fluid">
+                                <img src="images/Screenshot 2025-05-07 031306.png" alt="AI Image Generator" class="img-fluid lazy" width="800" height="450" loading="lazy">
                                 <div class="project-overlay">
                                     <div class="project-links">
-                                        <a href="https://mo7amed-3bnaser.github.io/Ai-Image-Generator/" target="_blank" rel="noopener" aria-label="Visit AI Image Generator Project"><i class="fas fa-link"></i></a>
-                                        <a href="https://github.com/Mo7amed-3bnaser/Ai-Image-Generator" target="_blank" rel="noopener" aria-label="View AI Image Generator Source Code"><i class="fab fa-github"></i></a>
+                                        <a href="https://mo7amed-3bnaser.github.io/Ai-Image-Generator/" target="_blank" rel="noopener"><i class="fas fa-link"></i></a>
+                                        <a href="https://github.com/Mo7amed-3bnaser/Ai-Image-Generator" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -309,11 +329,11 @@
                     <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="front" data-aos="flip-left" data-aos-delay="200">
                         <div class="project-card">
                             <div class="project-img">
-                                <img src="images/Screenshot 2025-05-07 031330.png" alt="Animated Login Form" class="img-fluid">
+                                <img src="images/Screenshot 2025-05-07 031330.png" alt="Animated Login Form" class="img-fluid lazy" width="800" height="450" loading="lazy">
                                 <div class="project-overlay">
                                     <div class="project-links">
-                                        <a href="https://mo7amed-3bnaser.github.io/Animated-Login-Form/" target="_blank" rel="noopener" aria-label="Visit Animated Login Form Project"><i class="fas fa-link"></i></a>
-                                        <a href="https://github.com/Mo7amed-3bnaser/Animated-Login-Form" target="_blank" rel="noopener" aria-label="View Animated Login Form Source Code"><i class="fab fa-github"></i></a>
+                                        <a href="https://mo7amed-3bnaser.github.io/Animated-Login-Form/" target="_blank" rel="noopener"><i class="fas fa-link"></i></a>
+                                        <a href="https://github.com/Mo7amed-3bnaser/Animated-Login-Form" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -332,11 +352,11 @@
                     <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="front" data-aos="flip-left" data-aos-delay="300">
                         <div class="project-card">
                             <div class="project-img">
-                                <img src="images/Screenshot 2025-05-07 031414.png" alt="BigPizza" class="img-fluid">
+                                <img src="images/Screenshot 2025-05-07 031414.png" alt="BigPizza" class="img-fluid lazy" width="800" height="450" loading="lazy">
                                 <div class="project-overlay">
                                     <div class="project-links">
-                                        <a href="https://mo7amed-3bnaser.github.io/BigPizza/" target="_blank" rel="noopener" aria-label="Visit BigPizza Project"><i class="fas fa-link"></i></a>
-                                        <a href="https://github.com/Mo7amed-3bnaser/BigPizza" target="_blank" rel="noopener" aria-label="View BigPizza Source Code"><i class="fab fa-github"></i></a>
+                                        <a href="https://mo7amed-3bnaser.github.io/BigPizza/" target="_blank" rel="noopener"><i class="fas fa-link"></i></a>
+                                        <a href="https://github.com/Mo7amed-3bnaser/BigPizza" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -355,11 +375,11 @@
                     <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="front" data-aos="flip-left" data-aos-delay="400">
                         <div class="project-card">
                             <div class="project-img">
-                                <img src="images/Screenshot 2025-05-07 031537.png" alt="Movie Website" class="img-fluid">
+                                <img src="images/Screenshot 2025-05-07 031537.png" alt="Movie Website" class="img-fluid lazy" width="800" height="450" loading="lazy">
                                 <div class="project-overlay">
                                     <div class="project-links">
-                                        <a href="https://mo7amed-3bnaser.github.io/Movie-Website/" target="_blank" rel="noopener" aria-label="Visit Movie Website Project"><i class="fas fa-link"></i></a>
-                                        <a href="https://github.com/Mo7amed-3bnaser/Movie-Website" target="_blank" rel="noopener" aria-label="View Movie Website Source Code"><i class="fab fa-github"></i></a>
+                                        <a href="https://mo7amed-3bnaser.github.io/Movie-Website/" target="_blank" rel="noopener"><i class="fas fa-link"></i></a>
+                                        <a href="https://github.com/Mo7amed-3bnaser/Movie-Website" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -375,14 +395,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="front" data-aos="flip-left" data-aos-delay="500">
+                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="front" data-aos="flip-left" data-aos-delay="300">
                         <div class="project-card">
                             <div class="project-img">
-                                <img src="images/Screenshot 2025-05-12 161844.png" alt="Rock Paper Scissors" class="img-fluid">
+                                <img src="images/Screenshot 2025-05-12 161844.png" alt="Rock Paper Scissors" class="img-fluid lazy" width="800" height="450" loading="lazy">
                                 <div class="project-overlay">
                                     <div class="project-links">
-                                        <a href="https://mo7amed-3bnaser.github.io/portfolio/" target="_blank" rel="noopener" aria-label="Visit Portfolio Website"><i class="fas fa-link"></i></a>
-                                        <a href="https://github.com/Mo7amed-3bnaser/portfolio" target="_blank" rel="noopener" aria-label="View Portfolio Source Code"><i class="fab fa-github"></i></a>
+                                        <a href="https://mo7amed-3bnaser.github.io/Rock-Paper-Scissors/" target="_blank" rel="noopener"><i class="fas fa-link"></i></a>
+                                        <a href="https://github.com/Mo7amed-3bnaser/Rock-Paper-Scissors.git" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -435,10 +455,10 @@
                                 </div>
                             </div>
                             <div class="social-links">
-                                <a href="https://www.instagram.com/m_3bdelnaser/profilecard/?igsh=ZG42NG93ZTl5NWIx" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
-                                <a href="https://www.facebook.com/share/12CPZ2MdKTb/" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                                <a href="https://github.com/Mo7amed-3bnaser" target="_blank" class="github"><i class="fab fa-github"></i></a>
-                                <a href="https://www.linkedin.com/in/3bnaser?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.instagram.com/m_3bdelnaser/profilecard/?igsh=ZG42NG93ZTl5NWIx" target="_blank" rel="noopener" class="instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/share/12CPZ2MdKTb/" target="_blank" rel="noopener" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://github.com/Mo7amed-3bnaser" target="_blank" rel="noopener" class="github"><i class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/3bnaser?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
                     </div>
@@ -482,10 +502,10 @@
                             <p>Front-End Web Developer specializing in creating responsive and interactive websites with modern technologies.</p>
                         </div>
                         <div class="footer-social">
-                            <a href="https://www.instagram.com/m_3bdelnaser/profilecard/?igsh=ZG42NG93ZTl5NWIx" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.facebook.com/share/12CPZ2MdKTb/" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://github.com/Mo7amed-3bnaser" target="_blank" class="github"><i class="fab fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/3bnaser?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.instagram.com/m_3bdelnaser/profilecard/?igsh=ZG42NG93ZTl5NWIx" target="_blank" rel="noopener" class="instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/share/12CPZ2MdKTb/" target="_blank" rel="noopener" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://github.com/Mo7amed-3bnaser" target="_blank" rel="noopener" class="github"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/3bnaser?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
@@ -530,18 +550,14 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <!-- Typed.js for typing animation -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
-    
-    <!-- Custom JavaScript -->
+    <!-- Custom JS -->
     <script src="js/script.js" defer></script>
-    <script src="js/optimize.js" defer></script>
     
     <!-- Formspree Form Handling Script -->
     <script>
@@ -601,5 +617,7 @@
         
         form.addEventListener("submit", handleSubmit);
     </script>
+    <!-- Add Optimization Script -->
+    <script src="js/optimize.js"></script>
 </body>
 </html>

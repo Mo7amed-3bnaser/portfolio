@@ -1075,6 +1075,8 @@ section.section:last-child {
     width: 100%;
     height: 250px;
     object-fit: cover;
+    opacity: 1 !important;
+    border-radius: 10px 10px 0 0;
 }
 
 .project-card:hover .project-img img {
