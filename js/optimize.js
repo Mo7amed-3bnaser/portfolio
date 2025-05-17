@@ -1,28 +1,31 @@
 // Make all images visible immediately
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function() {
     // Select all images
-    const images = document.querySelectorAll('img');
+    const allImages = document.querySelectorAll("img");
     
-    // Make all images visible immediately
-    images.forEach(img => {
-        img.style.opacity = '1';
-        img.classList.add('loaded');
+    // Force all images to be visible
+    allImages.forEach(function(image) {
+        // Add loaded class to all images immediately
+        image.classList.add("loaded");
+        
+        // Make sure image is visible
+        image.style.opacity = "1";
     });
     
-    // Still use IntersectionObserver to add loaded class when images come into view
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
+    // Simple observer just for animation when images come into view
+    if ("IntersectionObserver" in window) {
+        const imageObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.classList.add('loaded');
-                    imageObserver.unobserve(img);
+                    const image = entry.target;
+                    image.classList.add("loaded");
+                    imageObserver.unobserve(image);
                 }
             });
         });
         
-        images.forEach(img => {
-            imageObserver.observe(img);
+        allImages.forEach(function(image) {
+            imageObserver.observe(image);
         });
     }
 });

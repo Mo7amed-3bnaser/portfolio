@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mo7amed-3bnaser.github.io/portfolio/sitemap.xml
+Sitemap: https://3bnaser.tech/sitemap.xml
