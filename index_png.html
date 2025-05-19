@@ -61,10 +61,16 @@
             }
             /* Add more critical CSS as needed */
         </style>
+        
+        <!-- Mobile optimization script - load early for better performance -->
+        <script src="js/mobile-optimize.js"></script>
         <!-- Preload Critical Resources -->
         <link rel="preload" href="css/style.css" as="style">
         <link rel="preload" href="js/script.js" as="script">
         <link rel="preload" href="css/loading.css" as="style">
+        
+        <!-- Mobile Optimization CSS - only loaded on mobile devices -->
+        <link rel="stylesheet" href="css/mobile-optimize.css" media="(max-width: 768px)" importance="high">
     </head>
     
 <body>

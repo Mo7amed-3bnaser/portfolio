@@ -71,6 +71,29 @@
       }
     }
     </script>
+    <!-- JavaScript for mobile menu toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggleBtn = document.querySelector('.nav-toggle-btn');
+            const sideNav = document.querySelector('.side-nav');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            if (navToggleBtn) {
+                navToggleBtn.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    sideNav.classList.toggle('collapsed');
+                });
+            }
+            
+            // Close menu when clicking on a link
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    sideNav.classList.remove('collapsed');
+                    navToggleBtn.classList.remove('active');
+                });
+            });
+        });
+    </script>
     </head>
     
 <body>
@@ -100,6 +123,11 @@
                 </div>
             </a>
         </div>
+        <button class="nav-toggle-btn" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <ul class="nav-links">
             <li><a href="#home" class="active"><i class="fas fa-home"></i> <span>Home</span></a></li>
             <li><a href="#about"><i class="fas fa-user"></i> <span>About</span></a></li>
@@ -409,8 +437,8 @@
                                 <img src="images/Screenshot 2025-05-12 161844.png" alt="Rock Paper Scissors" class="img-fluid">
                                 <div class="project-overlay">
                                     <div class="project-links">
-                                        <a href="https://mo7amed-3bnaser.github.io/portfolio/" target="_blank" rel="noopener" aria-label="Visit Portfolio Website"><i class="fas fa-link"></i></a>
-                                        <a href="https://github.com/Mo7amed-3bnaser/portfolio" target="_blank" rel="noopener" aria-label="View Portfolio Source Code"><i class="fab fa-github"></i></a>
+                                        <a href="https://mo7amed-3bnaser.github.io/Rock-Paper-Scissors/" target="_blank" rel="noopener" aria-label="Visit Portfolio Website"><i class="fas fa-link"></i></a>
+                                        <a href="https://github.com/Mo7amed-3bnaser/Rock-Paper-Scissors.git" target="_blank" rel="noopener" aria-label="View Portfolio Source Code"><i class="fab fa-github"></i></a>
                                     </div>
                                 </div>
                             </div>

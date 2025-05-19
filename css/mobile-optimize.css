@@ -1,0 +1,49 @@
+/* Mobile Optimization Styles */
+
+/* Optimize the VIEW MY WORK button that's causing LCP issues */
+@media (max-width: 768px) {
+    /* Optimize the primary button (VIEW MY WORK) */
+    .btn.btn-primary {
+        /* Hardware acceleration */
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+        will-change: transform;
+        contain: layout style paint;
+        
+        /* Simplify styles */
+        box-shadow: none;
+        transition: transform 0.2s ease-out;
+        background: var(--primary-color);
+        border: none;
+        font-weight: 500;
+    }
+    
+    /* Reduce animation complexity */
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    
+    /* Optimize hero section */
+    .hero-content {
+        will-change: transform;
+        contain: layout style;
+    }
+    
+    /* Reduce particles for better performance */
+    #particles-js {
+        opacity: 0.5;
+    }
+    
+    /* Optimize loading */
+    .loading-screen {
+        background-color: #151515;
+    }
+    
+    /* Optimize progress animation */
+    .progress-bar-loading {
+        animation-duration: 1s;
+    }
+}

@@ -16,16 +16,16 @@ document.addEventListener('DOMContentLoaded', function() {
         loop: true
     });
     
-    // Initialize particles.js with reduced particles for mobile
+    // Initialize particles.js with significantly reduced particles for mobile
     if(document.getElementById('particles-js')) {
         const isMobile = window.innerWidth < 768;
         particlesJS('particles-js', {
             particles: {
                 number: {
-                    value: isMobile ? 40 : 80,
+                    value: isMobile ? 20 : 80, // Reduce particles count on mobile
                     density: {
                         enable: true,
-                        value_area: 800
+                        value_area: isMobile ? 1200 : 800 // Increase area on mobile
                     }
                 },
                 color: {
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 },
                 opacity: {
-                    value: 0.5,
+                    value: isMobile ? 0.3 : 0.5, // Reduce opacity on mobile
                     random: false,
                     anim: {
                         enable: false,
