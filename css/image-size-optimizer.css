@@ -1,0 +1,96 @@
+/* 
+ * Image Size Optimizer Styles for Mobile
+ * This CSS optimizes images for mobile without hiding them
+ * It helps with Largest Contentful Paint (LCP) issues by properly sizing and displaying images
+ */
+
+/* Only apply these optimizations on mobile devices */
+@media (max-width: 768px) {
+    /* Optimize all images */
+    img {
+        /* Prevent layout shifts with proper sizing */
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: attr(width) / attr(height);
+        
+        /* Force hardware acceleration */
+        transform: translateZ(0);
+        will-change: opacity;
+        
+        /* Prevent layout shifts */
+        contain: layout style;
+        
+        /* Ensure images are visible immediately */
+        opacity: 1 !important;
+        
+        /* Remove complex animations */
+        animation: none !important;
+        transition: opacity 0.2s ease-out !important;
+    }
+    
+    /* Optimize project images specifically */
+    .project-img img {
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+    }
+    
+    /* Optimize profile image */
+    .profile-img img {
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    /* Prevent image overlay effects from causing performance issues */
+    .project-overlay {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: none;
+    }
+    
+    /* Make project links always visible on mobile for better UX */
+    .project-links {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    
+    /* Optimize image containers */
+    .img-fluid-container {
+        position: relative;
+        overflow: hidden;
+        height: 0;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    }
+    
+    .img-fluid-container img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* Optimize background images */
+    [style*="background-image"] {
+        background-attachment: scroll !important;
+        background-size: cover !important;
+        will-change: opacity;
+        contain: paint;
+    }
+    
+    /* Add a low-quality image placeholder effect */
+    .img-placeholder {
+        filter: blur(10px);
+        transition: filter 0.3s ease-out;
+    }
+    
+    .img-placeholder.loaded {
+        filter: blur(0);
+    }
+}

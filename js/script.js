@@ -1,10 +1,12 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize AOS animation library
+    // Initialize AOS animation library with mobile optimizations
+    const isMobile = window.innerWidth < 768;
     AOS.init({
-        duration: 1000,
+        duration: isMobile ? 500 : 1000,
         once: true,
-        mirror: false
+        mirror: false,
+        disable: isMobile // Disable animations on mobile for better performance
     });
 
     // Initialize Typed.js for typing animation

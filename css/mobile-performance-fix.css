@@ -1,0 +1,74 @@
+/* 
+ * Mobile Performance Optimization Styles
+ * This CSS focuses on improving mobile performance without affecting desktop experience
+ * or hiding images. It addresses the LCP (Largest Contentful Paint) issues.
+ */
+
+/* Only apply these optimizations on mobile devices */
+@media (max-width: 768px) {
+    /* Optimize the VIEW MY WORK button (main LCP element) */
+    .btn.btn-primary {
+        /* Hardware acceleration */
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+        will-change: transform;
+        contain: layout style paint;
+        
+        /* Simplify styles to improve rendering */
+        box-shadow: none !important;
+        transition: transform 0.2s ease-out !important;
+        background: var(--primary-color);
+        border: none;
+        font-weight: 500;
+    }
+    
+    /* Optimize hero section which is likely part of LCP */
+    .hero-content h1, 
+    .hero-content p, 
+    .hero-content .typed-text {
+        will-change: transform;
+        contain: layout style;
+    }
+    
+    /* Reduce animation complexity */
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    
+    /* Optimize particles for better performance */
+    #particles-js {
+        opacity: 0.3;
+    }
+    
+    /* Optimize images without hiding them */
+    img {
+        /* Force immediate visibility */
+        opacity: 1 !important;
+        /* Prevent layout shifts */
+        contain: layout style;
+    }
+    
+    /* Optimize skill cards */
+    .skill-card {
+        contain: layout style;
+        will-change: transform;
+    }
+    
+    /* Optimize progress bars */
+    .progress-bar {
+        transition: width 0.5s ease-out !important;
+    }
+    
+    /* Optimize loading screen */
+    .loading-screen {
+        background-color: #151515;
+    }
+    
+    /* Optimize progress animation */
+    .progress-bar-loading {
+        animation-duration: 0.5s !important;
+    }
+}

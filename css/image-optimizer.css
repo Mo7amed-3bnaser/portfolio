@@ -1,0 +1,49 @@
+/* 
+ * Image Optimization Styles for Mobile
+ * This CSS optimizes images for mobile without hiding them
+ * It helps with Largest Contentful Paint (LCP) issues
+ */
+
+/* Only apply these optimizations on mobile devices */
+@media (max-width: 768px) {
+    /* Optimize all images */
+    img {
+        /* Force hardware acceleration */
+        transform: translateZ(0);
+        will-change: opacity;
+        /* Prevent layout shifts */
+        contain: layout style size;
+        /* Ensure images are visible immediately */
+        opacity: 1 !important;
+        /* Remove complex animations */
+        animation: none !important;
+        transition: opacity 0.2s ease-out !important;
+    }
+    
+    /* Add specific optimizations for the hero image (likely part of LCP) */
+    .hero-img img,
+    .profile-img img {
+        /* Highest priority optimizations */
+        content-visibility: auto;
+        contain-intrinsic-size: 300px;
+    }
+    
+    /* Optimize image containers */
+    .img-fluid-loaded {
+        opacity: 1 !important;
+    }
+    
+    /* Remove image hover effects on mobile */
+    .project-card:hover img,
+    .portfolio-item:hover img {
+        transform: none !important;
+        filter: none !important;
+    }
+    
+    /* Optimize background images */
+    [style*="background-image"] {
+        background-attachment: scroll !important;
+        will-change: opacity;
+        contain: paint;
+    }
+}
