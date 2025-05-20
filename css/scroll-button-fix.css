@@ -1,0 +1,48 @@
+/* 
+Scroll Button Fix CSS
+This file fixes the issue with the scroll arrow button staying green after clicking
+and ensures it returns to its original blue color
+*/
+
+/* Fix for scroll-down-btn to return to original color */
+.scroll-down-btn {
+    background: linear-gradient(145deg, rgba(78, 158, 255, 0.4), rgba(46, 160, 67, 0.4));
+    transition: all 0.3s ease;
+    color: white;
+    box-shadow: 0 4px 15px rgba(78, 158, 255, 0.5);
+}
+
+.scroll-down-btn:hover {
+    background-color: rgba(78, 158, 255, 0.6);
+    color: white;
+}
+
+/* Reset button state after click to ensure it returns to original style */
+.scroll-down-btn:active,
+.scroll-down-btn:focus {
+    background: linear-gradient(145deg, rgba(78, 158, 255, 0.4), rgba(46, 160, 67, 0.4));
+    color: white;
+    box-shadow: 0 4px 15px rgba(78, 158, 255, 0.5);
+}
+
+/* Fix for scroll-top-btn to return to original color */
+.scroll-top-btn {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 5px 15px rgba(88, 166, 255, 0.3);
+    transition: all 0.4s ease;
+}
+
+.scroll-top-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Reset button state after click */
+.scroll-top-btn:active,
+.scroll-top-btn:focus,
+.scroll-top-btn.clicked {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 5px 15px rgba(88, 166, 255, 0.3);
+}

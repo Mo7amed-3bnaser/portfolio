@@ -15,12 +15,12 @@
         will-change: transform;
         contain: layout style paint;
         
-        /* Simplify styles to improve rendering */
-        box-shadow: none !important;
-        transition: transform 0.2s ease-out !important;
-        background: var(--primary-color);
-        border: none;
-        font-weight: 500;
+        /* Simplify styles to improve rendering - Removed conflicting styles */
+        /* box-shadow: none !important; */
+        /* transition: transform 0.2s ease-out !important; */
+        /* background: var(--primary-color); */
+        /* border: none; */
+        /* font-weight: 500; */
     }
     
     /* Optimize hero section which is likely part of LCP */

@@ -227,9 +227,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 this.classList.add('active');
                 this.setAttribute('aria-current', 'page');
+                
+                // Reset scroll-down-btn style if this is the button
+                if (this.classList.contains('scroll-down-btn')) {
+                    this.classList.add('clicked');
+                    setTimeout(() => {
+                        this.classList.remove('clicked');
+                    }, 300);
+                }
             }
         });
     });
+    
+    // Specific handler for scroll-down-btn
+    const scrollDownBtn = document.querySelector('.scroll-down-btn');
+    if (scrollDownBtn) {
+        scrollDownBtn.addEventListener('click', function() {
+            // Reset button style after click
+            setTimeout(() => {
+                this.style.background = 'linear-gradient(145deg, rgba(78, 158, 255, 0.4), rgba(46, 160, 67, 0.4))';
+                this.style.boxShadow = '0 4px 15px rgba(78, 158, 255, 0.5)';
+            }, 300);
+        });
+    }
 
     // Update active nav link on scroll with debouncing
     window.addEventListener('scroll', function() {
@@ -275,6 +295,12 @@ document.addEventListener('DOMContentLoaded', function() {
             top: 0,
             behavior: 'smooth'
         });
+        
+        // Reset button style after click
+        this.classList.add('clicked');
+        setTimeout(() => {
+            this.classList.remove('clicked');
+        }, 300);
     });
 
     // Form submission handling - with improved form validation
