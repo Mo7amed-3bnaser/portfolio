@@ -1552,32 +1552,6 @@ textarea.form-control {
     display: none;
 }
 
-.footer-contact .phone-link {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: var(--transition);
-    display: inline-flex;
-    align-items: center;
-    font-weight: 500;
-    position: relative;
-    padding: 2px 0;
-    border-bottom: none;
-}
-
-.footer-contact .phone-link:hover {
-    color: var(--secondary-color);
-    text-decoration: none;
-    border-bottom: none;
-}
-
-.footer-contact .phone-link:hover::after {
-    content: none;
-}
-
-.footer-contact .phone-link .call-icon {
-    display: none;
-}
-
 .footer-contact p {
     display: flex;
     align-items: center;
@@ -1717,5 +1691,182 @@ textarea.form-control {
 @media (max-width: 768px) {
     .hero-section {
         height: 100vh;
+    }
+    
+    /* إلغاء حركة الصورة في About section للهواتف - ثابتة تماماً */
+    .about-img img {
+        transition: none; /* إلغاء أي انتقالات */
+    }
+    
+    .about-img img:hover {
+        transform: none; /* لا حركة على الإطلاق */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* نفس الظل الأصلي */
+    }
+}
+
+/* تصميم خاص للهواتف - أزرار دائرية محسنة للأداء */
+@media (max-width: 768px) {
+    /* تصميم أزرار Hero Section للهاتف */
+    .hero-content .cta-buttons {
+        margin-top: 2rem;
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    .hero-content .cta-buttons .btn {
+        padding: 15px 35px;
+        border-radius: 50px; /* دائري */
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        min-width: 150px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        transition: transform 0.2s ease, box-shadow 0.2s ease; /* تحسين الانتقالات */
+        border: 2px solid transparent;
+    }
+    
+    .hero-content .cta-buttons .btn-primary {
+        background: linear-gradient(135deg, var(--primary-color), #4a9eff);
+        border-color: var(--primary-color);
+        color: white;
+        box-shadow: 0 4px 15px rgba(88, 166, 255, 0.3);
+    }
+    
+    .hero-content .cta-buttons .btn-primary:hover {
+        background: linear-gradient(135deg, var(--secondary-color), #22c55e);
+        border-color: var(--secondary-color);
+        transform: translateY(-2px); /* تقليل الحركة */
+        box-shadow: 0 6px 20px rgba(46, 160, 67, 0.4);
+    }
+    
+    .hero-content .cta-buttons .btn-outline {
+        background: transparent; /* شفاف تماماً */
+        border: 2px solid var(--primary-color); /* بوردر أزرق */
+        color: var(--primary-color); /* لون النص أزرق */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+    
+    .hero-content .cta-buttons .btn-outline:hover {
+        background: linear-gradient(135deg, var(--primary-color), #4a9eff);
+        border-color: var(--primary-color);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(88, 166, 255, 0.4);
+    }
+    
+    /* تصميم أزرار About Section للهاتف */
+    .about-content .btn {
+        padding: 14px 32px;
+        border-radius: 45px; /* دائري */
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        min-width: 140px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        margin-bottom: 10px;
+        border: 2px solid transparent;
+    }
+    
+    .about-content .btn-primary {
+        background: linear-gradient(135deg, var(--primary-color), #4a9eff);
+        border-color: var(--primary-color);
+        color: white;
+        box-shadow: 0 4px 15px rgba(88, 166, 255, 0.3);
+    }
+    
+    .about-content .btn-primary:hover {
+        background: linear-gradient(135deg, var(--secondary-color), #22c55e);
+        border-color: var(--secondary-color);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(46, 160, 67, 0.4);
+    }
+    
+    .about-content .mt-4 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 1.5rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content .cta-buttons .btn {
+        padding: 12px 28px;
+        font-size: 12px;
+        min-width: 130px;
+        border-radius: 45px;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15); /* ظل أخف */
+    }
+    
+    .about-content .btn {
+        padding: 12px 28px;
+        font-size: 12px;
+        min-width: 120px;
+        border-radius: 40px;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* الصورة ثابتة تماماً للهواتف الصغيرة */
+    .about-img img {
+        transition: none; /* لا انتقالات */
+    }
+    
+    .about-img img:hover {
+        transform: none; /* لا حركة مطلقاً */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* ظل ثابت */
+    }
+}
+
+/* أزرار النماذج للهاتف - مبسطة */
+@media (max-width: 768px) {
+    .contact-form .btn,
+    form .btn,
+    #my-form-button {
+        padding: 14px 32px;
+        border-radius: 45px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        min-width: 140px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+        border: 2px solid var(--primary-color);
+    }
+    
+    .contact-form .btn-primary,
+    form .btn-primary,
+    #my-form-button.btn-primary {
+        background: linear-gradient(135deg, var(--primary-color), #4a9eff);
+        color: white;
+        box-shadow: 0 4px 15px rgba(88, 166, 255, 0.3);
+    }
+    
+    .contact-form .btn-primary:hover,
+    form .btn-primary:hover,
+    #my-form-button.btn-primary:hover {
+        background: linear-gradient(135deg, var(--secondary-color), #22c55e);
+        border-color: var(--secondary-color);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(46, 160, 67, 0.4);
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form .btn,
+    form .btn,
+    #my-form-button {
+        padding: 12px 28px;
+        font-size: 12px;
+        min-width: 120px;
+        border-radius: 40px;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
     }
 }

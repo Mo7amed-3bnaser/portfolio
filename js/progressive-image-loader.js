@@ -2,87 +2,89 @@
  * Progressive Image Loader
  * This script implements progressive image loading for better user experience
  * It loads low-quality placeholders first, then loads the full quality images
- * for all devices (desktop and mobile)
+ * without hiding images or affecting desktop experience
  */
 
 // Execute when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
-    // Apply on all devices (removed mobile-only check)
-    // Find all project images and other large images
-    const projectImages = document.querySelectorAll('.project-img img, .hero-img img, img[width][height]');
-    
-    // Process each image
-    projectImages.forEach(function(img) {
-        // Skip already processed images
-        if (img.dataset.progressive === 'true') return;
+    // Only apply on mobile devices
+    if (window.innerWidth < 768) {
+        // Find all project images and other large images
+        const projectImages = document.querySelectorAll('.project-img img, .hero-img img, img[width][height]');
         
-        // Mark as processed
-        img.dataset.progressive = 'true';
-        
-        // Get original image source
-        const originalSrc = img.src;
-        
-        // Create a wrapper for the image if it doesn't have one
-        let wrapper = img.parentElement;
-        if (!wrapper.classList.contains('progressive-img-wrapper')) {
-            // Create a wrapper
-            wrapper = document.createElement('div');
-            wrapper.className = 'progressive-img-wrapper';
-            img.parentNode.insertBefore(wrapper, img);
-            wrapper.appendChild(img);
-        }
-        
-        // Add placeholder class to image
-        img.classList.add('img-placeholder');
-        
-        // Create a tiny version of the image (data URI or tiny thumbnail)
-        createTinyPlaceholder(img, function(tinyDataUri) {
-            // Set the tiny placeholder as background
-            wrapper.style.backgroundImage = `url(${tinyDataUri})`;
-            wrapper.style.backgroundSize = 'cover';
-            wrapper.style.backgroundPosition = 'center';
+        // Process each image
+        projectImages.forEach(function(img) {
+            // Skip already processed images
+            if (img.dataset.progressive === 'true') return;
             
-            // Load the full image with IntersectionObserver
-            if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver(function(entries) {
-                    entries.forEach(function(entry) {
-                        if (entry.isIntersecting) {
-                            // Load the full image
-                            const fullImg = entry.target;
-                            
-                            // Create a new image element to load the full image
-                            const tempImg = new Image();
-                            tempImg.onload = function() {
-                                // Replace placeholder with full image
-                                fullImg.src = originalSrc;
-                                fullImg.classList.add('loaded');
-                                
-                                // Remove the background placeholder
-                                setTimeout(function() {
-                                    fullImg.parentElement.style.backgroundImage = 'none';
-                                }, 500);
-                                
-                                // Stop observing
-                                observer.unobserve(fullImg);
-                            };
-                            tempImg.src = originalSrc;
-                        }
-                    });
-                }, {
-                    rootMargin: '200px 0px' // Start loading when image is 200px from viewport
-                });
-                
-                // Start observing
-                observer.observe(img);
-            } else {
-                // Fallback for browsers that don't support IntersectionObserver
-                setTimeout(function() {
-                    img.src = originalSrc;
-                    img.classList.add('loaded');
-                }, 100);
+            // Mark as processed
+            img.dataset.progressive = 'true';
+            
+            // Get original image source
+            const originalSrc = img.src;
+            
+            // Create a wrapper for the image if it doesn't have one
+            let wrapper = img.parentElement;
+            if (!wrapper.classList.contains('progressive-img-wrapper')) {
+                // Create a wrapper
+                wrapper = document.createElement('div');
+                wrapper.className = 'progressive-img-wrapper';
+                img.parentNode.insertBefore(wrapper, img);
+                wrapper.appendChild(img);
             }
+            
+            // Add placeholder class to image
+            img.classList.add('img-placeholder');
+            
+            // Create a tiny version of the image (data URI or tiny thumbnail)
+            createTinyPlaceholder(img, function(tinyDataUri) {
+                // Set the tiny placeholder as background
+                wrapper.style.backgroundImage = `url(${tinyDataUri})`;
+                wrapper.style.backgroundSize = 'cover';
+                wrapper.style.backgroundPosition = 'center';
+                
+                // Load the full image with IntersectionObserver
+                if ('IntersectionObserver' in window) {
+                    const observer = new IntersectionObserver(function(entries) {
+                        entries.forEach(function(entry) {
+                            if (entry.isIntersecting) {
+                                // Load the full image
+                                const fullImg = entry.target;
+                                
+                                // Create a new image element to load the full image
+                                const tempImg = new Image();
+                                tempImg.onload = function() {
+                                    // Replace placeholder with full image
+                                    fullImg.src = originalSrc;
+                                    fullImg.classList.add('loaded');
+                                    
+                                    // Remove the background placeholder
+                                    setTimeout(function() {
+                                        fullImg.parentElement.style.backgroundImage = 'none';
+                                    }, 500);
+                                    
+                                    // Stop observing
+                                    observer.unobserve(fullImg);
+                                };
+                                tempImg.src = originalSrc;
+                            }
+                        });
+                    }, {
+                        rootMargin: '200px 0px' // Start loading when image is 200px from viewport
+                    });
+                    
+                    // Start observing
+                    observer.observe(img);
+                } else {
+                    // Fallback for browsers that don't support IntersectionObserver
+                    setTimeout(function() {
+                        img.src = originalSrc;
+                        img.classList.add('loaded');
+                    }, 100);
+                }
+            });
         });
-    });
+    }
     
     // Function to create a tiny placeholder version of the image
     function createTinyPlaceholder(img, callback) {
@@ -96,42 +98,100 @@ document.addEventListener('DOMContentLoaded', function() {
                                 srcPath.substring(srcPath.lastIndexOf('/') + 1);
         
         // Try to load the tiny placeholder
-        const tinyImg = new Image();
-        tinyImg.onload = function() {
+        const testImg = new Image();
+        testImg.crossOrigin = 'Anonymous';
+        testImg.onload = function() {
+            // Tiny placeholder exists, use it
             callback(tinyPlaceholderPath);
         };
-        tinyImg.onerror = function() {
-            // If tiny placeholder doesn't exist, create a simple color placeholder
-            // based on the average color of the image
-            getAverageColor(img, function(color) {
-                callback(`data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1" fill="${color}"><rect width="1" height="1"/></svg>`);
-            });
+        testImg.onerror = function() {
+            // Generate a tiny placeholder on the fly
+            generateTinyPlaceholder(img, callback);
         };
-        tinyImg.src = tinyPlaceholderPath;
+        testImg.src = tinyPlaceholderPath;
     }
     
-    // Function to get the average color of an image
-    function getAverageColor(img, callback) {
-        // Default color if we can't calculate
-        let color = '#222222';
+    // Function to generate a tiny placeholder on the fly
+    function generateTinyPlaceholder(img, callback) {
+        // Create a canvas element
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
         
-        // If image is already loaded, calculate average color
-        if (img.complete && img.naturalWidth > 0) {
+        // Set a very small size for the placeholder
+        canvas.width = 20;
+        canvas.height = 20;
+        
+        // Create a new image to draw on canvas
+        const tempImg = new Image();
+        tempImg.crossOrigin = 'Anonymous';
+        tempImg.onload = function() {
+            // Draw the image on canvas
+            ctx.drawImage(tempImg, 0, 0, canvas.width, canvas.height);
+            
+            // Get the data URL
             try {
-                const canvas = document.createElement('canvas');
-                const ctx = canvas.getContext('2d');
-                canvas.width = 1;
-                canvas.height = 1;
-                
-                ctx.drawImage(img, 0, 0, 1, 1);
-                const data = ctx.getImageData(0, 0, 1, 1).data;
-                
-                color = `rgb(${data[0]}, ${data[1]}, ${data[2]})`;
+                const dataUrl = canvas.toDataURL('image/jpeg', 0.1);
+                callback(dataUrl);
             } catch (e) {
-                // If there's an error (e.g., CORS), use default color
+                // If there's a security error (CORS), use a colored placeholder
+                createColorPlaceholder(img, callback);
             }
-        }
+        };
+        tempImg.onerror = function() {
+            // If loading fails, use a colored placeholder
+            createColorPlaceholder(img, callback);
+        };
+        tempImg.src = img.src;
+    }
+    
+    // Function to create a colored placeholder based on image position
+    function createColorPlaceholder(img, callback) {
+        // Create a canvas element
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
         
-        callback(color);
+        // Set a very small size for the placeholder
+        canvas.width = 10;
+        canvas.height = 10;
+        
+        // Use a color based on image position to create variety
+        const rect = img.getBoundingClientRect();
+        const hue = Math.floor((rect.top + rect.left) % 360);
+        ctx.fillStyle = `hsl(${hue}, 70%, 80%)`;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        // Get the data URL
+        const dataUrl = canvas.toDataURL('image/jpeg', 0.5);
+        callback(dataUrl);
     }
 });
+
+// Add CSS styles for progressive loading
+(function() {
+    // Only apply on mobile devices
+    if (window.innerWidth < 768) {
+        const style = document.createElement('style');
+        style.textContent = `
+            .progressive-img-wrapper {
+                position: relative;
+                overflow: hidden;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                width: 100%;
+            }
+            
+            .img-placeholder {
+                opacity: 0;
+                transition: opacity 0.5s ease-in;
+                width: 100%;
+                height: auto;
+            }
+            
+            .img-placeholder.loaded {
+                opacity: 1;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+})();

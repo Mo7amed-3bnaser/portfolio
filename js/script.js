@@ -1,3 +1,14 @@
+// Force loading screen to be visible on mobile
+(function() {
+    // Make sure loading screen is visible before anything else
+    var loadingScreen = document.getElementById('loading-screen');
+    if (loadingScreen) {
+        loadingScreen.style.display = 'flex';
+        loadingScreen.style.opacity = '1';
+        loadingScreen.style.visibility = 'visible';
+    }
+})();
+
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize AOS animation library with mobile optimizations
