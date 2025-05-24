@@ -2,16 +2,26 @@
 (function() {
     // Make sure loading screen is visible before anything else
     var loadingScreen = document.getElementById('loading-screen');
-    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     
-    if (loadingScreen && isMobile) {
-        // Force display on mobile devices
-        loadingScreen.style.setProperty('display', 'flex', 'important');
-        loadingScreen.style.setProperty('opacity', '1', 'important');
-        loadingScreen.style.setProperty('visibility', 'visible', 'important');
-        
-        // Prevent any immediate hiding
-        loadingScreen.classList.remove('hidden');
+    // Improved mobile detection
+    var isMobile = /iPhone|iPad|iPod|Android|Mobile|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (loadingScreen) {
+        if (isMobile) {
+            // Force display on mobile devices with !important
+            loadingScreen.style.setProperty('display', 'flex', 'important');
+            loadingScreen.style.setProperty('opacity', '1', 'important');
+            loadingScreen.style.setProperty('visibility', 'visible', 'important');
+            
+            // Prevent any immediate hiding
+            loadingScreen.classList.remove('hidden');
+            
+            // Add additional styles to ensure it's visible
+            document.documentElement.style.setProperty('overflow', 'hidden', 'important');
+            
+            // Force repaint
+            loadingScreen.offsetHeight;
+        }
     }
 })();
 

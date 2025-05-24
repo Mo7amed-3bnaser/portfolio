@@ -16,12 +16,16 @@
     contain: layout style paint;
     opacity: 1 !important;
     visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .loading-screen.hidden {
     opacity: 0 !important;
     visibility: hidden !important;
     display: none !important;
+    pointer-events: none !important;
 }
 
 /* Blinking Cursor */
