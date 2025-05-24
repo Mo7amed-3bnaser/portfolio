@@ -741,9 +741,15 @@
     <script>
         // Loading Screen Script
         window.addEventListener('load', function() {
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            var delay = isMobile ? 3000 : 2000; // Longer delay for mobile devices
+            
             setTimeout(function() {
-                document.getElementById('loading-screen').classList.add('hidden');
-            }, 2000); // Hide after 2 seconds
+                var loadingScreen = document.getElementById('loading-screen');
+                if (loadingScreen) {
+                    loadingScreen.classList.add('hidden');
+                }
+            }, delay);
         });
         
         // Formspree Form Handling

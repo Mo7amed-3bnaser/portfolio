@@ -2,10 +2,16 @@
 (function() {
     // Make sure loading screen is visible before anything else
     var loadingScreen = document.getElementById('loading-screen');
-    if (loadingScreen) {
-        loadingScreen.style.display = 'flex';
-        loadingScreen.style.opacity = '1';
-        loadingScreen.style.visibility = 'visible';
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
+    if (loadingScreen && isMobile) {
+        // Force display on mobile devices
+        loadingScreen.style.setProperty('display', 'flex', 'important');
+        loadingScreen.style.setProperty('opacity', '1', 'important');
+        loadingScreen.style.setProperty('visibility', 'visible', 'important');
+        
+        // Prevent any immediate hiding
+        loadingScreen.classList.remove('hidden');
     }
 })();
 
