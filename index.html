@@ -748,9 +748,9 @@
                 const isFromGoogle = document.referrer.includes('google');
                 
                 // Determine delay based on device and referrer
-                let delay = 1200; // تحسين: 1.2 ثانية للديسكتوب (بدلاً من 2 ثانية)
+                let delay = 1200; 
                 if (isMobile) {
-                    delay = isFromGoogle ? 1500 : 1200; // تحسين: 1.2 ثانية عادي، 1.5 من جوجل
+                    delay = isFromGoogle ? 1500 : 1200; 
                 }
                 
                 setTimeout(function() {
