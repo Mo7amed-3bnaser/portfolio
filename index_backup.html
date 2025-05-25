@@ -612,7 +612,7 @@
                                 <i class="fas fa-envelope"></i>
                                 <div>
                                     <h4>Email</h4>
-                                    <p><a href="mailto:ghdkuzyuf@gmail.com">mhmdbdalnasrm46@gmail.com</a></p>
+                                    <p><a href="mailto:ghdkuzyuf@gmail.com">ghdkuzyuf@gmail.com</a></p>
                                 </div>
                             </div>
                             <div class="info-item">
@@ -748,13 +748,13 @@
                 const isFromGoogle = document.referrer.includes('google');
                 
                 // Determine delay based on device and referrer
-                let delay = 1200; // تحسين: 1.2 ثانية للديسكتوب (بدلاً من 2 ثانية)
+                let delay = 2000; // Default 2 seconds for desktop
                 if (isMobile) {
-                    delay = isFromGoogle ? 1500 : 1200; // تحسين: 1.2 ثانية عادي، 1.5 من جوجل
+                    delay = isFromGoogle ? 3500 : 2500; // Longer delay for mobile, especially from Google
                 }
                 
                 setTimeout(function() {
-                    loadingScreen.style.transition = \"opacity 0.3s ease-out\"; loadingScreen.style.opacity = \"0\"; loadingScreen.classList.add(\"hidden\");
+                    loadingScreen.classList.add('hidden');
                     document.documentElement.style.overflow = ''; // Re-enable scrolling
                 }, delay);
             }
