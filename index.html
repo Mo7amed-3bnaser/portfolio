@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Loading Screen CSS - Performance Optimized -->
+        <link rel="stylesheet" href="css/new-loading.css">
+        <!-- Immediate Loading Screen Display Script -->
+        <script>
+            // Apply loading screen styles immediately
+            document.documentElement.style.overflow = 'hidden';
+        </script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="theme-color" content="#151515">
@@ -141,19 +148,11 @@
         </style>
         
         <!-- Mobile Performance Optimization - Load early for immediate effect -->
-        <script src="js/resource-optimizer.js"></script>
-        <script src="js/js-optimizer.js"></script>
-        <script src="js/mobile-performance-fix.js"></script>
-        <script src="js/image-size-optimizer.js"></script>
-        <script src="js/progressive-image-loader.js"></script>
-        <script src="js/image-format-optimizer.js"></script>
+        <script src="js/optimize.js"></script>
         
         <!-- Critical CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/loading.css">
-        <link rel="stylesheet" href="css/mobile-performance-fix.css">
-        <link rel="stylesheet" href="css/image-size-optimizer.css">
         <link rel="stylesheet" href="css/scroll-button-fix.css">
         
         <!-- Deferred CSS -->
@@ -237,17 +236,19 @@
 <body>
     <!-- Preload critical images -->
     <link rel="preload" as="image" href="images/3bnaser_logo_circle.ico">
-    <!-- Loading Screen -->
+    <!-- Modern Loading Screen -->
     <div class="loading-screen" id="loading-screen">
-        <div class="loading-logo">
-            <span class="symbols">&lt;/</span>
-            <span>3bnaser</span>
-            <span class="symbols">&gt;</span>
+        <div class="loading-logo-container">
+            <div class="loading-logo">
+                <span class="symbols">&lt;/</span>
+                <span class="number">3</span><span class="text">bnaser</span>
+                <span class="symbols s2">&gt;</span>
+            </div>
         </div>
         <div class="progress-container">
-            <div class="progress-bar-loading"></div>
+            <div class="progress-bar"></div>
         </div>
-        <div class="loading-text">LOADING</div>
+        <div class="loading-text">LOADING<span class="loading-dots"></span></div>
     </div>
 
     <!-- Top Navigation -->
@@ -737,19 +738,26 @@
     <script src="js/script.js" defer></script>
     <script src="js/optimize.js" defer></script>
     
-    <!-- Formspree Form Handling Script -->
+    <!-- Loading Screen and Form Handling Scripts -->
     <script>
-        // Loading Screen Script
+        // Loading Screen Script - Performance Optimized
         window.addEventListener('load', function() {
-            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-            var delay = isMobile ? 3000 : 2000; // Longer delay for mobile devices
-            
-            setTimeout(function() {
-                var loadingScreen = document.getElementById('loading-screen');
-                if (loadingScreen) {
-                    loadingScreen.classList.add('hidden');
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                const isFromGoogle = document.referrer.includes('google');
+                
+                // Determine delay based on device and referrer
+                let delay = 2000; // Default 2 seconds for desktop
+                if (isMobile) {
+                    delay = isFromGoogle ? 3500 : 2500; // Longer delay for mobile, especially from Google
                 }
-            }, delay);
+                
+                setTimeout(function() {
+                    loadingScreen.classList.add('hidden');
+                    document.documentElement.style.overflow = ''; // Re-enable scrolling
+                }, delay);
+            }
         });
         
         // Formspree Form Handling

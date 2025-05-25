@@ -1,32 +1,27 @@
-// Force loading screen to be visible on mobile
-(function() {
-    // Make sure loading screen is visible before anything else
-    var loadingScreen = document.getElementById('loading-screen');
-    
-    // Improved mobile detection
-    var isMobile = /iPhone|iPad|iPod|Android|Mobile|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    
+// Main document ready function with enhanced loading screen support
+document.addEventListener('DOMContentLoaded', function() {
+    // Loading screen handling
+    const loadingScreen = document.getElementById('loading-screen');
     if (loadingScreen) {
-        if (isMobile) {
-            // Force display on mobile devices with !important
-            loadingScreen.style.setProperty('display', 'flex', 'important');
-            loadingScreen.style.setProperty('opacity', '1', 'important');
-            loadingScreen.style.setProperty('visibility', 'visible', 'important');
+        loadingScreen.style.display = 'flex';
+        loadingScreen.style.opacity = '1';
+        loadingScreen.style.visibility = 'visible';
+        
+        // Special handling for mobile devices
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            document.documentElement.style.overflow = 'hidden';
             
-            // Prevent any immediate hiding
-            loadingScreen.classList.remove('hidden');
-            
-            // Add additional styles to ensure it's visible
-            document.documentElement.style.setProperty('overflow', 'hidden', 'important');
-            
-            // Force repaint
-            loadingScreen.offsetHeight;
+            // Special handling for Google referrals on mobile
+            if (document.referrer.includes('google')) {
+                setTimeout(function() {
+                    loadingScreen.style.opacity = '1';
+                    loadingScreen.style.visibility = 'visible';
+                }, 100);
+            }
         }
     }
-})();
-
-// Wait for the DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
+    
+    // Initialize site functionality
     // Initialize AOS animation library with mobile optimizations
     const isMobile = window.innerWidth < 768;
     AOS.init({

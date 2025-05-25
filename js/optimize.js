@@ -1,53 +1,50 @@
-// Optimize mobile performance
-document.addEventListener("DOMContentLoaded", function() {
-    // Detect if mobile device
-    const isMobile = window.innerWidth < 768;
-    
-    // Select all images
-    const allImages = document.querySelectorAll("img");
-    
-    // Force critical images to be visible immediately
-    allImages.forEach(function(image) {
-        // Add loaded class to all images immediately
-        image.classList.add("loaded");
-        
-        // Make sure image is visible
-        image.style.opacity = "1";
+// JavaScript for optimizing mobile performance
+const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+// Optimize image loading on mobile devices
+if (isMobileDevice) {
+    // Make critical images visible immediately
+    document.querySelectorAll('img[data-critical="true"]').forEach(img => {
+        img.style.visibility = 'visible';
     });
     
-    // Optimize the VIEW MY WORK button (which is causing LCP issues)
-    const viewWorkButton = document.querySelector('.btn.btn-primary');
-    if (viewWorkButton) {
-        // Add will-change property for better rendering performance
-        viewWorkButton.style.willChange = "transform";
-        // Reduce animation complexity on mobile
-        if (isMobile) {
-            viewWorkButton.style.transition = "transform 0.2s ease-out";
-        }
+    // Optimize VIEW MY WORK button
+    const viewWorkBtn = document.querySelector('.btn-primary');
+    if (viewWorkBtn) {
+        viewWorkBtn.style.willChange = 'transform';
     }
     
-    // Use more efficient intersection observer for mobile
-    if ("IntersectionObserver" in window) {
-        const observerOptions = {
-            rootMargin: isMobile ? "300px" : "0px",
-            threshold: isMobile ? 0 : 0.1
-        };
-        
-        const imageObserver = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(function(entry) {
+    // Use IntersectionObserver for efficient image loading
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const image = entry.target;
-                    image.classList.add("loaded");
-                    imageObserver.unobserve(image);
+                    const img = entry.target;
+                    const src = img.getAttribute('data-src');
+                    
+                    if (src) {
+                        img.src = src;
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    }
                 }
             });
-        }, observerOptions);
+        }, { rootMargin: '50px 0px', threshold: 0.1 });
         
-        allImages.forEach(function(image) {
-            imageObserver.observe(image);
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    } else {
+        // Fallback for older browsers
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            const src = img.getAttribute('data-src');
+            if (src) {
+                img.src = src;
+                img.classList.add('loaded');
+            }
         });
     }
-});
+}
 
 // Defer non-critical CSS
 function loadCSS(href) {
@@ -57,30 +54,25 @@ function loadCSS(href) {
     document.head.appendChild(link);
 }
 
-// Load critical CSS inline and defer non-critical CSS
+// Optimize CSS loading and animations
 document.addEventListener('DOMContentLoaded', function() {
-    // Detect if mobile device
     const isMobile = window.innerWidth < 768;
     
-    // Optimize for mobile - load CSS with priority hints
+    // Load CSS with priority hints
     const fontAwesomeLink = document.createElement('link');
     fontAwesomeLink.rel = 'stylesheet';
     fontAwesomeLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
-    if (isMobile) {
-        fontAwesomeLink.setAttribute('importance', 'low');
-    }
+    if (isMobile) fontAwesomeLink.setAttribute('importance', 'low');
     document.head.appendChild(fontAwesomeLink);
     
-    // Load AOS with lower priority on mobile
+    // Load AOS CSS
     const aosLink = document.createElement('link');
     aosLink.rel = 'stylesheet';
     aosLink.href = 'https://unpkg.com/aos@2.3.1/dist/aos.css';
-    if (isMobile) {
-        aosLink.setAttribute('importance', 'low');
-    }
+    if (isMobile) aosLink.setAttribute('importance', 'low');
     document.head.appendChild(aosLink);
     
-    // Add optimized CSS for mobile
+    // Add performance optimizations
     const style = document.createElement('style');
     style.textContent = `
         img.loaded {
@@ -90,7 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        /* Optimize the VIEW MY WORK button for mobile */
         .btn.btn-primary {
             ${isMobile ? 'contain: paint;' : ''}
             ${isMobile ? 'will-change: transform;' : ''}
@@ -99,14 +90,11 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
     
-    // Reduce animation complexity on mobile
-    if (isMobile) {
-        // Disable or simplify AOS animations on mobile
-        if (window.AOS) {
-            AOS.init({
-                disable: true,
-                once: true
-            });
-        }
+    // Optimize animations on mobile
+    if (isMobile && window.AOS) {
+        AOS.init({
+            disable: true,
+            once: true
+        });
     }
 });

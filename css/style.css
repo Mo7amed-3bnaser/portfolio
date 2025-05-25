@@ -122,15 +122,12 @@ a:hover {
 .btn-primary {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
+    transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
     background-color: var(--secondary-color);
     border-color: var(--secondary-color);
-}
-
-.btn-primary {
-    transition: all 0.3s ease;
 }
 
 .btn-outline-primary {
@@ -453,10 +450,6 @@ a:hover {
 
 .nav-links a.active i {
     color: var(--primary-color) !important;
-}
-
-.nav-links a {
-    transition: all 0.3s ease;
 }
 
 .nav-links a::after {
@@ -1169,6 +1162,7 @@ section.section:last-child {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    margin-top: 15px;
 }
 
 .tech-stack span {
@@ -1180,39 +1174,6 @@ section.section:last-child {
     font-weight: 500;
 }
 
-.project-links a:nth-child(1) {
-    transition-delay: 0.1s;
-}
-
-.project-links a:nth-child(2) {
-    transition-delay: 0.2s;
-}
-
-.project-info {
-    padding: 20px;
-}
-
-.project-info h3 {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-}
-
-.tech-stack {
-    margin-top: 15px;
-}
-
-.tech-stack span {
-    display: inline-block;
-    background-color: #3a3a55;
-    color: var(--light-color);
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-}
-
-/* ===== CONTACT SECTION ===== */
 .contact-section-container {
     margin-top: 50px;
 }
@@ -1693,14 +1654,13 @@ textarea.form-control {
         height: 100vh;
     }
     
-    /* إلغاء حركة الصورة في About section للهواتف - ثابتة تماماً */
     .about-img img {
-        transition: none; /* إلغاء أي انتقالات */
+        transition: none;
     }
     
     .about-img img:hover {
-        transform: none; /* لا حركة على الإطلاق */
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* نفس الظل الأصلي */
+        transform: none;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
 }
 
@@ -1800,7 +1760,7 @@ textarea.form-control {
         font-size: 12px;
         min-width: 130px;
         border-radius: 45px;
-        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15); /* ظل أخف */
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
     }
     
     .about-content .btn {
@@ -1811,14 +1771,13 @@ textarea.form-control {
         box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
     }
     
-    /* الصورة ثابتة تماماً للهواتف الصغيرة */
     .about-img img {
-        transition: none; /* لا انتقالات */
+        transition: none;
     }
     
     .about-img img:hover {
-        transform: none; /* لا حركة مطلقاً */
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* ظل ثابت */
+        transform: none;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
 }
 
