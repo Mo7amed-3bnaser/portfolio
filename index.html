@@ -754,7 +754,9 @@
                 }
                 
                 setTimeout(function() {
-                    loadingScreen.style.transition = \"opacity 0.3s ease-out\"; loadingScreen.style.opacity = \"0\"; loadingScreen.classList.add(\"hidden\");
+                    loadingScreen.style.transition = "opacity 0.3s ease-out"; 
+                    loadingScreen.style.opacity = "0"; 
+                    loadingScreen.classList.add("hidden");
                     document.documentElement.style.overflow = ''; // Re-enable scrolling
                 }, delay);
             }
