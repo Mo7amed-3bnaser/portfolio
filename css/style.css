@@ -740,6 +740,9 @@ section.section:last-child {
     padding: 10px;
     border-radius: 15px;
     margin-bottom: 30px;
+    text-align: center;
+    max-width: 450px;
+    margin: 0 auto 30px auto;
 }
 
 .about-img::before {
@@ -772,6 +775,10 @@ section.section:last-child {
     transition: var(--transition);
     position: relative;
     z-index: 2;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 1/1;
 }
 
 .about-img img:hover {
@@ -1172,6 +1179,119 @@ section.section:last-child {
     border-radius: 20px;
     font-size: 12px;
     font-weight: 500;
+}
+
+/* Mobile Project Buttons - Performance Optimized */
+.project-mobile-buttons {
+    display: none; /* Hidden by default */
+    padding: 15px 25px 0;
+    gap: 12px;
+    justify-content: center;
+    will-change: transform; /* Performance optimization */
+    contain: layout; /* CSS containment for better performance */
+}
+
+.project-mobile-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Optimized transitions */
+    min-width: 120px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 2px solid transparent;
+    will-change: transform; /* Performance hint */
+}
+
+.project-mobile-btn:hover {
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.project-mobile-btn i {
+    margin-right: 8px;
+    font-size: 14px;
+}
+
+.project-mobile-btn.demo-btn {
+    background: linear-gradient(135deg, var(--primary-color), #4a9eff);
+    color: white;
+    box-shadow: 0 3px 12px rgba(88, 166, 255, 0.3);
+}
+
+.project-mobile-btn.demo-btn:hover {
+    background: linear-gradient(135deg, var(--secondary-color), #2ea043);
+    color: white;
+    box-shadow: 0 5px 18px rgba(46, 160, 67, 0.4);
+    transform: translateY(-3px);
+}
+
+.project-mobile-btn.github-btn {
+    background: transparent;
+    color: var(--light-color);
+    border-color: var(--gray-color);
+}
+
+.project-mobile-btn.github-btn:hover {
+    background: var(--gray-color);
+    color: var(--dark-color);
+    border-color: var(--gray-color);
+}
+
+/* Show buttons only on mobile devices */
+@media (max-width: 768px) {
+    .project-mobile-buttons {
+        display: flex;
+    }
+    
+    /* Hide hover overlay on mobile for better performance */
+    .project-overlay {
+        display: none;
+    }
+    
+    /* Optimize mobile project cards */
+    .project-card:hover {
+        transform: none; /* Disable hover transforms on mobile */
+    }
+    
+    .project-card:hover .project-img img {
+        transform: none; /* Disable image scaling on mobile */
+    }
+    
+    /* Disable hover effects on mobile for better performance */
+    .project-mobile-btn:hover {
+        transform: translateY(-2px); /* Keep minimal hover effect */
+    }
+    
+    .project-mobile-btn.demo-btn:hover {
+        background: linear-gradient(135deg, var(--primary-color), #4a9eff); /* Keep original color on mobile */
+        box-shadow: 0 3px 12px rgba(88, 166, 255, 0.3);
+        transform: translateY(-2px); /* Minimal movement */
+    }
+}
+
+/* Further optimization for smaller screens */
+@media (max-width: 480px) {
+    .project-mobile-buttons {
+        padding: 12px 20px 0;
+        gap: 10px;
+    }
+    
+    .project-mobile-btn {
+        padding: 8px 16px;
+        font-size: 12px;
+        min-width: 100px;
+    }
+    
+    .project-mobile-btn i {
+        margin-right: 6px;
+        font-size: 12px;
+    }
 }
 
 .contact-section-container {
