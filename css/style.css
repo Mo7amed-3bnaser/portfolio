@@ -10,6 +10,25 @@ html {
     width: 100%;
 }
 
+/* Scroll Progress Indicator */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: rgba(139, 148, 158, 0.1);
+    z-index: 9999;
+}
+
+.progress-line {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transition: width 0.3s ease;
+    border-radius: 0 2px 2px 0;
+}
+
 :root {
     --primary-color: #58a6ff;
     --secondary-color: #2ea043;
@@ -154,6 +173,17 @@ a:hover {
     background-color: var(--primary-color);
     color: white;
 }
+
+/* Utility Classes */
+.cv-hidden {
+    display: none;
+}
+
+/* Progress Bar Utilities */
+.progress-95 { width: 95%; }
+.progress-90 { width: 90%; }
+.progress-85 { width: 85%; }
+.progress-80 { width: 80%; }
 
 .btn-outline-primary:active, .btn-outline-primary:focus {
     background-color: transparent !important;
@@ -828,6 +858,50 @@ section.section:last-child {
     background-color: var(--primary-color);
 }
 
+/* Stats Row */
+.stats-row {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 1.5rem 0;
+}
+
+.stat-item {
+    text-align: center;
+    flex: 1;
+    min-width: 120px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--gray-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .stats-row {
+        gap: 1rem;
+    }
+    
+    .stat-item {
+        min-width: 100px;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
 .info-item {
     display: flex;
     align-items: center;
@@ -1096,7 +1170,8 @@ section.section:last-child {
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px rgba(88, 166, 255, 0.2), 0 0 20px rgba(88, 166, 255, 0.1);
+    border: 1px solid rgba(88, 166, 255, 0.3);
 }
 
 .project-img {

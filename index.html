@@ -198,6 +198,7 @@
       }
     }
     </script>
+    
     <!-- JavaScript for mobile menu toggle -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -220,23 +221,14 @@
                 });
             });
         });
-    </script>
-    <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "Person",
-          "name": "Mohamed Abdelnaser Mohamed",
-          "image": "https://3bnaser.tech/images/mohamed-3bnaser.jpg",
-          "url": "https://3bnaser.tech",
-          "jobTitle": "Front-End Developer"
-        }
-        </script>        
+    </script>        
     </head>
     
 <body>
-            <!-- Preload critical images -->
+        <!-- Preload critical images -->
         <link rel="preload" as="image" href="images/3bnaser_logo_circle.ico">
         <link rel="preload" as="image" href="images/Mohamed-3bnaser.jpg">
+        
     <!-- Modern Loading Screen -->
     <div class="loading-screen" id="loading-screen">
         <div class="loading-logo-container">
@@ -250,6 +242,11 @@
             <div class="progress-bar"></div>
         </div>
         <div class="loading-text">LOADING<span class="loading-dots"></span></div>
+    </div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress">
+        <div class="progress-line"></div>
     </div>
 
     <!-- Top Navigation -->
@@ -293,16 +290,16 @@
                                 <a href="#contact" class="btn btn-outline">Contact Me</a>
                             </div>
                             <div class="social-icons social-links hero-social">
-                                <a href="https://www.instagram.com/m_3bdelnaser/profilecard/?igsh=ZG42NG93ZTl5NWIx" target="_blank" rel="noopener" aria-label="Instagram Profile" class="instagram"><i class="fab fa-instagram"></i></a>
-                                <a href="https://www.facebook.com/share/12CPZ2MdKTb/" target="_blank" rel="noopener" aria-label="Facebook Profile" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                                <a href="https://github.com/Mo7amed-3bnaser" target="_blank" rel="noopener" aria-label="GitHub Profile" class="github"><i class="fab fa-github"></i></a>
-                                <a href="https://www.linkedin.com/in/3bnaser?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" aria-label="LinkedIn Profile" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.instagram.com/m_3bdelnaser/profilecard/?igsh=ZG42NG93ZTl5NWIx" target="_blank" rel="noopener" aria-label="Instagram Profile" title="Follow me on Instagram" class="instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/share/12CPZ2MdKTb/" target="_blank" rel="noopener" aria-label="Facebook Profile" title="Connect on Facebook" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://github.com/Mo7amed-3bnaser" target="_blank" rel="noopener" aria-label="GitHub Profile" title="View my GitHub projects" class="github"><i class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/3bnaser?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" aria-label="LinkedIn Profile" title="Connect on LinkedIn" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <a href="#about" class="scroll-down-btn">
+            <a href="#about" class="scroll-down-btn" title="Scroll to About section">
                 <i class="fas fa-chevron-down"></i>
             </a>
         </section>
@@ -324,8 +321,25 @@
                     <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
                         <div class="about-content">
                             <h3>Front-End Developer</h3>
-                            <p class="lead">A passionate front-end web developer with hands-on experience in building responsive and interactive websites.</p>
-                            <p>Skilled in HTML, CSS, JavaScript, and Bootstrap. Constantly learning and improving through real-world projects and challenges.</p>
+                            <p class="lead">A passionate front-end web developer with 3 years of hands-on experience in building responsive and interactive websites.</p>
+                            <p>Skilled in HTML, CSS, JavaScript, React, and Bootstrap with 20+ projects under my belt. I love turning creative ideas into functional, user-friendly web experiences. When I'm not coding, you'll find me exploring new technologies and pushing the boundaries of what's possible on the web.</p>
+                            
+                            <!-- Quick Stats -->
+                            <div class="stats-row mt-4 mb-4">
+                                <div class="stat-item">
+                                    <span class="stat-number" data-target="20">0</span>
+                                    <span class="stat-label">Projects Completed</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number" data-target="3">0</span>
+                                    <span class="stat-label">Years Experience</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number" data-target="98">0</span>
+                                    <span class="stat-label">% Code Quality</span>
+                                </div>
+                            </div>
+                            
                             <div class="row mt-4">
                                 <div class="col-md-6 mb-3">
                                     <div class="info-item">
@@ -354,7 +368,7 @@
                             </div>
                             <div class="mt-4">
                                 <a href="#contact" class="btn btn-primary me-3">Hire Me</a>
-                                <a href="#" class="btn btn-outline" style="display: none;">Download CV</a>
+                                <a href="#" class="btn btn-outline cv-hidden">Download CV</a>
                             </div>
                         </div>
                     </div>
@@ -377,7 +391,7 @@
                             </div>
                             <h3>HTML5</h3>
                             <div class="progress-container">
-                                <div class="progress-bar" style="width: 95%"></div>
+                                <div class="progress-bar progress-95"></div>
                                 <span class="progress-text">95%</span>
                             </div>
                             <p>Semantic markup, accessibility, forms</p>
@@ -390,7 +404,7 @@
                             </div>
                             <h3>CSS3</h3>
                             <div class="progress-container">
-                                <div class="progress-bar" style="width: 90%"></div>
+                                <div class="progress-bar progress-90"></div>
                                 <span class="progress-text">90%</span>
                             </div>
                             <p>Flexbox, Grid, Animations, Responsive design</p>
@@ -403,7 +417,7 @@
                             </div>
                             <h3>JavaScript</h3>
                             <div class="progress-container">
-                                <div class="progress-bar" style="width: 85%"></div>
+                                <div class="progress-bar progress-85"></div>
                                 <span class="progress-text">85%</span>
                             </div>
                             <p>ES6+, DOM manipulation, Fetch API</p>
@@ -416,7 +430,7 @@
                             </div>
                             <h3>Bootstrap</h3>
                             <div class="progress-container">
-                                <div class="progress-bar" style="width: 90%"></div>
+                                <div class="progress-bar progress-90"></div>
                                 <span class="progress-text">90%</span>
                             </div>
                             <p>Grid system, Components, Utilities</p>
@@ -429,7 +443,7 @@
                             </div>
                             <h3>Responsive Design</h3>
                             <div class="progress-container">
-                                <div class="progress-bar" style="width: 95%"></div>
+                                <div class="progress-bar progress-95"></div>
                                 <span class="progress-text">95%</span>
                             </div>
                             <p>Mobile-first approach, Media queries</p>
@@ -442,7 +456,7 @@
                             </div>
                             <h3>Web Performance</h3>
                             <div class="progress-container">
-                                <div class="progress-bar" style="width: 80%"></div>
+                                <div class="progress-bar progress-80"></div>
                                 <span class="progress-text">80%</span>
                             </div>
                             <p>Optimization, Best practices</p>
@@ -455,7 +469,7 @@
                             </div>
                             <h3>React</h3>
                             <div class="progress-container">
-                                <div class="progress-bar" style="width: 85%"></div>
+                                <div class="progress-bar progress-85"></div>
                                 <span class="progress-text">85%</span>
                             </div>
                             <p>Components, Hooks, State Management</p>
@@ -479,7 +493,40 @@
                     <button class="filter-btn" data-filter="back">Back-End</button>
                 </div>
                 <div class="row project-container">
-                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="front" data-aos="flip-left" data-aos-delay="100">
+                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="fullstack front back" data-aos="flip-left" data-aos-delay="100">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <img src="images/ChatGPT Image Aug 6, 2025, 05_16_59 PM.png" alt="ShopZone E-commerce" class="img-fluid" width="400" height="225" loading="lazy">
+                                <div class="project-overlay">
+                                    <div class="project-links">
+                                        <a href="https://shopzone-1-mcnz.onrender.com" target="_blank" rel="noopener" aria-label="Visit ShopZone Project"><i class="fas fa-link"></i></a>
+                                        <a href="https://github.com/Mo7amed-3bnaser/ShopZone.git" target="_blank" rel="noopener" aria-label="View ShopZone Source Code"><i class="fab fa-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <h3>ShopZone</h3>
+                                <p>A comprehensive full-stack e-commerce solution featuring modern UI/UX design, secure authentication system, real-time shopping cart functionality, and responsive mobile-first architecture. Built with vanilla JavaScript and optimized for performance across all devices.</p>
+                                <div class="tech-stack">
+                                    <span>HTML5</span>
+                                    <span>CSS3</span>
+                                    <span>JavaScript ES6+</span>
+                                    <span>Fetch API</span>
+                                    <span>MongoDB</span>
+                                    <span>Node.js</span>
+                                </div>
+                                <div class="project-mobile-buttons">
+                                    <a href="https://shopzone-1-mcnz.onrender.com" target="_blank" rel="noopener" class="project-mobile-btn demo-btn">
+                                        <i class="fas fa-external-link-alt"></i>Live Demo
+                                    </a>
+                                    <a href="https://github.com/Mo7amed-3bnaser/ShopZone.git" target="_blank" rel="noopener" class="project-mobile-btn github-btn">
+                                        <i class="fab fa-github"></i>GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="front" data-aos="flip-left" data-aos-delay="200">
                         <div class="project-card">
                             <div class="project-img">
                                 <img src="images/ChatGPT Image Jun 17, 2025, 02_31_07 AM.png" alt="AI Image Generator" class="img-fluid" width="400" height="225" loading="lazy">
@@ -510,7 +557,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="front" data-aos="flip-left" data-aos-delay="200">
+                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="front" data-aos="flip-left" data-aos-delay="300">
                         <div class="project-card">
                             <div class="project-img">
                                 <img src="images/ChatGPT Image Jun 16, 2025, 08_05_29 AM.png" alt="Animated Login Form" class="img-fluid" width="400" height="225" loading="lazy">
@@ -702,10 +749,10 @@
                                 </div>
                             </div>
                             <div class="social-links">
-                                <a href="https://www.instagram.com/m_3bdelnaser/profilecard/?igsh=ZG42NG93ZTl5NWIx" target="_blank" rel="noopener" class="instagram"><i class="fab fa-instagram"></i></a>
-                                <a href="https://www.facebook.com/share/12CPZ2MdKTb/" target="_blank" rel="noopener" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                                <a href="https://github.com/Mo7amed-3bnaser" target="_blank" rel="noopener" class="github"><i class="fab fa-github"></i></a>
-                                <a href="https://www.linkedin.com/in/3bnaser?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.instagram.com/m_3bdelnaser/profilecard/?igsh=ZG42NG93ZTl5NWIx" target="_blank" rel="noopener" title="Follow on Instagram" class="instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/share/12CPZ2MdKTb/" target="_blank" rel="noopener" title="Connect on Facebook" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://github.com/Mo7amed-3bnaser" target="_blank" rel="noopener" title="View GitHub Profile" class="github"><i class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/3bnaser?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" title="Connect on LinkedIn" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
                     </div>
@@ -749,10 +796,10 @@
                             <p>Front-End Web Developer specializing in creating responsive and interactive websites with modern technologies.</p>
                         </div>
                         <div class="footer-social">
-                            <a href="https://www.instagram.com/m_3bdelnaser/profilecard/?igsh=ZG42NG93ZTl5NWIx" target="_blank" rel="noopener" class="instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.facebook.com/share/12CPZ2MdKTb/" target="_blank" rel="noopener" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://github.com/Mo7amed-3bnaser" target="_blank" rel="noopener" class="github"><i class="fab fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/3bnaser?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.instagram.com/m_3bdelnaser/profilecard/?igsh=ZG42NG93ZTl5NWIx" target="_blank" rel="noopener" title="Follow on Instagram" class="instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/share/12CPZ2MdKTb/" target="_blank" rel="noopener" title="Connect on Facebook" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://github.com/Mo7amed-3bnaser" target="_blank" rel="noopener" title="View GitHub Profile" class="github"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/3bnaser?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" title="Connect on LinkedIn" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
@@ -793,7 +840,7 @@
     </main>
 
     <!-- Back to Top Button -->
-    <a href="#" class="scroll-top-btn" rel="noopener">
+    <a href="#" class="scroll-top-btn" title="Back to top" rel="noopener">
         <i class="fas fa-arrow-up"></i>
     </a>
 
@@ -812,76 +859,155 @@
     
     <!-- Loading Screen and Form Handling Scripts -->
     <script>
-        // Loading Screen Script - Performance Optimized
-        window.addEventListener('load', function() {
-            const loadingScreen = document.getElementById('loading-screen');
-            if (loadingScreen) {
-                const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-                const isFromGoogle = document.referrer.includes('google');
-                
-                // Determine delay based on device and referrer
-                let delay = 1000; 
-                if (isMobile) {
-                    delay = isFromGoogle ? 1200 : 1000; 
-                }
-                
-                setTimeout(function() {
-                    loadingScreen.style.transition = "opacity 0.3s ease-out"; 
-                    loadingScreen.style.opacity = "0"; 
-                    loadingScreen.classList.add("hidden");
-                    document.documentElement.style.overflow = ''; // Re-enable scrolling
-                }, delay);
-            }
-        });
-        
-        // Formspree Form Handling
-        var form = document.getElementById("my-form");
-        
-        async function handleSubmit(event) {
-            event.preventDefault();
-            var status = document.getElementById("my-form-status");
-            var button = document.getElementById("my-form-button");
-            var formElement = document.getElementById("my-form");
-            
-            // Add loading state
-            formElement.classList.add("form-submitting");
-            status.innerHTML = "Sending...";
-            
-            var data = new FormData(event.target);
-            try {
-                const response = await fetch(event.target.action, {
-                    method: form.method,
-                    body: data,
-                    headers: {
-                        'Accept': 'application/json'
+        // Application initialization and utilities
+        const App = {
+            // Loading Screen Script - Performance Optimized
+            initLoadingScreen: function() {
+                window.addEventListener('load', function() {
+                    const loadingScreen = document.getElementById('loading-screen');
+                    if (loadingScreen) {
+                        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                        const isFromGoogle = document.referrer.includes('google');
+                        
+                        // Determine delay based on device and referrer
+                        let delay = 1000; 
+                        if (isMobile) {
+                            delay = isFromGoogle ? 1200 : 1000; 
+                        }
+                        
+                        setTimeout(function() {
+                            loadingScreen.style.transition = "opacity 0.3s ease-out"; 
+                            loadingScreen.style.opacity = "0"; 
+                            loadingScreen.classList.add("hidden");
+                            document.documentElement.style.overflow = ''; // Re-enable scrolling
+                        }, delay);
                     }
                 });
-                
-                if (response.ok) {
-                    status.innerHTML = "Thanks for your message! I'll get back to you soon.";
-                    status.style.color = "#28a745";
-                    status.style.backgroundColor = "rgba(40, 167, 69, 0.1)";
-                    form.reset();
-                } else {
-                    const responseData = await response.json();
-                    if (Object.hasOwn(responseData, 'errors')) {
-                        status.innerHTML = responseData["errors"].map(error => error["message"]).join(", ");
-                    } else {
-                        status.innerHTML = "Oops! There was a problem submitting your form";
+            },
+
+            // Scroll Progress Indicator
+            initScrollProgress: function() {
+                function updateScrollProgress() {
+                    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    const scrolled = (scrollTop / scrollHeight) * 100;
+                    const progressLine = document.querySelector('.progress-line');
+                    if (progressLine) {
+                        progressLine.style.width = scrolled + '%';
                     }
-                    status.style.color = "#dc3545";
-                    status.style.backgroundColor = "rgba(220, 53, 69, 0.1)";
                 }
-            } catch (error) {
-                status.innerHTML = "Oops! There was a problem submitting your form";
-                status.style.color = "#dc3545";
-                status.style.backgroundColor = "rgba(220, 53, 69, 0.1)";
-            } finally {
-                formElement.classList.remove("form-submitting");
+                
+                window.addEventListener('scroll', updateScrollProgress);
+            },
+
+            // Counter Animation for Stats
+            initCounters: function() {
+                let hasAnimated = false;
+                
+                function animateCounters() {
+                    if (hasAnimated) return; // منع التكرار
+                    hasAnimated = true;
+                    
+                    const counters = document.querySelectorAll('.stat-number');
+                    
+                    counters.forEach(counter => {
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        const increment = target / 100;
+                        let current = 0;
+                        
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(timer);
+                            }
+                            counter.textContent = Math.floor(current);
+                        }, 20);
+                    });
+                }
+                
+                // Run counter animation when about section is in view
+                const aboutSection = document.querySelector('#about');
+                if (aboutSection) {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting && !hasAnimated) {
+                                animateCounters();
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, { 
+                        threshold: 0.3, // تقليل threshold للجوال
+                        rootMargin: '0px 0px -50px 0px' // تحسين التشغيل على الجوال
+                    });
+                    
+                    observer.observe(aboutSection);
+                }
+            },
+
+            // Form Handling
+            initFormHandling: function() {
+                const form = document.getElementById("my-form");
+                
+                if (!form) return;
+
+                async function handleSubmit(event) {
+                    event.preventDefault();
+                    const status = document.getElementById("my-form-status");
+                    const formElement = document.getElementById("my-form");
+                    
+                    // Add loading state
+                    formElement.classList.add("form-submitting");
+                    status.innerHTML = "Sending...";
+                    
+                    const data = new FormData(event.target);
+                    try {
+                        const response = await fetch(event.target.action, {
+                            method: form.method,
+                            body: data,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+                        
+                        if (response.ok) {
+                            status.innerHTML = "Thanks for your message! I'll get back to you soon.";
+                            status.style.color = "#28a745";
+                            status.style.backgroundColor = "rgba(40, 167, 69, 0.1)";
+                            form.reset();
+                        } else {
+                            const responseData = await response.json();
+                            if (Object.hasOwn(responseData, 'errors')) {
+                                status.innerHTML = responseData["errors"].map(error => error["message"]).join(", ");
+                            } else {
+                                status.innerHTML = "Oops! There was a problem submitting your form";
+                            }
+                            status.style.color = "#dc3545";
+                            status.style.backgroundColor = "rgba(220, 53, 69, 0.1)";
+                        }
+                    } catch (error) {
+                        status.innerHTML = "Oops! There was a problem submitting your form";
+                        status.style.color = "#dc3545";
+                        status.style.backgroundColor = "rgba(220, 53, 69, 0.1)";
+                    } finally {
+                        formElement.classList.remove("form-submitting");
+                    }
+                }
+                
+                form.addEventListener("submit", handleSubmit);
+            },
+
+            // Initialize all components
+            init: function() {
+                this.initLoadingScreen();
+                this.initScrollProgress();
+                this.initCounters();
+                this.initFormHandling();
             }
-        }
-        
-        form.addEventListener("submit", handleSubmit);
+        };
+
+        // Start the application
+        App.init();
     </script>
 </body>
 </html>

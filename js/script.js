@@ -404,7 +404,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const filterValue = this.getAttribute('data-filter');
             
             projectItems.forEach(item => {
-                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                const itemCategories = item.getAttribute('data-category');
+                if (filterValue === 'all' || itemCategories.includes(filterValue)) {
                     item.style.display = 'block';
                     item.removeAttribute('aria-hidden');
                 } else {
