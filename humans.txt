@@ -1,0 +1,36 @@
+/* TEAM */
+Developer: Mohamed Abdelnaser
+Site: https://3bnaser.tech
+Location: Sohag, Egypt
+Contact: mhmdbdalnasrm46@gmail.com
+Phone: +201551143537
+
+/* THANKS */
+Google Fonts
+Bootstrap
+Font Awesome
+AOS Animation Library
+Particles.js
+jQuery
+
+/* SITE */
+Last update: 2025/08/19
+Language: English / العربية
+Doctype: HTML5
+IDE: Visual Studio Code
+Standards: HTML5, CSS3, JavaScript ES6+
+Components: Bootstrap 5, jQuery, AOS, Particles.js
+Software: Git, GitHub, Netlify
+
+/* SKILLS */
+Front-End Development
+JavaScript (ES6+)
+React.js
+HTML5
+CSS3
+Bootstrap
+Responsive Design
+UI/UX Design
+Web Performance Optimization
+SEO Optimization
+Git & Version Control

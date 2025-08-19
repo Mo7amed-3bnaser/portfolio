@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square70x70logo src="images/3bnaser_logo_circle.ico"/>
+            <square150x150logo src="images/3bnaser_logo_circle.ico"/>
+            <square310x310logo src="images/3bnaser_logo_circle.ico"/>
+            <TileColor>#151515</TileColor>
+        </tile>
+    </msapplication>
+</browserconfig>
