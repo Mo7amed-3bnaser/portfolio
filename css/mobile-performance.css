@@ -1,0 +1,83 @@
+
+/* Mobile Performance Optimizations */
+
+/* Reduce animations on mobile */
+@media (max-width: 768px) and (prefers-reduced-motion: no-preference) {
+    .hero-content h1,
+    .hero-content h2 {
+        animation-duration: 0.5s !important;
+    }
+    
+    .btn {
+        transition: all 0.2s ease !important;
+    }
+    
+    .project-card {
+        transition: transform 0.2s ease !important;
+    }
+}
+
+/* Optimize images for mobile */
+@media (max-width: 768px) {
+    .project-img img,
+    .about-img img {
+        image-rendering: auto;
+        image-rendering: crisp-edges;
+        image-rendering: -webkit-optimize-contrast;
+    }
+    
+    /* Reduce section padding on mobile */
+    .section {
+        padding: 60px 0 !important;
+    }
+    
+    /* Optimize hero section for mobile */
+    .hero-section {
+        min-height: 100vh;
+        background-attachment: scroll !important;
+    }
+    
+    /* Reduce font sizes slightly for better performance */
+    .hero-content h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* Critical CSS for above-the-fold content */
+@media (max-width: 768px) {
+    body {
+        font-family: system-ui, -apple-system, sans-serif;
+        color: var(--light-color);
+        background-color: var(--dark-color);
+        line-height: 1.5;
+        text-rendering: optimizeSpeed;
+    }
+    
+    /* Optimize loading screen */
+    .loading-screen {
+        will-change: opacity;
+        backface-visibility: hidden;
+    }
+    
+    /* GPU acceleration for smooth animations */
+    .nav-toggle-btn,
+    .scroll-top-btn,
+    .btn {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+    }
+}
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

@@ -18,7 +18,7 @@
         <link rel="icon" href="images/3bnaser_logo_circle.ico" type="image/x-icon">
         
         <!-- Enhanced SEO Meta Tags -->
-        <meta name="description" content="Mohamed Abdelnaser (3bnaser) - Expert Front-End Developer from Egypt specializing in responsive web design, JavaScript, React, and modern web technologies. View portfolio of 20+ projects and hire for your next website.">
+        <meta name="description" content="Mohamed Abdelnaser (3bnaser) - Front-End Developer from Egypt specializing in responsive web design, JavaScript, React, and modern web technologies. View portfolio of 20+ projects and hire for your next website.">
         <meta name="keywords" content="Mohamed Abdelnaser, 3bnaser, محمد عبدالناصر, Front-End Developer Egypt, Web Developer Sohag, JavaScript Developer, React Developer, HTML CSS Expert, Responsive Web Design, Portfolio Website, Freelance Web Developer, UI UX Designer, Bootstrap Developer, Modern Web Development, Egyptian Web Developer, Front-End Engineer, Web Designer Egypt, JavaScript ES6, Mobile-First Design, Performance Optimization, SEO Optimization, Web Development Services">
         <meta name="author" content="Mohamed Abdelnaser">
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -62,7 +62,7 @@
         <meta http-equiv="cache-control" content="public, max-age=31536000">
         <meta http-equiv="expires" content="Thu, 31 Dec 2025 23:59:59 GMT">
         <!-- Enhanced Open Graph Meta Tags -->
-        <meta property="og:title" content="Mohamed Abdelnaser | Expert Front-End Developer & Web Designer">
+        <meta property="og:title" content="Mohamed Abdelnaser | Front-End Developer">
         <meta property="og:description" content="Professional front-end developer from Egypt with 3+ years experience. Specializing in JavaScript, React, responsive design, and modern web technologies. View my portfolio of 20+ projects.">
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://3bnaser.tech/">
@@ -76,7 +76,7 @@
         
         <!-- Twitter Card Meta Tags -->
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Mohamed Abdelnaser | Expert Front-End Developer">
+        <meta name="twitter:title" content="Mohamed Abdelnaser | Front-End Developer">
         <meta name="twitter:description" content="Professional front-end developer from Egypt. Specializing in JavaScript, React, and responsive web design. View portfolio of 20+ projects.">
         <meta name="twitter:image" content="https://3bnaser.tech/images/3bnaser_logo_circle.webp">
         <meta name="twitter:image:alt" content="Mohamed Abdelnaser - Front-End Developer">
@@ -153,10 +153,20 @@
                     --light-color: #f0f6fc;
                     --gray-color: #8b949e;
                     --card-bg-color: #21262d;
-                    --section-padding: 100px 0;
-                    --transition: all 0.3s ease;
+                    --section-padding: 80px 0;
+                    --transition: all 0.2s ease;
                     --danger-color: #f85149;
-                    --side-nav-width: 250px;
+                    --side-nav-width: 220px;
+                }
+                
+                /* Mobile Performance Optimizations */
+                * {
+                    box-sizing: border-box;
+                }
+                
+                img {
+                    content-visibility: auto;
+                    contain-intrinsic-size: 300px 200px;
                 }
                 body {
                     font-family: 'Poppins', sans-serif;
@@ -250,6 +260,20 @@
                      color: white;
                 }
             }
+            
+            /* Desktop Only - Larger About Image */
+            @media (min-width: 769px) {
+                .about-img img {
+                    max-width: 500px !important;
+                    width: 500px !important;
+                    height: 500px !important;
+                }
+                
+                .about-img {
+                    max-width: 500px;
+                    margin: 0 auto;
+                }
+            }
         </style>
         
         <!-- Mobile Performance Optimization - Load early for immediate effect -->
@@ -297,7 +321,7 @@
         "height": 200
       },
       "jobTitle": "Front-End Developer",
-      "description": "Expert Front-End Developer specializing in JavaScript, React, HTML5, CSS3, and responsive web design. 3+ years experience with 20+ completed projects.",
+      "description": "Front-End Developer specializing in JavaScript, React, HTML5, CSS3, and responsive web design. 3+ years experience with 20+ completed projects.",
       "email": "mhmdbdalnasrm46@gmail.com",
       "telephone": "+201551143537",
       "worksFor": {
@@ -1130,7 +1154,7 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- JavaScript Libraries -->
+    <!-- JavaScript Libraries - Optimized for Mobile -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
