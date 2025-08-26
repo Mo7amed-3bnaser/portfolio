@@ -10,7 +10,13 @@
         </script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Theme Colors for Different Browsers -->
         <meta name="theme-color" content="#151515">
+        <meta name="msapplication-navbutton-color" content="#151515">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="msapplication-TileColor" content="#151515">
+        
         <meta name="HandheldFriendly" content="true">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -120,7 +126,6 @@
         
         <!-- Security Headers -->
         <meta http-equiv="X-Content-Type-Options" content="nosniff">
-        <meta http-equiv="X-Frame-Options" content="DENY">
         <meta http-equiv="X-XSS-Protection" content="1; mode=block">
         <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
         <!-- Preconnect to external domains -->
@@ -175,7 +180,7 @@
                 }
                 .hero-section {
                     height: 100vh;
-                    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/new-hero-bg.jpg');
+                    background: linear-gradient(135deg, var(--dark-color), var(--darker-color));
                     background-size: cover;
                     background-position: center;
                     position: relative;
@@ -283,6 +288,228 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/scroll-button-fix.css">
+        
+        <!-- Custom Scrollbar Styles -->
+        <style>
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar {
+                width: 8px;
+            }
+            
+            ::-webkit-scrollbar-track {
+                background: var(--darker-color);
+                border-radius: 10px;
+            }
+            
+            ::-webkit-scrollbar-thumb {
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                border-radius: 10px;
+                transition: all 0.3s ease;
+            }
+            
+            ::-webkit-scrollbar-thumb:hover {
+                background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+                box-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+            }
+            
+            /* Firefox Scrollbar */
+            @supports (scrollbar-width: thin) {
+                html {
+                    scrollbar-width: thin;
+                    scrollbar-color: var(--primary-color) var(--darker-color);
+                }
+            }
+            
+            /* Footer Logo Link Styles */
+            .footer-logo-link {
+                text-decoration: none;
+                color: inherit;
+                display: inline-block;
+                transition: all 0.3s ease;
+            }
+            
+            .footer-logo-link:hover {
+                color: var(--primary-color);
+                text-decoration: none;
+                transform: translateY(-2px);
+            }
+            
+            .footer-logo-link h3 {
+                margin: 0;
+                transition: all 0.3s ease;
+            }
+            
+            .footer-logo-link:hover h3 {
+                color: var(--primary-color);
+                text-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
+            }
+            
+            /* Copyright Developer Name Link */
+            .developer-name-link {
+                text-decoration: none;
+                color: inherit;
+                transition: all 0.3s ease;
+            }
+            
+            .developer-name-link:hover {
+                text-decoration: none;
+            }
+            
+            .developer-name {
+                color: var(--primary-color);
+                font-weight: 600;
+                transition: all 0.3s ease;
+            }
+            
+            .developer-name-link:hover .developer-name {
+                color: var(--secondary-color);
+                text-shadow: 0 0 8px rgba(88, 166, 255, 0.5);
+            }
+        </style>
+        
+        <!-- What I Can Do Section Styles -->
+        <style>
+            .capabilities-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+                margin-top: 3rem;
+            }
+            
+            .capability-card {
+                background: var(--card-bg-color);
+                border-radius: 16px;
+                padding: 2.5rem 2rem;
+                text-align: center;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .capability-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            
+            .capability-card:hover {
+                transform: translateY(-8px) scale(1.02);
+                box-shadow: 0 20px 40px rgba(88, 166, 255, 0.15);
+                border-color: rgba(88, 166, 255, 0.3);
+            }
+            
+            .capability-card:hover::before {
+                opacity: 1;
+            }
+            
+            .card-icon {
+                width: 70px;
+                height: 70px;
+                margin: 0 auto 1.5rem;
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.8rem;
+                color: white;
+                transition: all 0.3s ease;
+                box-shadow: 0 8px 16px rgba(88, 166, 255, 0.3);
+            }
+            
+            .capability-card:hover .card-icon {
+                transform: rotateY(360deg) scale(1.1);
+                box-shadow: 0 12px 24px rgba(88, 166, 255, 0.4);
+            }
+            
+            .capability-card h3 {
+                color: var(--light-color);
+                font-size: 1.4rem;
+                font-weight: 600;
+                margin-bottom: 1rem;
+                line-height: 1.3;
+            }
+            
+            .capability-card p {
+                color: var(--gray-color);
+                font-size: 1rem;
+                line-height: 1.6;
+                margin: 0;
+                transition: color 0.3s ease;
+            }
+            
+            .capability-card:hover p {
+                color: #b3b3b3;
+            }
+            
+            /* Responsive Design */
+            @media (max-width: 1200px) {
+                .capabilities-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 1.5rem;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                .capabilities-grid {
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+                    margin-top: 2rem;
+                }
+                
+                .capability-card {
+                    padding: 2rem 1.5rem;
+                }
+                
+                .card-icon {
+                    width: 60px;
+                    height: 60px;
+                    font-size: 1.5rem;
+                    margin-bottom: 1.25rem;
+                }
+                
+                .capability-card h3 {
+                    font-size: 1.25rem;
+                }
+                
+                .capability-card p {
+                    font-size: 0.95rem;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .capabilities-grid {
+                    grid-template-columns: 1fr;
+                    gap: 1.25rem;
+                }
+                
+                .capability-card {
+                    padding: 1.75rem 1.25rem;
+                }
+                
+                .card-icon {
+                    width: 55px;
+                    height: 55px;
+                    font-size: 1.3rem;
+                }
+                
+                .capability-card h3 {
+                    font-size: 1.2rem;
+                }
+                
+                .capability-card p {
+                    font-size: 0.9rem;
+                }
+            }
+        </style>
         
         <!-- Deferred CSS -->
         <link rel="stylesheet" href="css/form.css" media="print" onload="this.media='all'">
@@ -562,7 +789,7 @@
     <!-- Top Navigation -->
     <nav class="side-nav">
         <div class="nav-logo">
-            <a href="#index.html" class="logo-link">
+            <a href="#home" class="logo-link">
                 <div class="logo">
                     <span class="symbols">&lt;/</span>
                     <span class="number">3</span><span class="text">bnaser</span>
@@ -579,6 +806,7 @@
             <li><a href="#home" class="active"><i class="fas fa-home"></i> <span>Home</span></a></li>
             <li><a href="#about"><i class="fas fa-user"></i> <span>About</span></a></li>
             <li><a href="#skills"><i class="fas fa-code"></i> <span>Skills</span></a></li>
+            <li><a href="#experience"><i class="fas fa-cogs"></i> <span>Services</span></a></li>
             <li><a href="#projects"><i class="fas fa-project-diagram"></i> <span>Projects</span></a></li>
             <li><a href="#contact"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
         </ul>
@@ -784,6 +1012,91 @@
                             </div>
                             <p>Components, Hooks, State Management</p>
                         </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="800">
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fab fa-node-js"></i>
+                            </div>
+                            <h3>Node.js</h3>
+                            <div class="progress-container">
+                                <div class="progress-bar progress-75"></div>
+                                <span class="progress-text">75%</span>
+                            </div>
+                            <p>Express.js, API Development, NPM</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="900">
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h3>MongoDB</h3>
+                            <div class="progress-container">
+                                <div class="progress-bar progress-70"></div>
+                                <span class="progress-text">70%</span>
+                            </div>
+                            <p>NoSQL, Mongoose, Database Design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What I Can Do Section -->
+        <section id="experience" class="section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>What I Can Do</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="capabilities-grid">
+                    <div class="capability-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Build Websites</h3>
+                        <p>I create responsive, modern websites from scratch using HTML, CSS, JavaScript and React. Every site is optimized for performance and user experience.</p>
+                    </div>
+                    
+                    <div class="capability-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Web Applications</h3>
+                        <p>I develop interactive web applications with dynamic functionality, user authentication, databases, and real-time features for enhanced user engagement.</p>
+                    </div>
+                    
+                    <div class="capability-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3>UI/UX Design</h3>
+                        <p>I create intuitive user interfaces and seamless user experiences with modern design principles, wireframing, and user-centered design approach.</p>
+                    </div>
+                    
+                    <div class="capability-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile-First Design</h3>
+                        <p>I design with mobile users in mind first, ensuring your website looks perfect and functions smoothly on all devices and screen sizes.</p>
+                    </div>
+                    
+                    <div class="capability-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="card-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <h3>SEO Optimization</h3>
+                        <p>I implement proven SEO strategies to improve your website's visibility on search engines and drive more organic traffic to your business.</p>
+                    </div>
+                    
+                    <div class="capability-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="card-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Maintenance & Support</h3>
+                        <p>I provide ongoing website maintenance, updates, and technical support to keep your site secure, fast, and running smoothly.</p>
                     </div>
                 </div>
             </div>
@@ -1102,7 +1415,9 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                         <div class="footer-logo">
-                            <h3>Mohamed Abdelnaser</h3>
+                            <a href="#home" class="footer-logo-link">
+                                <h3>Mohamed Abdelnaser</h3>
+                            </a>
                             <p>Front-End Web Developer specializing in creating responsive and interactive websites with modern technologies.</p>
                         </div>
                         <div class="footer-social">
@@ -1118,6 +1433,7 @@
                             <li><a href="#home">Home</a></li>
                             <li><a href="#about">About</a></li>
                             <li><a href="#skills">Skills</a></li>
+                            <li><a href="#experience">Services</a></li>
                             <li><a href="#projects">Projects</a></li>
                             <li><a href="#contact">Contact</a></li>
                         </ul>
@@ -1142,7 +1458,7 @@
                 </div>
                 <div class="footer-bottom">
                     <div class="copyright text-center mt-4 pt-4 border-top">
-                        <p>&copy; 2025 All Rights Reserved | Developed by <span class="developer-name">Mohamed Abdelnaser</span></p>
+                        <p>&copy; 2025 All Rights Reserved | Developed by <a href="#home" class="developer-name-link"><span class="developer-name">Mohamed Abdelnaser</span></a></p>
                     </div>
                 </div>
             </div>
@@ -1165,7 +1481,6 @@
     
     <!-- Custom JavaScript -->
     <script src="js/script.js" defer></script>
-    <script src="js/optimize.js" defer></script>
     
     <!-- Loading Screen and Form Handling Scripts -->
     <script>
