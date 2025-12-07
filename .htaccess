@@ -62,6 +62,20 @@
 # Custom 404 Error Page
 ErrorDocument 404 /index.html
 
+# SEO-friendly URLs
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Remove .html extension
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.html -f
+    RewriteRule ^(.*)$ $1.html [L]
+    
+    # Remove index from URLs
+    RewriteCond %{THE_REQUEST} /index\.html [NC]
+    RewriteRule ^(.*)index\.html$ /$1 [R=301,L,NC]
+</IfModule>
+
 # Block access to sensitive files
 <FilesMatch "\.(htaccess|htpasswd|ini|log|sh|inc|bak)$">
     Order Allow,Deny

@@ -1,0 +1,20 @@
+# Security Contact Information
+# https://securitytxt.org/
+
+Contact: mailto:mohamedabdelnaser1010@gmail.com
+Contact: https://3bnaser.tech/#contact
+
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: en, ar
+
+# Canonical URL
+Canonical: https://3bnaser.tech/.well-known/security.txt
+
+# Acknowledgments
+Acknowledgments: https://3bnaser.tech/
+
+# Policy
+Policy: https://3bnaser.tech/
+
+# Hiring
+Hiring: https://3bnaser.tech/#contact

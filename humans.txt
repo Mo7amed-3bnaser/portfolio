@@ -1,9 +1,12 @@
 /* TEAM */
-Developer: Mohamed Abdelnaser
+Developer: Mohamed Abdelnaser (3bnaser)
 Site: https://3bnaser.tech
+Email: mohamedabdelnaser1010@gmail.com
 Location: Sohag, Egypt
-Contact: mhmdbdalnasrm46@gmail.com
-Phone: +201551143537
+Phone: +201207166536
+Social: @3bnaser
+GitHub: https://github.com/Mo7amed-3bnaser
+LinkedIn: https://www.linkedin.com/in/3bnaser
 
 /* THANKS */
 Google Fonts
@@ -14,7 +17,7 @@ Particles.js
 jQuery
 
 /* SITE */
-Last update: 2025/08/19
+Last update: 2025/12/07
 Language: English / العربية
 Doctype: HTML5
 IDE: Visual Studio Code
@@ -26,6 +29,8 @@ Software: Git, GitHub, Netlify
 Front-End Development
 JavaScript (ES6+)
 React.js
+Node.js
+MongoDB
 HTML5
 CSS3
 Bootstrap
@@ -34,3 +39,5 @@ UI/UX Design
 Web Performance Optimization
 SEO Optimization
 Git & Version Control
+API Integration
+Full-Stack Development

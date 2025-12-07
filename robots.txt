@@ -1,4 +1,28 @@
 User-agent: *
 Allow: /
 
+# Disallow specific files if needed
+Disallow: /LICENSE
+Disallow: /README.md
+Disallow: /*.json$
+
+# Allow CSS and JS
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Sitemap location
 Sitemap: https://3bnaser.tech/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 0
+
+# Specific bot rules
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
