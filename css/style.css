@@ -1033,6 +1033,12 @@ section.section:last-child {
     color: #00C7B7; /* Netlify teal for web performance */
 }
 
+.skill-icon .tailwind-icon {
+    color: #06B6D4; /* Tailwind CSS color */
+    width: 48px;
+    height: 48px;
+}
+
 .skill-card:hover .skill-icon {
     transform: scale(1.2);
 }
