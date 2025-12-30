@@ -1,0 +1,721 @@
+/* ==============================================
+   RESPONSIVE DESIGN - UNIFIED STYLES
+   Modern, Clean, and Optimized for All Devices
+   ============================================== */
+
+/* ===== CSS VARIABLES FOR RESPONSIVE ===== */
+:root {
+    --mobile-padding: 15px;
+    --tablet-padding: 25px;
+    --section-padding-mobile: 60px 0;
+    --section-padding-tablet: 80px 0;
+    --header-height-mobile: 55px;
+    --header-height-desktop: 60px;
+}
+
+/* ==============================================
+   BREAKPOINT: LARGE TABLETS (max-width: 992px)
+   ============================================== */
+@media (max-width: 992px) {
+    /* Section Adjustments */
+    section.section {
+        padding: var(--section-padding-tablet);
+        margin-bottom: 40px;
+    }
+    
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+    
+    /* About Section */
+    .about-content {
+        padding-left: 20px;
+    }
+    
+    .about-content h3 {
+        font-size: 2rem;
+    }
+    
+    .about-img img {
+        width: 400px;
+        height: 400px;
+    }
+    
+    /* Navigation */
+    .nav-links a {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+/* ==============================================
+   BREAKPOINT: TABLETS (max-width: 768px)
+   ============================================== */
+@media (max-width: 768px) {
+    /* ===== GENERAL MOBILE STYLES ===== */
+    body {
+        font-size: 15px;
+    }
+    
+    section.section {
+        padding: var(--section-padding-mobile);
+        margin-bottom: 30px;
+    }
+    
+    .container {
+        padding-left: var(--mobile-padding);
+        padding-right: var(--mobile-padding);
+    }
+    
+    /* ===== TYPOGRAPHY ===== */
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.3rem; }
+    
+    /* ===== NAVIGATION - IMPROVED MOBILE MENU ===== */
+    .side-nav {
+        height: var(--header-height-mobile);
+        padding: 0 var(--mobile-padding);
+        justify-content: space-between;
+    }
+    
+    .nav-toggle-btn {
+        display: flex;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        background: rgba(88, 166, 255, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .nav-toggle-btn:active {
+        background: rgba(88, 166, 255, 0.2);
+        transform: scale(0.95);
+    }
+    
+    .nav-toggle-btn span {
+        width: 22px;
+        height: 2px;
+        margin: 3px 0;
+        border-radius: 2px;
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    /* Animated X on active */
+    .nav-toggle-btn.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .nav-toggle-btn.active span:nth-child(2) {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    
+    .nav-toggle-btn.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: var(--header-height-mobile);
+        left: 0;
+        right: 0;
+        background: rgba(13, 17, 23, 0.98);
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        padding: 20px 0;
+        transform: translateY(-120%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+        max-height: calc(100vh - var(--header-height-mobile));
+        overflow-y: auto;
+    }
+    
+    .side-nav.collapsed .nav-links {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-links li {
+        margin: 0;
+        transform: translateX(-20px);
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+    
+    .side-nav.collapsed .nav-links li {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
+    .side-nav.collapsed .nav-links li:nth-child(1) { transition-delay: 0.1s; }
+    .side-nav.collapsed .nav-links li:nth-child(2) { transition-delay: 0.15s; }
+    .side-nav.collapsed .nav-links li:nth-child(3) { transition-delay: 0.2s; }
+    .side-nav.collapsed .nav-links li:nth-child(4) { transition-delay: 0.25s; }
+    .side-nav.collapsed .nav-links li:nth-child(5) { transition-delay: 0.3s; }
+    
+    .nav-links a {
+        padding: 16px 25px;
+        font-size: 16px;
+        border-left: 3px solid transparent;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .nav-links a:hover,
+    .nav-links a.active {
+        background: rgba(88, 166, 255, 0.15);
+        border-left-color: var(--primary-color);
+    }
+    
+    .nav-links a i {
+        font-size: 18px;
+        width: 24px;
+        text-align: center;
+    }
+    
+    /* ===== HERO SECTION - MOBILE ===== */
+    .hero-section {
+        min-height: 100vh;
+        height: auto;
+        padding: 100px 0 80px;
+    }
+    
+    .hero-content {
+        padding: 0 10px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.3rem;
+        margin-bottom: 25px;
+    }
+    
+    /* Particles - Reduced on Mobile */
+    #particles-js {
+        opacity: 0.4;
+    }
+    
+    /* CTA Buttons - Stacked on Mobile */
+    .hero-content .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 30px;
+    }
+    
+    .hero-content .cta-buttons .btn {
+        width: 80%;
+        max-width: 280px;
+        padding: 14px 30px;
+        font-size: 14px;
+        border-radius: 50px;
+    }
+    
+    .hero-content .cta-buttons .btn-primary {
+        background: linear-gradient(135deg, var(--primary-color), #4a9eff);
+        box-shadow: 0 4px 20px rgba(88, 166, 255, 0.4);
+    }
+    
+    .hero-content .cta-buttons .btn-outline {
+        border: 2px solid var(--primary-color);
+        background: transparent;
+    }
+    
+    /* Hero Social Icons */
+    .hero-social {
+        gap: 12px;
+        margin-top: 35px;
+    }
+    
+    .hero-social a {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+    
+    /* Scroll Down Button */
+    .scroll-down-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+        bottom: 25px;
+    }
+    
+    /* ===== ABOUT SECTION - MOBILE ===== */
+    .about-img {
+        max-width: 320px;
+        margin: 0 auto 40px;
+        padding: 20px;
+    }
+    
+    .about-img img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+    }
+    
+    .about-img:hover img {
+        transform: none;
+    }
+    
+    .about-content {
+        padding: 0;
+        text-align: center;
+    }
+    
+    .about-content h3 {
+        font-size: 1.6rem;
+    }
+    
+    .about-content h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .about-content .lead {
+        font-size: 1.1rem;
+    }
+    
+    .about-content p {
+        font-size: 1rem;
+        text-align: left;
+    }
+    
+    /* About Buttons */
+    .about-content .mt-4 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .about-content .btn {
+        width: 80%;
+        max-width: 250px;
+        padding: 14px 28px;
+        border-radius: 50px;
+    }
+    
+    /* Stats Row */
+    .stats-row {
+        justify-content: center;
+        gap: 20px;
+        padding: 20px 0;
+    }
+    
+    .stat-item {
+        min-width: 90px;
+        flex: 0 1 auto;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
+    
+    /* ===== CAPABILITIES GRID - MOBILE ===== */
+    .capabilities-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 25px;
+    }
+    
+    .capability-card {
+        padding: 25px 20px;
+        border-radius: 16px;
+    }
+    
+    .capability-card:hover {
+        transform: translateY(-4px);
+    }
+    
+    .card-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin-bottom: 18px;
+    }
+    
+    .capability-card:hover .card-icon {
+        transform: scale(1.05);
+    }
+    
+    .capability-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .capability-card p {
+        font-size: 0.95rem;
+    }
+    
+    /* ===== SKILLS SECTION - MOBILE ===== */
+    .skill-card {
+        padding: 25px 20px;
+        margin-bottom: 20px;
+    }
+    
+    .skill-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    /* ===== PROJECT CARDS - MOBILE ===== */
+    .project-card {
+        margin-bottom: 25px;
+    }
+    
+    .project-card img {
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .project-card:hover img {
+        transform: none;
+    }
+    
+    .project-overlay {
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.7);
+    }
+    
+    .project-buttons {
+        display: flex;
+        gap: 10px;
+    }
+    
+    .project-buttons .btn {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+    
+    /* ===== CONTACT SECTION - MOBILE ===== */
+    .contact-form .form-control {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 14px 18px;
+    }
+    
+    .contact-form .btn {
+        width: 100%;
+        padding: 14px;
+        font-size: 15px;
+    }
+    
+    /* Info Items */
+    .info-item {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px 0;
+    }
+    
+    .info-item i {
+        font-size: 20px;
+        width: 24px;
+        margin-top: 3px;
+    }
+    
+    .info-item span {
+        font-size: 0.95rem;
+        word-break: break-word;
+    }
+    
+    /* ===== FOOTER - MOBILE ===== */
+    footer {
+        padding: 40px 0 20px;
+        text-align: center;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .footer-social {
+        justify-content: center;
+    }
+    
+    .scroll-top-btn {
+        width: 42px;
+        height: 42px;
+        right: 15px;
+        bottom: 15px;
+        font-size: 16px;
+    }
+    
+    /* ===== DISABLE HEAVY ANIMATIONS ON MOBILE ===== */
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    
+    /* Reduce motion for performance */
+    @media (prefers-reduced-motion: reduce) {
+        * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+}
+
+/* ==============================================
+   BREAKPOINT: SMALL PHONES (max-width: 480px)
+   ============================================== */
+@media (max-width: 480px) {
+    /* Typography */
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.1rem;
+    }
+    
+    /* Logo */
+    .logo {
+        font-size: 14px;
+    }
+    
+    .logo .number {
+        font-size: 20px;
+    }
+    
+    .logo .text {
+        font-size: 18px;
+    }
+    
+    .logo .symbols {
+        font-size: 19px;
+    }
+    
+    /* Buttons */
+    .hero-content .cta-buttons .btn {
+        width: 90%;
+        padding: 12px 25px;
+        font-size: 13px;
+    }
+    
+    .about-content .btn {
+        width: 90%;
+        padding: 12px 25px;
+        font-size: 13px;
+    }
+    
+    /* About Image */
+    .about-img {
+        max-width: 280px;
+        padding: 15px;
+    }
+    
+    /* Cards */
+    .capability-card {
+        padding: 20px 15px;
+    }
+    
+    .card-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .capability-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    /* Stats */
+    .stats-row {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .stat-item {
+        min-width: 80px;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    /* Project Cards */
+    .project-card img {
+        height: 180px;
+    }
+    
+    .project-buttons .btn {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+    
+    /* Contact */
+    .contact-form .form-control {
+        padding: 12px 15px;
+    }
+    
+    /* Hero Social */
+    .hero-social a {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+}
+
+/* ==============================================
+   BREAKPOINT: VERY SMALL PHONES (max-width: 360px)
+   ============================================== */
+@media (max-width: 360px) {
+    .hero-content h1 {
+        font-size: 1.6rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 1rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .about-img {
+        max-width: 250px;
+    }
+    
+    .hero-content .cta-buttons .btn,
+    .about-content .btn {
+        padding: 11px 20px;
+        font-size: 12px;
+    }
+    
+    .stat-number {
+        font-size: 1.3rem;
+    }
+}
+
+/* ==============================================
+   LANDSCAPE MODE FIXES
+   ============================================== */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+        min-height: 0;
+        padding: 80px 0 60px;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+    
+    .hero-content .cta-buttons {
+        flex-direction: row;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .hero-content .cta-buttons .btn {
+        width: auto;
+        padding: 10px 25px;
+    }
+    
+    .hero-social {
+        margin-top: 20px;
+    }
+    
+    .scroll-down-btn {
+        display: none;
+    }
+}
+
+/* ==============================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ============================================== */
+@media (hover: none) and (pointer: coarse) {
+    /* Remove hover effects that don't work well on touch */
+    .btn:hover {
+        transform: none;
+    }
+    
+    .skill-card:hover {
+        transform: none;
+    }
+    
+    .capability-card:hover {
+        transform: translateY(-4px);
+    }
+    
+    .about-img img:hover {
+        transform: none;
+    }
+    
+    /* Ensure touch targets are large enough */
+    .nav-links a {
+        min-height: 48px;
+    }
+    
+    .btn {
+        min-height: 44px;
+    }
+    
+    /* Social icons touch area */
+    .hero-social a,
+    .social-icons a {
+        min-width: 44px;
+        min-height: 44px;
+    }
+}
+
+/* ==============================================
+   PRINT STYLES
+   ============================================== */
+@media print {
+    .side-nav,
+    .nav-toggle-btn,
+    #particles-js,
+    .scroll-down-btn,
+    .scroll-top-btn,
+    .hero-social {
+        display: none !important;
+    }
+    
+    .hero-section {
+        height: auto;
+        min-height: 0;
+        padding: 20px 0;
+    }
+    
+    section.section {
+        padding: 20px 0;
+        break-inside: avoid;
+    }
+}
