@@ -202,11 +202,18 @@
         font-size: 2.2rem;
         line-height: 1.2;
         margin-bottom: 15px;
+        white-space: nowrap;
     }
     
     .hero-content h2 {
-        font-size: 1.3rem;
-        margin-bottom: 25px;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        padding: 0 15px;
     }
     
     /* Particles - Reduced on Mobile */
@@ -257,8 +264,10 @@
     .scroll-down-btn {
         width: 45px;
         height: 45px;
-        font-size: 18px;
-        bottom: 25px;
+        font-size: 20px;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
     }
     
     /* ===== ABOUT SECTION - MOBILE ===== */
@@ -317,24 +326,21 @@
         border-radius: 50px;
     }
     
-    /* Stats Row */
+    /* Stats Row - Hidden on mobile */
     .stats-row {
-        justify-content: center;
-        gap: 20px;
-        padding: 20px 0;
+        display: none !important;
     }
     
     .stat-item {
-        min-width: 90px;
-        flex: 0 1 auto;
+        display: none !important;
     }
     
     .stat-number {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
     
     .stat-label {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
     
     /* ===== CAPABILITIES GRID - MOBILE ===== */
@@ -492,28 +498,35 @@
     }
     
     .hero-content h1 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+        white-space: nowrap;
     }
     
     .hero-content h2 {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     
-    /* Logo */
+    .hero-description {
+        font-size: 0.8rem;
+        line-height: 1.5;
+        padding: 0 10px;
+    }
+    
+    /* Logo - Bigger on mobile */
     .logo {
-        font-size: 14px;
-    }
-    
-    .logo .number {
         font-size: 20px;
     }
     
+    .logo .number {
+        font-size: 28px;
+    }
+    
     .logo .text {
-        font-size: 18px;
+        font-size: 24px;
     }
     
     .logo .symbols {
-        font-size: 19px;
+        font-size: 25px;
     }
     
     /* Buttons */
@@ -550,18 +563,23 @@
         font-size: 1.1rem;
     }
     
-    /* Stats */
+    /* Stats - Keep horizontal */
     .stats-row {
-        flex-wrap: wrap;
-        gap: 15px;
+        flex-wrap: nowrap;
+        gap: 8px;
     }
     
     .stat-item {
-        min-width: 80px;
+        min-width: 70px;
+        padding: 12px 8px;
     }
     
     .stat-number {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+    }
+    
+    .stat-label {
+        font-size: 0.65rem;
     }
     
     /* Project Cards */
@@ -592,11 +610,18 @@
    ============================================== */
 @media (max-width: 360px) {
     .hero-content h1 {
-        font-size: 1.6rem;
+        font-size: 1.35rem;
+        white-space: nowrap;
     }
     
     .hero-content h2 {
-        font-size: 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .hero-description {
+        font-size: 0.75rem;
+        line-height: 1.4;
+        padding: 0 8px;
     }
     
     .section-header h2 {
@@ -613,8 +638,23 @@
         font-size: 12px;
     }
     
+    /* Stats - Keep horizontal on very small screens */
+    .stats-row {
+        flex-wrap: nowrap;
+        gap: 6px;
+    }
+    
+    .stat-item {
+        min-width: 60px;
+        padding: 10px 6px;
+    }
+    
     .stat-number {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+    }
+    
+    .stat-label {
+        font-size: 0.6rem;
     }
 }
 

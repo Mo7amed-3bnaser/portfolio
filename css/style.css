@@ -374,18 +374,18 @@ a:hover {
 /* Media query for smaller screens */ 
 @media (max-width: 768px) {
   .logo {
-        font-size: 18px;
+        font-size: 24px;
         padding: 2px 12px;
     }
   .logo .number {
-        font-size: 28px;
+        font-size: 32px;
         margin-top: 0;
     }
   .logo .text {
-        font-size: 25px;
+        font-size: 28px;
     }
   .logo .symbols {
-        font-size: 26px;
+        font-size: 29px;
         position: relative;
         top: 1px; 
     }
@@ -396,18 +396,18 @@ a:hover {
 
 @media (max-width: 480px) {
   .logo {
-        font-size: 15px;
+        font-size: 20px;
         padding: 2px 10px;
         left: -1px;
     }
   .logo .number {
-        font-size: 23px;
+        font-size: 28px;
     }
   .logo .text {
-        font-size: 20px;
+        font-size: 24px;
     }
   .logo .symbols {
-        font-size: 21px;
+        font-size: 25px;
     }
 }
 
@@ -741,11 +741,11 @@ section.section:last-child {
     
 @media (max-width: 768px) {
     .scroll-down-btn {
-        width: 50px;
-        height: 50px;
-        bottom: 25px;
+        width: 45px;
+        height: 45px;
+        bottom: 30px;
         font-size: 20px;
-        left: 44%;
+        left: 50%;
         transform: translateX(-50%);
     }
 }
@@ -890,15 +890,19 @@ section.section:last-child {
 
 @media (max-width: 768px) {
     .stats-row {
-        gap: 1rem;
+        display: none;
     }
     
     .stat-item {
-        min-width: 100px;
+        display: none;
     }
     
     .stat-number {
-        font-size: 2rem;
+        display: none;
+    }
+    
+    .stat-label {
+        display: none;
     }
 }
 

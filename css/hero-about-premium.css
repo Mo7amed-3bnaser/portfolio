@@ -612,6 +612,7 @@
     .hero-content h1 {
         font-size: 2.2rem;
         line-height: 1.2;
+        white-space: nowrap;
     }
     
     .hero-content h2 {
@@ -619,8 +620,9 @@
     }
     
     .hero-description {
-        font-size: 1rem;
-        padding: 0 20px;
+        font-size: 0.9rem;
+        padding: 0 15px;
+        line-height: 1.5;
     }
     
     .cta-buttons {
@@ -642,11 +644,14 @@
     }
     
     .scroll-down-btn {
-        bottom: 25px;
-        width: 26px;
-        height: 44px;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
     }
-    
+
     /* About Mobile */
     .about-img {
         max-width: 300px;
@@ -679,17 +684,19 @@
     }
     
     .stats-row {
-        justify-content: center;
-        gap: 15px;
+        display: none;
     }
     
     .stat-item {
-        min-width: 100px;
-        padding: 20px 15px;
+        display: none;
     }
     
     .stat-number {
-        font-size: 2rem;
+        font-size: 1.6rem;
+    }
+    
+    .stat-label {
+        font-size: 0.7rem;
     }
     
     .info-item {
@@ -699,11 +706,18 @@
 
 @media (max-width: 480px) {
     .hero-content h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+        white-space: nowrap;
     }
     
     .hero-content h2 {
-        font-size: 1.1rem;
+        font-size: 1rem;
+    }
+    
+    .hero-description {
+        font-size: 0.85rem;
+        padding: 0 10px;
+        line-height: 1.5;
     }
     
     .cta-buttons .btn {
@@ -720,16 +734,20 @@
         font-size: 1.5rem;
     }
     
+    .stats-row {
+        gap: 8px;
+    }
+    
     .stat-item {
-        min-width: 85px;
-        padding: 15px 10px;
+        min-width: 80px;
+        padding: 12px 8px;
     }
     
     .stat-number {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
     
     .stat-label {
-        font-size: 0.75rem;
+        font-size: 0.65rem;
     }
 }
