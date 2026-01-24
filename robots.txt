@@ -1,4 +1,26 @@
+# Robots.txt for 3bnaser.tech
+# Mohamed Abdelnaser Portfolio
+
 User-agent: *
 Allow: /
+Disallow: /js/
+Disallow: /css/
+Disallow: /*.json$
 
+# Google Bot - Full Access
+User-agent: Googlebot
+Allow: /
+
+# Bing Bot - Full Access
+User-agent: Bingbot
+Allow: /
+
+# Crawl Delay for other bots
+User-agent: *
+Crawl-delay: 1
+
+# Sitemap Location
 Sitemap: https://3bnaser.tech/sitemap.xml
+
+# Host
+Host: https://3bnaser.tech
