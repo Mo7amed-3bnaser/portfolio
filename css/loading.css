@@ -1,4 +1,4 @@
-/* Loading Screen Styles */
+/* Modern Loading Screen Styles - Performance Optimized */
 .loading-screen {
     position: fixed;
     top: 0;
@@ -24,69 +24,166 @@
 .loading-screen.hidden {
     opacity: 0 !important;
     visibility: hidden !important;
-    display: none !important;
     pointer-events: none !important;
+    /* Don't use display: none immediately to allow transition to complete */
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
 }
 
-/* Blinking Cursor */
-.cursor {
-    position: absolute;
-    right: 0;
-    width: 10px;
-    height: 20px;
-    background-color: var(--primary-color);
-    animation: blink 1s infinite;
+/* Apply display: none after transition completes */
+.loading-screen.hidden {
+    display: none !important;
 }
 
-@keyframes blink {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
+/* Logo Container */
+.loading-logo-container {
+    position: relative;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: pulse 2s infinite alternate;
+    transform: translateZ(0);
+    will-change: transform, box-shadow;
+}
+
+/* Logo Styling */
+.loading-logo {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 42px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+.loading-logo .symbols {
+    color: #666;
+    animation: colorChangeGray 4s infinite alternate;
+}
+
+.loading-logo .number {
+    color: var(--primary-color);
+    animation: colorChange 4s infinite alternate;
+}
+
+.loading-logo .text {
+    color: var(--light-color);
+    animation: colorChange 4s infinite alternate;
+}
+
+.loading-logo .s2 {
+    color: #666;
+    animation: colorChangeGray 4s infinite alternate;
+}
+
+/* Progress Bar Container */
+.progress-container {
+    width: 250px;
+    height: 6px;
+    background-color: var(--darker-color);
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(88, 166, 255, 0.1);
+    transform: translateZ(0);
 }
 
 /* Progress Bar */
-.progress-container {
-    width: 300px;
-    height: 10px;
-    background-color: var(--darker-color);
-    border-radius: 5px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(88, 166, 255, 0.2);
-}
-
-.progress-bar-loading {
+.progress-bar {
     height: 100%;
     width: 0%;
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    border-radius: 5px;
-    animation: progress 3s ease-in-out forwards;
+    border-radius: 3px;
+    animation: progress 2.5s ease-in-out forwards;
+    transform: translateZ(0);
+    will-change: width;
+}
+
+/* Loading Text */
+.loading-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--light-color);
+    letter-spacing: 2px;
+    margin-top: 15px;
+    text-transform: uppercase;
+    opacity: 0.8;
+    transform: translateZ(0);
+}
+
+/* Dot Animation */
+.loading-dots {
+    display: inline-block;
+    width: 20px;
+    text-align: left;
+}
+
+.loading-dots::after {
+    content: '';
+    animation: dots 1.5s infinite;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% {
+        transform: scale(1) translateZ(0);
+    }
+    100% {
+        transform: scale(1.05) translateZ(0);
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        color: var(--primary-color);
+    }
+    50% {
+        color: var(--secondary-color);
+    }
+    100% {
+        color: var(--primary-color);
+    }
+}
+
+@keyframes colorChangeGray {
+    0% {
+        color: #666;
+    }
+    50% {
+        color: #999;
+    }
+    100% {
+        color: #666;
+    }
 }
 
 @keyframes progress {
     0% {
         width: 0%;
     }
+    10% {
+        width: 10%;
+    }
+    30% {
+        width: 40%;
+    }
+    50% {
+        width: 60%;
+    }
+    70% {
+        width: 75%;
+    }
+    90% {
+        width: 90%;
+    }
     100% {
         width: 100%;
     }
-}
-
-/* Loading Text */
-.loading-text {
-    color: var(--light-color);
-    font-family: 'Courier New', monospace;
-    font-size: 16px;
-    margin-top: 15px;
-    letter-spacing: 2px;
-}
-
-.loading-text::after {
-    content: '';
-    animation: dots 1.5s infinite;
 }
 
 @keyframes dots {
@@ -101,32 +198,27 @@
     }
 }
 
-/* Logo Animation */
-.loading-logo {
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    font-size: 28px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 30px;
-    position: relative;
-}
-
-/* Responsive styles for loading logo */
+/* Mobile Optimization */
 @media (max-width: 768px) {
     .loading-logo {
-        font-size: 22px;
+        font-size: 32px;
+    }
+    
+    .progress-container {
+        width: 200px;
+    }
+    
+    .loading-text {
+        font-size: 12px;
     }
 }
 
-.loading-logo span {
-    display: inline-block; 
-    animation: colorChange 4s infinite alternate;
-}
-
-.loading-logo .symbols {
-    color: #666;
-    animation: colorChangeGray 4s infinite alternate;
+@media (max-width: 480px) {
+    .loading-logo {
+        font-size: 28px;
+    }
+    
+    .progress-container {
+        width: 180px;
+    }
 }

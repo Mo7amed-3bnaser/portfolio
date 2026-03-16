@@ -333,58 +333,43 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 300);
   });
 
-  // Form submission handling - with improved form validation
-  const contactForm = document.getElementById("contactForm");
+  // Form submission handling - Formspree AJAX
+  const contactForm = document.getElementById("my-form");
+  const formStatus = document.getElementById("my-form-status");
+  const formButton = document.getElementById("my-form-button");
+
   if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
+    contactForm.addEventListener("submit", async function (e) {
       e.preventDefault();
 
-      // Get form values
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const subject = document.getElementById("subject").value.trim();
-      const message = document.getElementById("message").value.trim();
+      formButton.disabled = true;
+      formButton.textContent = "Sending...";
+      formStatus.textContent = "";
 
-      // Better validation
-      let isValid = true;
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const data = new FormData(contactForm);
 
-      // Simple form validation
-      if (!name) {
-        isValid = false;
-        document.getElementById("name").classList.add("is-invalid");
-      } else {
-        document.getElementById("name").classList.remove("is-invalid");
-      }
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: data,
+          headers: { Accept: "application/json" },
+        });
 
-      if (!email || !emailRegex.test(email)) {
-        isValid = false;
-        document.getElementById("email").classList.add("is-invalid");
-      } else {
-        document.getElementById("email").classList.remove("is-invalid");
-      }
-
-      if (!subject) {
-        isValid = false;
-        document.getElementById("subject").classList.add("is-invalid");
-      } else {
-        document.getElementById("subject").classList.remove("is-invalid");
-      }
-
-      if (!message) {
-        isValid = false;
-        document.getElementById("message").classList.add("is-invalid");
-      } else {
-        document.getElementById("message").classList.remove("is-invalid");
-      }
-
-      if (isValid) {
-        // In a real application, you would send this data to a server
-        // For now, just show a success message and reset the form
-        alert("Thank you for your message! I will get back to you soon.");
-        contactForm.reset();
-      } else {
-        alert("Please fill in all fields correctly.");
+        if (response.ok) {
+          formStatus.textContent =
+            "Message sent successfully! I'll get back to you soon.";
+          formStatus.style.color = "#2ea043";
+          contactForm.reset();
+        } else {
+          formStatus.textContent = "Something went wrong. Please try again.";
+          formStatus.style.color = "#f85149";
+        }
+      } catch (error) {
+        formStatus.textContent = "Network error. Please check your connection.";
+        formStatus.style.color = "#f85149";
+      } finally {
+        formButton.disabled = false;
+        formButton.textContent = "Send Message";
       }
     });
   }
