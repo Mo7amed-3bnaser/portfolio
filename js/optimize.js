@@ -58,13 +58,42 @@ function loadCSS(href) {
 document.addEventListener('DOMContentLoaded', function() {
     const isMobile = window.innerWidth < 768;
     
-    // Load CSS with priority hints
-    const fontAwesomeLink = document.createElement('link');
-    fontAwesomeLink.rel = 'stylesheet';
-    fontAwesomeLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
-    if (isMobile) fontAwesomeLink.setAttribute('importance', 'low');
-    document.head.appendChild(fontAwesomeLink);
-    
+    // Font Awesome is loaded directly in the document head because hero social icons are above the fold.
+    const hasFontAwesome = document.querySelector('link[href*="font-awesome"], link[href*="fontawesome"]');
+    if (!hasFontAwesome) {
+        const fontAwesomeLink = document.createElement('link');
+        fontAwesomeLink.rel = 'stylesheet';
+        fontAwesomeLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+        document.head.appendChild(fontAwesomeLink);
+    }
+
+    function updateHeroIconMode() {
+        if (!document.fonts) return;
+
+        const loadedFamilies = Array.from(document.fonts)
+            .filter(fontFace => fontFace.status === 'loaded')
+            .map(fontFace => fontFace.family.replace(/["']/g, ''));
+
+        const hasBrandIcons = loadedFamilies.includes('Font Awesome 6 Brands');
+        const hasSolidIcons = loadedFamilies.includes('Font Awesome 6 Free');
+        document.documentElement.classList.toggle('fa-icons-ready', hasBrandIcons && hasSolidIcons);
+    }
+
+    updateHeroIconMode();
+
+    if (document.fonts && document.fonts.load) {
+        Promise.allSettled([
+            document.fonts.load('400 1em "Font Awesome 6 Brands"'),
+            document.fonts.load('900 1em "Font Awesome 6 Free"')
+        ]).then(updateHeroIconMode);
+
+        document.fonts.ready.then(updateHeroIconMode);
+    }
+
+    window.addEventListener('load', updateHeroIconMode);
+    setTimeout(updateHeroIconMode, 1500);
+    setTimeout(updateHeroIconMode, 4000);
+
     // Load AOS CSS
     const aosLink = document.createElement('link');
     aosLink.rel = 'stylesheet';

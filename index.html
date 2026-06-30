@@ -1,564 +1,847 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Loading Screen CSS - Performance Optimized -->
-        <link rel="stylesheet" href="css/loading.css">
-        <!-- Apple Touch Icon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="images/3bnaser_logo_circle.webp">
-        <!-- Immediate Loading Screen Display Script -->
-        <script>
-            // Apply loading screen styles immediately
-            document.documentElement.style.overflow = 'hidden';
-        </script>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <!-- Theme Colors for Different Browsers -->
-        <meta name="theme-color" content="#151515">
-        <meta name="msapplication-navbutton-color" content="#151515">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="msapplication-TileColor" content="#151515">
-        
-        <meta name="HandheldFriendly" content="true">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <title>Mohamed Abdelnaser | Front-End Developer</title>
-        <link rel="icon" href="images/3bnaser_logo_circle.ico" type="image/x-icon">
-        
-        <!-- Enhanced SEO Meta Tags -->
-        <meta name="description" content="Mohamed Abdelnaser (محمد عبدالناصر) - Professional Front-End Developer from Egypt. Expert in JavaScript, React, Node.js with 3+ years experience. View my portfolio of 20+ successful web projects. Hire me for your next project!">
-        <meta name="keywords" content="Mohamed Abdelnaser, Mohamed Abdel Naser, Mohamed Abd El Naser, Mohamed Abdelnasser, Mohamed AbdelNaser, Mohamad Abdelnaser, محمد عبدالناصر, محمد عبد الناصر, 3bnaser, Mohamed Abdelnaser Developer, Mohamed Abdelnaser Portfolio, Mohamed Abdelnaser Front-End, Mohamed Abdelnaser Egypt, Mohamed Abdelnaser Sohag, مطور ويب محمد عبدالناصر, Front-End Developer Egypt, JavaScript Developer, React Developer, Node.js Developer, Web Developer Sohag, Portfolio Website, Freelance Web Developer Egypt, مطور فرونت اند مصر, مطور مواقع مصر">
-        <meta name="author" content="Mohamed Abdelnaser">
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-        <meta name="googlebot" content="index, follow">
-        <meta name="bingbot" content="index, follow">
-        
-        <!-- Geographic and Language Meta Tags -->
-        <meta name="geo.region" content="EG-SHG">
-        <meta name="geo.placename" content="Sohag, Egypt">
-        <meta name="geo.position" content="26.5584;31.6959">
-        <meta name="ICBM" content="26.5584, 31.6959">
-        <meta name="language" content="en">
-        <meta name="content-language" content="en,ar">
-        <meta name="revisit-after" content="7 days">
-        
-        <!-- Arabic Content Meta Tags -->
-        <meta name="arabic-name" content="محمد عبدالناصر">
-        <meta name="arabic-title" content="محمد عبدالناصر - مطور مواقع">
-        <meta name="arabic-description" content="محمد عبدالناصر مطور مواقع محترف من مصر متخصص في تطوير المواقع الحديثة باستخدام JavaScript و React">"
-        
-        <!-- Additional SEO Meta Tags -->
-        <meta name="rating" content="general">
-        <meta name="distribution" content="global">
-        <meta name="expires" content="never">
-        <meta name="subject" content="Front-End Web Development Portfolio">
-        <meta name="abstract" content="Professional portfolio showcasing modern web development skills and projects by Mohamed Abdelnaser, a front-end developer from Egypt specializing in JavaScript, React, and responsive design.">
-        <meta name="topic" content="Front-End Development, Full-Stack Development, JavaScript, React, Portfolio">
-        <meta name="summary" content="Mohamed Abdelnaser (محمد عبدالناصر | 3bnaser) - Expert Front-End Developer from Sohag, Egypt. JavaScript, React, Node.js & MongoDB specialist with 3+ years experience and 20+ successful projects.">
-        <meta name="classification" content="Business">
-        <meta name="designer" content="Mohamed Abdelnaser">
-        <meta name="copyright" content="Mohamed Abdelnaser">
-        <meta name="reply-to" content="mohamedabdelnaser1010@gmail.com">
-        <meta name="owner" content="Mohamed Abdelnaser">
-        <meta name="url" content="https://3bnaser.tech">
-        <meta name="identifier-URL" content="https://3bnaser.tech">
-        <meta name="directory" content="submission">
-        <meta name="pagename" content="Mohamed Abdelnaser Portfolio">
-        <meta name="category" content="Web Development, Portfolio, Technology">
-        <meta name="coverage" content="Worldwide">
-        <meta name="target" content="all">
-        <meta name="audience" content="all">
-        <meta name="contactname" content="Mohamed Abdelnaser">
-        <meta name="contactorganization" content="3bnaser">
-        <meta name="contactnetwork" content="https://3bnaser.tech">
-        
-        <!-- Performance and Caching -->
-        <meta http-equiv="cache-control" content="public, max-age=31536000">
-        <meta http-equiv="expires" content="Thu, 31 Dec 2027 23:59:59 GMT">
-        <!-- Enhanced Open Graph Meta Tags -->
-        <meta property="og:title" content="Mohamed Abdelnaser (محمد عبدالناصر) - Front-End Developer Portfolio">
-        <meta property="og:description" content="Mohamed Abdelnaser (3bnaser) - Elite Front-End Developer from Egypt | 3+ Years Building Stunning Websites | JavaScript, React, Node.js Expert | 20+ Success Stories | Transform Your Vision Into Reality">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://3bnaser.tech/">
-        <meta property="og:image" content="https://3bnaser.tech/images/3bnaser_logo_circle.webp">
-        <meta property="og:image:alt" content="Mohamed Abdelnaser - Front-End Developer Logo">
-        <meta property="og:image:width" content="1200">
-        <meta property="og:image:height" content="630">
-        <meta property="og:site_name" content="Mohamed Abdelnaser Portfolio">
-        <meta property="og:locale" content="en_US">
-        <meta property="og:locale:alternate" content="ar_EG">
-        
-        <!-- Twitter Card Meta Tags -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Mohamed Abdelnaser (محمد عبدالناصر) - Front-End Developer Portfolio">
-        <meta name="twitter:description" content="Mohamed Abdelnaser (3bnaser) - Elite Front-End Developer from Egypt | 3+ Years Building Stunning Websites | JavaScript, React, Node.js Expert | 20+ Success Stories | Transform Your Vision Into Reality">
-        <meta name="twitter:image" content="https://3bnaser.tech/images/3bnaser_logo_circle.webp">
-        <meta name="twitter:image:alt" content="Mohamed Abdelnaser - Front-End Developer">
-        <meta name="twitter:creator" content="@3bnaser">
-        <meta name="twitter:site" content="@3bnaser">
-        
-        <!-- Facebook Meta Tags -->
-        <meta property="article:author" content="https://www.facebook.com/share/12CPZ2MdKTb/">
-        
-        <!-- LinkedIn Meta Tags -->
-        <meta property="profile:first_name" content="Mohamed">
-        <meta property="profile:last_name" content="Abdelnaser">
-        <meta property="profile:username" content="3bnaser">
-        <!-- Canonical URL -->
-        <link rel="canonical" href="https://3bnaser.tech/">
-        
-        <!-- Additional Link Relations for SEO -->
-        <link rel="alternate" href="https://3bnaser.tech/" hreflang="en">
-        <link rel="alternate" href="https://3bnaser.tech/" hreflang="ar">
-        <link rel="alternate" href="https://3bnaser.tech/" hreflang="en-EG">
-        <link rel="alternate" href="https://3bnaser.tech/" hreflang="ar-EG">
-        <link rel="alternate" href="https://3bnaser.tech/" hreflang="x-default">
-        <link rel="author" href="humans.txt">
-        <link rel="dns-prefetch" href="//fonts.googleapis.com">
-        <link rel="dns-prefetch" href="//fonts.gstatic.com">
-        <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
-        <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-        <link rel="dns-prefetch" href="//unpkg.com">
-        
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-title" content="3bnaser">
-        <meta name="application-name" content="Mohamed Abdelnaser Portfolio">
-        <meta name="msapplication-TileColor" content="#151515">
-        <meta name="msapplication-config" content="/browserconfig.xml">
-        
-        <!-- PWA Manifest -->
-        <link rel="manifest" href="/manifest.json">
-        
-        <!-- Additional Favicon Sizes -->
-        <link rel="icon" type="image/png" sizes="32x32" href="images/3bnaser_logo_circle.ico">
-        <link rel="icon" type="image/png" sizes="16x16" href="images/3bnaser_logo_circle.ico">
-        
-        <!-- Security Headers -->
-        <meta http-equiv="X-Content-Type-Options" content="nosniff">
-        <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-        <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-        <!-- Preconnect to external domains -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preconnect" href="https://cdn.jsdelivr.net">
-        <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-        <link rel="preconnect" href="https://unpkg.com">
-        
-        <!-- Resource Hints for Performance -->
-        <link rel="prefetch" href="https://3bnaser.tech/#about">
-        <link rel="prefetch" href="https://3bnaser.tech/#skills">
-        <link rel="prefetch" href="https://3bnaser.tech/#projects">
-        <link rel="prefetch" href="https://3bnaser.tech/#contact">
-        
-        <!-- Preload Critical Resources -->
-        <link rel="preload" href="css/main.css" as="style">
-        <link rel="preload" href="js/script.js" as="script">
-        <link rel="preload" href="images/WhatsApp Image 2025-12-16 at 5.54.53 PM.jpeg" as="image" type="image/jpeg">
-        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" as="style">
-        
-        <!-- Critical CSS for Mobile Performance -->
-        <style>
-            @media (max-width: 768px) {
-                :root {
-                    --primary-color: #58a6ff;
-                    --secondary-color: #2ea043;
-                    --dark-color: #0d1117;
-                    --darker-color: #161b22;
-                    --light-color: #f0f6fc;
-                    --gray-color: #8b949e;
-                    --card-bg-color: #21262d;
-                    --section-padding: 80px 0;
-                    --transition: all 0.2s ease;
-                    --danger-color: #f85149;
-                    --side-nav-width: 220px;
-                }
-                
-                /* Mobile Performance Optimizations */
-                * {
-                    box-sizing: border-box;
-                }
-                
-                /* Info items spacing fix */
-                .info-item {
-                    display: flex;
-                    align-items: center;
-                    margin-bottom: 1rem;
-                    word-break: break-all;
-                }
-                .info-item i {
-                    margin-right: 10px;
-                    min-width: 20px;
-                }
-                .info-item span {
-                    flex: 1;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
-                @media (max-width: 576px) {
-                    .info-item span {
-                        white-space: normal;
-                        word-break: break-word;
-                    }
-                }
-                
-                img {
-                    content-visibility: auto;
-                    contain-intrinsic-size: 300px 200px;
-                }
-                body {
-                    font-family: 'Poppins', sans-serif;
-                    color: var(--light-color);
-                    background-color: var(--dark-color);
-                }
-                .hero-section {
-                    height: 100vh;
-                    background: linear-gradient(135deg, var(--dark-color), var(--darker-color));
-                    background-size: cover;
-                    background-position: center;
-                    position: relative;
-                    color: white;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    overflow: hidden;
-                }
-                .hero-section .container {
-                    position: relative;
-                    z-index: 2;
-                    text-align: center;
-                }
-                 .hero-content h1 {
-                    font-size: 3.5rem;
-                    margin-bottom: 1rem;
-                     will-change: transform;
-                     contain: layout style;
-                }
-                .hero-content h2 {
-                     font-size: 2rem;
-                     margin-bottom: 2rem;
-                     color: var(--primary-color);
-                     font-weight: 500;
-                     will-change: transform;
-                     contain: layout style;
-                }
-                .typed-text {
-                     will-change: transform;
-                     contain: layout style;
-                }
-                .cta-buttons {
-                     margin-top: 2rem;
-                }
-                .btn {
-                    padding: 10px 25px;
-                    opacity: 0.9;
-                    border-radius: 50px;
-                    font-weight: 500;
-                    transition: all 0.3s ease;
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
-                    font-size: 14px;
-                }
-                .btn-primary {
-                    background-color: var(--primary-color);
-                    border-color: var(--primary-color);
-                     transform: translateZ(0);
-                     backface-visibility: hidden;
-                     perspective: 1000px;
-                     will-change: transform;
-                     contain: layout style paint;
-                }
-                 .btn-outline {
-                     color: var(--primary-color);
-                     border: 2px solid var(--primary-color);
-                     background-color: transparent;
-                     transition: all 0.3s ease;
-                     opacity: 1;
-                }
-                .social-icons {
-                    margin-top: 2rem;
-                    margin-bottom: 2rem;
-                }
-                .hero-social {
-                    margin-top: 30px;
-                    display: flex;
-                    justify-content: center;
-                    gap: 15px;
-                }
-                .hero-social a {
-                    width: 45px;
-                    height: 45px;
-                    font-size: 20px;
-                    background-color: rgba(255, 255, 255, 0.1);
-                    transition: all 0.3s ease;
-                     display: inline-flex;
-                     align-items: center;
-                     justify-content: center;
-                     border-radius: 50%;
-                     color: white;
-                }
+
+<head>
+    <!-- Loading Screen CSS - Performance Optimized -->
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/3bnaser_logo_circle.webp">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Theme Colors for Different Browsers -->
+    <meta name="theme-color" content="#060a10">
+    <meta name="msapplication-navbutton-color" content="#060a10">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-TileColor" content="#060a10">
+
+    <meta name="HandheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Mohamed Abdelnaser | Front-End Developer</title>
+    <link rel="icon" href="images/3bnaser_logo_circle.ico" type="image/x-icon">
+
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="description"
+        content="Mohamed Abdelnaser (محمد عبدالناصر) - Professional Front-End Developer from Egypt. Expert in JavaScript, React, Node.js with 3+ years experience. View my portfolio of 20+ successful web projects. Hire me for your next project!">
+    <meta name="keywords"
+        content="Mohamed Abdelnaser, Mohamed Abdel Naser, Mohamed Abd El Naser, Mohamed Abdelnasser, Mohamed AbdelNaser, Mohamad Abdelnaser, محمد عبدالناصر, محمد عبد الناصر, 3bnaser, Mohamed Abdelnaser Developer, Mohamed Abdelnaser Portfolio, Mohamed Abdelnaser Front-End, Mohamed Abdelnaser Egypt, Mohamed Abdelnaser Sohag, مطور ويب محمد عبدالناصر, Front-End Developer Egypt, JavaScript Developer, React Developer, Node.js Developer, Web Developer Sohag, Portfolio Website, Freelance Web Developer Egypt, مطور فرونت اند مصر, مطور مواقع مصر">
+    <meta name="author" content="Mohamed Abdelnaser">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+
+    <!-- Geographic and Language Meta Tags -->
+    <meta name="geo.region" content="EG-SHG">
+    <meta name="geo.placename" content="Sohag, Egypt">
+    <meta name="geo.position" content="26.5584;31.6959">
+    <meta name="ICBM" content="26.5584, 31.6959">
+    <meta name="language" content="en">
+    <meta name="content-language" content="en,ar">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Arabic Content Meta Tags -->
+    <meta name="arabic-name" content="محمد عبدالناصر">
+    <meta name="arabic-title" content="محمد عبدالناصر - مطور مواقع">
+    <meta name="arabic-description"
+        content="محمد عبدالناصر مطور مواقع محترف من مصر متخصص في تطوير المواقع الحديثة باستخدام JavaScript و React">
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="rating" content="general">
+    <meta name="distribution" content="global">
+    <meta name="expires" content="never">
+    <meta name="subject" content="Front-End Web Development Portfolio">
+    <meta name="abstract"
+        content="Professional portfolio showcasing modern web development skills and projects by Mohamed Abdelnaser, a front-end developer from Egypt specializing in JavaScript, React, and responsive design.">
+    <meta name="topic" content="Front-End Development, Full-Stack Development, JavaScript, React, Portfolio">
+    <meta name="summary"
+        content="Mohamed Abdelnaser (محمد عبدالناصر | 3bnaser) - Expert Front-End Developer from Sohag, Egypt. JavaScript, React, Node.js & MongoDB specialist with 3+ years experience and 20+ successful projects.">
+    <meta name="classification" content="Business">
+    <meta name="designer" content="Mohamed Abdelnaser">
+    <meta name="copyright" content="Mohamed Abdelnaser">
+    <meta name="reply-to" content="mohamedabdelnaser1010@gmail.com">
+    <meta name="owner" content="Mohamed Abdelnaser">
+    <meta name="url" content="https://3bnaser.tech">
+    <meta name="identifier-URL" content="https://3bnaser.tech">
+    <meta name="directory" content="submission">
+    <meta name="pagename" content="Mohamed Abdelnaser Portfolio">
+    <meta name="category" content="Web Development, Portfolio, Technology">
+    <meta name="coverage" content="Worldwide">
+    <meta name="target" content="all">
+    <meta name="audience" content="all">
+    <meta name="contactname" content="Mohamed Abdelnaser">
+    <meta name="contactorganization" content="3bnaser">
+    <meta name="contactnetwork" content="https://3bnaser.tech">
+
+    <!-- Performance and Caching -->
+    <meta http-equiv="cache-control" content="public, max-age=31536000">
+    <meta http-equiv="expires" content="Thu, 31 Dec 2027 23:59:59 GMT">
+    <!-- Enhanced Open Graph Meta Tags -->
+    <meta property="og:title" content="Mohamed Abdelnaser (محمد عبدالناصر) - Front-End Developer Portfolio">
+    <meta property="og:description"
+        content="Mohamed Abdelnaser (3bnaser) - Elite Front-End Developer from Egypt | 3+ Years Building Stunning Websites | JavaScript, React, Node.js Expert | 20+ Success Stories | Transform Your Vision Into Reality">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://3bnaser.tech/">
+    <meta property="og:image" content="https://3bnaser.tech/images/3bnaser_logo_circle.webp">
+    <meta property="og:image:alt" content="Mohamed Abdelnaser - Front-End Developer Logo">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Mohamed Abdelnaser Portfolio">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ar_EG">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mohamed Abdelnaser (محمد عبدالناصر) - Front-End Developer Portfolio">
+    <meta name="twitter:description"
+        content="Mohamed Abdelnaser (3bnaser) - Elite Front-End Developer from Egypt | 3+ Years Building Stunning Websites | JavaScript, React, Node.js Expert | 20+ Success Stories | Transform Your Vision Into Reality">
+    <meta name="twitter:image" content="https://3bnaser.tech/images/3bnaser_logo_circle.webp">
+    <meta name="twitter:image:alt" content="Mohamed Abdelnaser - Front-End Developer">
+    <meta name="twitter:creator" content="@3bnaser">
+    <meta name="twitter:site" content="@3bnaser">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="article:author" content="https://www.facebook.com/share/12CPZ2MdKTb/">
+
+    <!-- LinkedIn Meta Tags -->
+    <meta property="profile:first_name" content="Mohamed">
+    <meta property="profile:last_name" content="Abdelnaser">
+    <meta property="profile:username" content="3bnaser">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://3bnaser.tech/">
+
+    <!-- Additional Link Relations for SEO -->
+    <link rel="alternate" href="https://3bnaser.tech/" hreflang="en">
+    <link rel="alternate" href="https://3bnaser.tech/" hreflang="ar">
+    <link rel="alternate" href="https://3bnaser.tech/" hreflang="en-EG">
+    <link rel="alternate" href="https://3bnaser.tech/" hreflang="ar-EG">
+    <link rel="alternate" href="https://3bnaser.tech/" hreflang="x-default">
+    <link rel="author" href="humans.txt">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//unpkg.com">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="3bnaser">
+    <meta name="application-name" content="Mohamed Abdelnaser Portfolio">
+    <meta name="msapplication-TileColor" content="#060a10">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Additional Favicon Sizes -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/3bnaser_logo_circle.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/3bnaser_logo_circle.ico">
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
+
+    <!-- Resource Hints for Performance -->
+    <link rel="prefetch" href="https://3bnaser.tech/#about">
+    <link rel="prefetch" href="https://3bnaser.tech/#skills">
+    <link rel="prefetch" href="https://3bnaser.tech/#projects">
+    <link rel="prefetch" href="https://3bnaser.tech/#contact">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="css/main.css" as="style">
+    <link rel="preload" href="js/script.js" as="script">
+    <link rel="preload" href="images/3bnaserrr.jpeg" as="image" type="image/jpeg">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        as="style">
+
+    <!-- Critical CSS for Mobile Performance -->
+    <style>
+        @media (max-width: 768px) {
+            :root {
+                --primary-color: #2f81d9;
+                --secondary-color: #3B82F6;
+                --dark-color: #060a10;
+                --darker-color: #0b1118;
+                --light-color: #f0f6fc;
+                --gray-color: #8b949e;
+                --card-bg-color: #21262d;
+                --section-padding: 80px 0;
+                --transition: all 0.2s ease;
+                --danger-color: #f85149;
+                --side-nav-width: 220px;
             }
-            
-            /* Desktop Only - Larger About Image */
-            @media (min-width: 769px) {
-                .about-img img {
-                    max-width: 500px !important;
-                    width: 500px !important;
-                    height: 500px !important;
-                }
-                
-                .about-img {
-                    max-width: 500px;
-                    margin: 0 auto;
-                }
+
+            /* Mobile Performance Optimizations */
+            * {
+                box-sizing: border-box;
             }
-        </style>
-        
-        <!-- Mobile Performance Optimization - Load early for immediate effect -->
-        <script src="js/optimize.js"></script>
-        
-        <!-- Critical CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/main.css">
-        <!-- Unified Responsive Styles -->
-        <link rel="stylesheet" href="css/responsive.css">
-        <!-- Premium Styles -->
-        <link rel="stylesheet" href="css/premium.css">
-        
-        <!-- Custom Scrollbar Styles -->
-        <style>
-            /* Custom Scrollbar */
-            ::-webkit-scrollbar {
-                width: 8px;
+
+            /* Info items spacing fix */
+            .info-item {
+                display: flex;
+                align-items: center;
+                margin-bottom: 1rem;
+                word-break: break-all;
             }
-            
-            ::-webkit-scrollbar-track {
-                background: var(--darker-color);
-                border-radius: 10px;
+
+            .info-item i {
+                margin-right: 10px;
+                min-width: 20px;
             }
-            
-            ::-webkit-scrollbar-thumb {
-                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-                border-radius: 10px;
-                transition: all 0.3s ease;
-            }
-            
-            ::-webkit-scrollbar-thumb:hover {
-                background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-                box-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
-            }
-            
-            /* Firefox Scrollbar */
-            @supports (scrollbar-width: thin) {
-                html {
-                    scrollbar-width: thin;
-                    scrollbar-color: var(--primary-color) var(--darker-color);
-                }
-            }
-            
-            /* Footer Logo Link Styles */
-            .footer-logo-link {
-                text-decoration: none;
-                color: inherit;
-                display: inline-block;
-                transition: all 0.3s ease;
-            }
-            
-            .footer-logo-link:hover {
-                color: var(--primary-color);
-                text-decoration: none;
-                transform: translateY(-2px);
-            }
-            
-            .footer-logo-link h3 {
-                margin: 0;
-                transition: all 0.3s ease;
-            }
-            
-            .footer-logo-link:hover h3 {
-                color: var(--primary-color);
-                text-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
-            }
-            
-            /* Copyright Developer Name Link */
-            .developer-name-link {
-                text-decoration: none;
-                color: inherit;
-                transition: all 0.3s ease;
-            }
-            
-            .developer-name-link:hover {
-                text-decoration: none;
-            }
-            
-            .developer-name {
-                color: var(--primary-color);
-                font-weight: 600;
-                transition: all 0.3s ease;
-            }
-            
-            .developer-name-link:hover .developer-name {
-                color: var(--secondary-color);
-                text-shadow: 0 0 8px rgba(88, 166, 255, 0.5);
-            }
-        </style>
-        
-        <!-- What I Can Do Section Styles -->
-        <style>
-            .capabilities-grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 2rem;
-                margin-top: 3rem;
-            }
-            
-            .capability-card {
-                background: var(--card-bg-color);
-                border-radius: 16px;
-                padding: 2.5rem 2rem;
-                text-align: center;
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                border: 1px solid rgba(255, 255, 255, 0.08);
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                position: relative;
+
+            .info-item span {
+                flex: 1;
+                white-space: nowrap;
                 overflow: hidden;
+                text-overflow: ellipsis;
             }
-            
-            .capability-card::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                height: 4px;
-                background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-                opacity: 0;
-                transition: opacity 0.3s ease;
+
+            @media (max-width: 576px) {
+                .info-item span {
+                    white-space: normal;
+                    word-break: break-word;
+                }
             }
-            
-            .capability-card:hover {
-                transform: translateY(-8px) scale(1.02);
-                box-shadow: 0 20px 40px rgba(88, 166, 255, 0.15);
-                border-color: rgba(88, 166, 255, 0.3);
+
+            img {
+                content-visibility: auto;
+                contain-intrinsic-size: 300px 200px;
             }
-            
-            .capability-card:hover::before {
-                opacity: 1;
+
+            body {
+                font-family: 'Poppins', sans-serif;
+                color: var(--light-color);
+                background-color: var(--dark-color);
             }
-            
-            .card-icon {
-                width: 70px;
-                height: 70px;
-                margin: 0 auto 1.5rem;
-                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-                border-radius: 50%;
+
+            .hero-section {
+                height: 100vh;
+                background: linear-gradient(135deg, var(--dark-color), var(--darker-color));
+                background-size: cover;
+                background-position: center;
+                position: relative;
+                color: white;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                font-size: 1.8rem;
-                color: white;
-                transition: all 0.3s ease;
-                box-shadow: 0 8px 16px rgba(88, 166, 255, 0.3);
+                overflow: hidden;
             }
-            
-            .capability-card:hover .card-icon {
-                transform: rotateY(360deg) scale(1.1);
-                box-shadow: 0 12px 24px rgba(88, 166, 255, 0.4);
+
+            .hero-section .container {
+                position: relative;
+                z-index: 2;
+                text-align: center;
             }
-            
-            .capability-card h3 {
-                color: var(--light-color);
-                font-size: 1.4rem;
-                font-weight: 600;
+
+            .hero-content h1 {
+                font-size: 3.5rem;
                 margin-bottom: 1rem;
-                line-height: 1.3;
+                will-change: transform;
+                contain: layout style;
             }
-            
+
+            .hero-content h2 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+                color: var(--primary-color);
+                font-weight: 500;
+                will-change: transform;
+                contain: layout style;
+            }
+
+            .typed-text {
+                will-change: transform;
+                contain: layout style;
+            }
+
+            .cta-buttons {
+                margin-top: 2rem;
+            }
+
+            .btn {
+                padding: 10px 25px;
+                opacity: 0.9;
+                border-radius: 50px;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-size: 14px;
+            }
+
+            .btn-primary {
+                background-color: var(--primary-color);
+                border-color: var(--primary-color);
+                transform: translateZ(0);
+                backface-visibility: hidden;
+                perspective: 1000px;
+                will-change: transform;
+                contain: layout style paint;
+            }
+
+            .btn-outline {
+                color: var(--primary-color);
+                border: 2px solid var(--primary-color);
+                background-color: transparent;
+                transition: all 0.3s ease;
+                opacity: 1;
+            }
+
+            .social-icons {
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .hero-social {
+                margin-top: 30px;
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero-social a {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+                background-color: rgba(255, 255, 255, 0.1);
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                color: white;
+            }
+        }
+
+        /* Desktop Only - Larger About Image */
+        @media (min-width: 769px) {
+            .about-img img {
+                max-width: 500px !important;
+                width: 500px !important;
+                height: 500px !important;
+            }
+
+            .about-img {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+
+    <!-- Mobile Performance Optimization - Load early for immediate effect -->
+    <script src="js/optimize.js"></script>
+
+    <!-- Critical CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Unified Responsive Styles -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Premium Styles -->
+    <link rel="stylesheet" href="css/premium.css">
+    <!-- Unified Button Styles -->
+    <link rel="stylesheet" href="css/unified-buttons.css">
+    <!-- Skills Categories -->
+    <link rel="stylesheet" href="css/skills-categories.css">
+    <!-- Mobile Responsive Fixes -->
+    <link rel="stylesheet" href="css/mobile-responsive-fixes.css">
+
+    <!-- Hero Animations - NEW -->
+    <link rel="stylesheet" href="css/hero-animations.css">
+
+    <!-- Site-wide Animations - NEW -->
+    <link rel="stylesheet" href="css/site-animations.css">
+
+    <!-- Animated Background - NEW -->
+    <link rel="stylesheet" href="css/animated-background.css">
+
+
+
+    <!-- Custom Scrollbar Styles -->
+    <style>
+        /* Keep only one visible page scrollbar. */
+        html {
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-color) var(--darker-color);
+        }
+
+        html::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        html::-webkit-scrollbar-track {
+            background: var(--darker-color);
+            border-radius: 10px;
+        }
+
+        html::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--primary-color), #3B82F6);
+            border-radius: 10px;
+        }
+
+        html::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #3B82F6, var(--primary-color));
+        }
+
+        body {
+            overflow-y: visible;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        body::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+            display: none;
+        }
+
+        section,
+        section>.container {
+            overflow: visible;
+        }
+
+        /* Footer Logo Link Styles */
+        .footer-logo-link {
+            text-decoration: none;
+            color: inherit;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .footer-logo-link:hover {
+            color: var(--primary-color);
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+
+        .footer-logo-link h3 {
+            margin: 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer-logo-link:hover h3 {
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(47, 129, 217, 0.3);
+        }
+
+        /* Copyright Developer Name Link */
+        .developer-name-link {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .developer-name-link:hover {
+            text-decoration: none;
+        }
+
+        .developer-name {
+            color: var(--primary-color);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .developer-name-link:hover .developer-name {
+            color: var(--secondary-color);
+            text-shadow: 0 0 8px rgba(47, 129, 217, 0.5);
+        }
+    </style>
+
+    <!-- What I Can Do Section Styles -->
+    <style>
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .capability-card {
+            background: var(--card-bg-color);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .capability-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), #3B82F6);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .capability-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(47, 129, 217, 0.15);
+            border-color: rgba(47, 129, 217, 0.3);
+        }
+
+        .capability-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color), #3B82F6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 16px rgba(47, 129, 217, 0.3);
+        }
+
+        .capability-card:hover .card-icon {
+            transform: rotateY(360deg) scale(1.1);
+            box-shadow: 0 12px 24px rgba(47, 129, 217, 0.4);
+        }
+
+        .capability-card h3 {
+            color: var(--light-color);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .capability-card p {
+            color: var(--gray-color);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
+            transition: color 0.3s ease;
+        }
+
+        .capability-card:hover p {
+            color: #b3b3b3;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .capabilities-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .capabilities-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+
+            .capability-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .card-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+                margin-bottom: 1.25rem;
+            }
+
+            .capability-card h3 {
+                font-size: 1.25rem;
+            }
+
             .capability-card p {
-                color: var(--gray-color);
-                font-size: 1rem;
-                line-height: 1.6;
-                margin: 0;
-                transition: color 0.3s ease;
+                font-size: 0.95rem;
             }
-            
-            .capability-card:hover p {
-                color: #b3b3b3;
+        }
+
+        @media (max-width: 480px) {
+            .capabilities-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
             }
-            
-            /* Responsive Design */
-            @media (max-width: 1200px) {
-                .capabilities-grid {
-                    grid-template-columns: repeat(2, 1fr);
-                    gap: 1.5rem;
-                }
+
+            .capability-card {
+                padding: 1.75rem 1.25rem;
             }
-            
-            @media (max-width: 768px) {
-                .capabilities-grid {
-                    grid-template-columns: 1fr;
-                    gap: 1.5rem;
-                    margin-top: 2rem;
-                }
-                
-                .capability-card {
-                    padding: 2rem 1.5rem;
-                }
-                
-                .card-icon {
-                    width: 60px;
-                    height: 60px;
-                    font-size: 1.5rem;
-                    margin-bottom: 1.25rem;
-                }
-                
-                .capability-card h3 {
-                    font-size: 1.25rem;
-                }
-                
-                .capability-card p {
-                    font-size: 0.95rem;
-                }
+
+            .card-icon {
+                width: 55px;
+                height: 55px;
+                font-size: 1.3rem;
             }
-            
-            @media (max-width: 480px) {
-                .capabilities-grid {
-                    grid-template-columns: 1fr;
-                    gap: 1.25rem;
-                }
-                
-                .capability-card {
-                    padding: 1.75rem 1.25rem;
-                }
-                
-                .card-icon {
-                    width: 55px;
-                    height: 55px;
-                    font-size: 1.3rem;
-                }
-                
-                .capability-card h3 {
-                    font-size: 1.2rem;
-                }
-                
-                .capability-card p {
-                    font-size: 0.9rem;
-                }
+
+            .capability-card h3 {
+                font-size: 1.2rem;
             }
-        </style>
-        
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-        
-        <!-- Deferred JavaScript -->
-        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
-        
-        <!-- Preload Font Awesome with low importance for mobile -->
-        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" importance="low">
-        <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-        
-        <!-- Preload AOS with low importance for mobile -->
-        <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'" importance="low">
-        <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
+
+            .capability-card p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
+
+    <!-- Deferred JavaScript -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+
+    <!-- Font Awesome is needed above the fold for the hero social icons. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Preload AOS with low importance for mobile -->
+    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'" importance="low">
+    <noscript>
+        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    </noscript>
+
+    <style id="hero-browser-consistency-fix">
+        /* Final hero layer: keep Chrome, Edge, and Firefox on the same visible state. */
+        #home.hero-section,
+        #home .container,
+        #home .row,
+        #home .col-lg-10,
+        #home .hero-content {
+            overflow: visible !important;
+        }
+
+        #home .hero-content {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            min-height: 0 !important;
+            gap: 0 !important;
+        }
+
+        #home .hero-avatar-wrap {
+            display: grid !important;
+            place-items: center !important;
+            width: 340px !important;
+            height: 340px !important;
+            max-width: 38vw !important;
+            max-height: 38vw !important;
+            min-width: 280px !important;
+            min-height: 280px !important;
+            margin: 0 auto 22px !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            animation: heroAvatarFloat 5.8s ease-in-out 1s infinite !important;
+        }
+
+        #home .hero-avatar {
+            width: 266px !important;
+            height: 266px !important;
+            max-width: 30vw !important;
+            max-height: 30vw !important;
+            min-width: 218px !important;
+            min-height: 218px !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            animation: avatarGlow 3s ease-in-out infinite alternate !important;
+        }
+
+        #home .hero-ring {
+            opacity: 1 !important;
+            visibility: visible !important;
+            animation: ringPulse 5s ease-in-out infinite !important;
+        }
+
+        #home .hero-status-dot {
+            opacity: 1 !important;
+            visibility: visible !important;
+            animation: statusPulse 2s ease-in-out infinite !important;
+        }
+
+        #home .hero-greeting,
+        #home .hero-name,
+        #home .hero-name-word,
+        #home .hero-letter,
+        #home .hero-description,
+        #home .hero-social,
+        #home .cta-buttons {
+            opacity: 1 !important;
+            visibility: visible !important;
+            filter: none !important;
+        }
+
+        #home .hero-greeting {
+            margin: 0 0 14px !important;
+        }
+
+        #home .hero-name,
+        #home .hero-content h1 {
+            margin: 0 auto 18px !important;
+        }
+
+        #home .hero-description {
+            margin: 0 auto 18px !important;
+            max-width: 680px !important;
+        }
+
+        #home .hero-social {
+            order: 5 !important;
+            display: flex !important;
+            position: static !important;
+            inset: auto !important;
+            z-index: 50 !important;
+            justify-content: center !important;
+            align-items: center !important;
+            flex-wrap: wrap !important;
+            gap: 10px !important;
+            width: auto !important;
+            max-width: 620px !important;
+            height: auto !important;
+            margin: 0 auto 22px !important;
+            padding: 0 !important;
+            pointer-events: auto !important;
+            animation: none !important;
+        }
+
+        #home .hero-social a {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 44px !important;
+            height: 44px !important;
+            min-width: 44px !important;
+            min-height: 44px !important;
+            border-radius: 14px !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            color: rgba(248, 250, 252, 0.95) !important;
+            background: rgba(255, 255, 255, 0.085) !important;
+            border: 1px solid rgba(255, 255, 255, 0.18) !important;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22) !important;
+            text-decoration: none !important;
+            transform: none !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+
+        #home .hero-social a i {
+            display: none !important;
+            position: relative !important;
+            z-index: 1 !important;
+            font-size: 1rem !important;
+            line-height: 1 !important;
+        }
+
+        html.fa-icons-ready #home .hero-social a i {
+            display: inline-block !important;
+        }
+
+        #home .hero-social a::after {
+            content: attr(data-fallback);
+            position: relative;
+            z-index: 1;
+            display: inline-grid;
+            place-items: center;
+            min-width: 1.1em;
+            font-family: Poppins, Arial, sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: 0;
+            text-transform: none;
+        }
+
+        html.fa-icons-ready #home .hero-social a::after {
+            content: none !important;
+            display: none !important;
+        }
+
+        #home .hero-social a:hover {
+            transform: translateY(-3px) !important;
+            background: rgba(203, 213, 225, 0.22) !important;
+            border-color: rgba(241, 245, 249, 0.42) !important;
+        }
+
+        #home .cta-buttons {
+            order: 6 !important;
+            display: flex !important;
+            margin: 0 auto !important;
+        }
+
+        @media (max-width: 992px) {
+            #home .hero-avatar-wrap {
+                width: 300px !important;
+                height: 300px !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                max-width: 72vw !important;
+                max-height: 72vw !important;
+            }
+
+            #home .hero-avatar {
+                width: 234px !important;
+                height: 234px !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                max-width: 56vw !important;
+                max-height: 56vw !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            #home .hero-avatar-wrap {
+                width: 230px !important;
+                height: 230px !important;
+            }
+
+            #home .hero-avatar {
+                width: 180px !important;
+                height: 180px !important;
+            }
+
+            #home .hero-social a {
+                width: 42px !important;
+                height: 42px !important;
+                min-width: 42px !important;
+                min-height: 42px !important;
+            }
+        }
+
+        @media (max-height: 760px) and (min-width: 900px) {
+            #home.hero-section {
+                padding-top: 92px !important;
+                padding-bottom: 72px !important;
+            }
+
+            #home .hero-avatar-wrap {
+                width: 260px !important;
+                height: 260px !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+            }
+
+            #home .hero-avatar {
+                width: 202px !important;
+                height: 202px !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+            }
+        }
+    </style>
     <!-- Enhanced Schema.org structured data for better SEO -->
     <script type="application/ld+json">
     {
@@ -569,7 +852,7 @@
       "url": "https://3bnaser.tech/",
       "image": {
         "@type": "ImageObject",
-        "url": "https://3bnaser.tech/images/mohamed-3bnaser.jpg",
+        "url": "https://3bnaser.tech/images/3bnaserrr.jpeg",
         "width": 400,
         "height": 400
       },
@@ -599,9 +882,9 @@
         "CSS3",
         "Bootstrap",
         "Responsive Web Design",
-        "UI/UX Design",
+        "Portfolio Websites",
         "Web Performance Optimization",
-        "SEO Optimization",
+        "Performance & SEO",
         "Git & Version Control",
         "API Integration"
       ],
@@ -642,7 +925,7 @@
       }
     }
     </script>
-    
+
     <!-- Website Schema -->
     <script type="application/ld+json">
     {
@@ -669,7 +952,7 @@
       }
     }
     </script>
-    
+
     <!-- Professional Service Schema -->
     <script type="application/ld+json">
     {
@@ -711,7 +994,7 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "UI/UX Design",
+              "name": "Portfolio Websites",
               "description": "User interface and user experience design services"
             }
           }
@@ -722,7 +1005,7 @@
       "email": "mohamedabdelnaser1010@gmail.com"
     }
     </script>
-    
+
     <!-- FAQ Schema for Rich Snippets -->
     <script type="application/ld+json">
     {
@@ -734,7 +1017,7 @@
           "name": "What services does Mohamed Abdelnaser offer?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Mohamed Abdelnaser offers comprehensive web development services including: Front-End Development (React, JavaScript), Back-End Development (Node.js, MongoDB), Full-Stack Applications, UI/UX Design, Mobile-First Responsive Design, SEO Optimization, Performance Enhancement, and Website Maintenance."
+            "text": "Mohamed Abdelnaser offers comprehensive web development services including: Front-End Development (React, JavaScript), Back-End Development (Node.js, MongoDB), Full-Stack Applications, Portfolio Websites, Mobile-First Responsive Design, Performance & SEO, Performance Enhancement, and Website Maintenance."
           }
         },
         {
@@ -772,7 +1055,7 @@
       ]
     }
     </script>
-    
+
     <!-- Arabic SEO Schema -->
     <script type="application/ld+json">
     {
@@ -796,51 +1079,40 @@
       ]
     }
     </script>
-    
+
     <!-- JavaScript for mobile menu toggle -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const navToggleBtn = document.querySelector('.nav-toggle-btn');
             const sideNav = document.querySelector('.side-nav');
             const navLinks = document.querySelectorAll('.nav-links a');
-            
+
             if (navToggleBtn) {
-                navToggleBtn.addEventListener('click', function() {
+                navToggleBtn.addEventListener('click', function () {
                     this.classList.toggle('active');
                     sideNav.classList.toggle('collapsed');
                 });
             }
-            
+
             // Close menu when clicking on a link
             navLinks.forEach(link => {
-                link.addEventListener('click', function() {
+                link.addEventListener('click', function () {
                     sideNav.classList.remove('collapsed');
                     navToggleBtn.classList.remove('active');
                 });
             });
         });
-    </script>        
-    </head>
-    
+    </script>
+</head>
+
 <body>
-        <!-- Preload critical images -->
-        <link rel="preload" as="image" href="images/3bnaser_logo_circle.ico">
-        <link rel="preload" as="image" href="images/Mohamed-3bnaser.jpg">
-        
-    <!-- Modern Loading Screen -->
-    <div class="loading-screen" id="loading-screen">
-        <div class="loading-logo-container">
-            <div class="loading-logo">
-                <span class="symbols">&lt;/</span>
-                <span class="number">3</span><span class="text">bnaser</span>
-                <span class="symbols s2">&gt;</span>
-            </div>
-        </div>
-        <div class="progress-container">
-            <div class="progress-bar"></div>
-        </div>
-        <div class="loading-text">LOADING<span class="loading-dots"></span></div>
-    </div>
+    <!-- Preload critical images -->
+    <link rel="preload" as="image" href="images/3bnaser_logo_circle.ico">
+    <link rel="preload" as="image" href="images/3bnaserrr.jpeg">
+    <!-- Animated Orbs Background -->
+    <div class="animated-orb orb-1"></div>
+    <div class="animated-orb orb-2"></div>
+    <div class="animated-orb orb-3"></div>
 
     <!-- Scroll Progress Indicator -->
     <div class="scroll-progress">
@@ -851,10 +1123,17 @@
     <nav class="side-nav">
         <div class="nav-logo">
             <a href="#home" class="logo-link">
-                <div class="logo">
-                    <span class="symbols">&lt;/</span>
-                    <span class="number">3</span><span class="text">bnaser</span>
-                    <span class="symbols s2">&gt;</span>
+                <div class="logo" aria-label="3bnaser">
+                    <span class="logo-char logo-symbol" aria-hidden="true">&lt;</span>
+                    <span class="logo-char logo-symbol" aria-hidden="true">/</span>
+                    <span class="logo-char number" aria-hidden="true">3</span>
+                    <span class="logo-char logo-letter" aria-hidden="true">b</span>
+                    <span class="logo-char logo-letter" aria-hidden="true">n</span>
+                    <span class="logo-char logo-letter" aria-hidden="true">a</span>
+                    <span class="logo-char logo-letter" aria-hidden="true">s</span>
+                    <span class="logo-char logo-letter" aria-hidden="true">e</span>
+                    <span class="logo-char logo-letter" aria-hidden="true">r</span>
+                    <span class="logo-char logo-symbol s2" aria-hidden="true">&gt;</span>
                 </div>
             </a>
         </div>
@@ -864,12 +1143,12 @@
             <span></span>
         </button>
         <ul class="nav-links">
-            <li><a href="#home" class="active"><i class="fas fa-home"></i> <span>Home</span></a></li>
-            <li><a href="#about"><i class="fas fa-user"></i> <span>About</span></a></li>
-            <li><a href="#skills"><i class="fas fa-code"></i> <span>Skills</span></a></li>
-            <li><a href="#experience"><i class="fas fa-cogs"></i> <span>Services</span></a></li>
-            <li><a href="#projects"><i class="fas fa-project-diagram"></i> <span>Projects</span></a></li>
-            <li><a href="#contact"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
+            <li><a href="#home" class="active"><span>Home</span></a></li>
+            <li><a href="#about"><span>About</span></a></li>
+            <li><a href="#skills"><span>Skills</span></a></li>
+            <li><a href="#experience"><span>Services</span></a></li>
+            <li><a href="#projects"><span>Projects</span></a></li>
+            <li><a href="#contact"><span>Contact</span></a></li>
         </ul>
     </nav>
 
@@ -882,19 +1161,73 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
                         <div class="hero-content text-center">
-                            <p class="hero-greeting">Hello, I'm</p>
-                            <h1>Mohamed Abdelnaser</h1>
-                            <h2><span class="typed-text"></span></h2>
-                            <p class="hero-description">Crafting beautiful, responsive, and user-friendly web experiences. Turning creative ideas into functional digital solutions.</p>
-                            <div class="cta-buttons">
-                                <a href="#projects" class="btn btn-primary">View My Work</a>
-                                <a href="#contact" class="btn btn-outline">Let's Talk</a>
+                            <div class="hero-avatar-wrap">
+                                <span class="hero-ring hero-ring-1"></span>
+                                <span class="hero-ring hero-ring-2"></span>
+                                <span class="hero-ring hero-ring-3"></span>
+                                <span class="hero-ring hero-ring-4"></span>
+                                <span class="hero-ring hero-ring-5"></span>
+                                <span class="hero-ring hero-ring-6"></span>
+                                <img src="images/3bnaserrr.jpeg" alt="Mohamed Abdelnaser" class="hero-avatar"
+                                    width="230" height="230" loading="eager">
+                                <span class="hero-status-dot"></span>
                             </div>
+                            <p class="hero-greeting" data-hero-roles="FRONT-END DEVELOPER|FREELANCER" aria-live="off">FRONT-END DEVELOPER</p>
+                            <h1 class="hero-name" aria-label="Mohamed Abdelnaser">
+                                <span class="hero-name-word" aria-hidden="true"><span class="hero-letter">M</span><span
+                                        class="hero-letter">o</span><span class="hero-letter">h</span><span
+                                        class="hero-letter">a</span><span class="hero-letter">m</span><span
+                                        class="hero-letter">e</span><span class="hero-letter">d</span></span>
+                                <span class="hero-name-space" aria-hidden="true"></span>
+                                <span class="hero-name-word" aria-hidden="true"><span class="hero-letter">A</span><span
+                                        class="hero-letter">b</span><span class="hero-letter">d</span><span
+                                        class="hero-letter">e</span><span class="hero-letter">l</span><span
+                                        class="hero-letter">n</span><span class="hero-letter">a</span><span
+                                        class="hero-letter">s</span><span class="hero-letter">e</span><span
+                                        class="hero-letter">r</span></span>
+                            </h1>
+                            <p class="hero-description">I build modern, responsive web applications with clean
+                                interfaces, fast performance, and seamless user experiences.</p>
                             <div class="hero-social">
-                                <a href="https://www.instagram.com/m_3bdelnaser/profilecard/?igsh=ZG42NG93ZTl5NWIx" target="_blank" rel="noopener" aria-label="Instagram Profile" title="Follow me on Instagram" class="instagram"><i class="fab fa-instagram"></i></a>
-                                <a href="https://www.facebook.com/share/12CPZ2MdKTb/" target="_blank" rel="noopener" aria-label="Facebook Profile" title="Connect on Facebook" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                                <a href="https://github.com/Mo7amed-3bnaser" target="_blank" rel="noopener" aria-label="GitHub Profile" title="View my GitHub projects" class="github"><i class="fab fa-github"></i></a>
-                                <a href="https://www.linkedin.com/in/3bnaser?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" aria-label="LinkedIn Profile" title="Connect on LinkedIn" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.instagram.com/m_3bdelnaser/" target="_blank" rel="noopener"
+                                    aria-label="Instagram" title="Follow on Instagram" class="instagram" data-fallback="IG">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://www.facebook.com/share/12CPZ2MdKTb/" target="_blank" rel="noopener"
+                                    aria-label="Facebook" title="Connect on Facebook" class="facebook" data-fallback="f">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://github.com/Mo7amed-3bnaser" target="_blank" rel="noopener"
+                                    aria-label="GitHub" title="View GitHub" class="github" data-fallback="GH">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/3bnaser" target="_blank" rel="noopener"
+                                    aria-label="LinkedIn" title="Connect on LinkedIn" class="linkedin" data-fallback="in">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://twitter.com/3bnaser" target="_blank" rel="noopener"
+                                    aria-label="Twitter" title="Follow on Twitter" class="twitter" data-fallback="X">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="https://wa.me/201207166536" target="_blank" rel="noopener"
+                                    aria-label="WhatsApp" title="Chat on WhatsApp" class="whatsapp" data-fallback="WA">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="mailto:m3bnaserr@gmail.com" aria-label="Email" title="Send Email"
+                                    class="email" data-fallback="@">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="tel:+201207166536" aria-label="Phone" title="Call" class="phone" data-fallback="Ph">
+                                    <i class="fas fa-phone"></i>
+                                </a>
+                                <a href="assets/Mohamed-Abdelnaser-CV.pdf" target="_blank" rel="noopener"
+                                    aria-label="CV" title="View CV" class="cv-link" data-fallback="CV">
+                                    <i class="fas fa-file-lines"></i>
+                                </a>
+                            </div>
+                            <div class="cta-buttons">
+                                <a href="#projects" class="btn btn-primary">View Projects</a>
+                                <a href="#contact" class="btn btn-outline">Start a Project</a>
                             </div>
                         </div>
                     </div>
@@ -909,73 +1242,54 @@
         <section id="about" class="section" aria-label="About Mohamed Abdelnaser">
             <div class="container">
                 <div class="section-header" data-aos="fade-up">
-                    <h2>About Me</h2>
+                    <h2><span>01</span> &mdash; About</h2>
+                    <p class="section-description">A focused look at who I am, what I build, and how I approach modern
+                        web interfaces.</p>
                     <div class="section-line"></div>
                 </div>
-                <div class="row align-items-center">
-                    <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
-                        <div class="about-img">
-                            <div class="about-img-wrapper">
-                                <img src="images/WhatsApp Image 2025-12-16 at 5.54.53 PM.jpeg" alt="Mohamed Abdelnaser - Front-End Developer" class="img-fluid" width="400" height="400" loading="eager">
-                            </div>
-                            <div class="about-badge">
-                                <span>3+</span>
-                                Years Exp
-                            </div>
+                <div class="about-grid-v2">
+                    <div class="about-visual" data-aos="fade-right" data-aos-delay="120">
+                        <div class="about-img-wrapper">
+                            <img src="images/3bnaserrr.jpeg" alt="Mohamed Abdelnaser professional portrait"
+                                class="img-fluid" width="360" height="460" loading="lazy">
                         </div>
                     </div>
-                    <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
-                        <div class="about-content">
-                            <h3>Front-End Developer</h3>
-                            <p class="lead">A passionate front-end web developer with 3 years of hands-on experience in building responsive and interactive websites.</p>
-                            <p>Skilled in HTML, CSS, JavaScript, React, Tailwind CSS, and Bootstrap with 20+ projects under my belt. I love turning creative ideas into functional, user-friendly web experiences. When I'm not coding, you'll find me exploring new technologies and pushing the boundaries of what's possible on the web.</p>
-                            
-                            <!-- Quick Stats -->
-                            <div class="stats-row mt-4 mb-4">
-                                <div class="stat-item">
-                                    <span class="stat-number" data-target="20">0</span>
-                                    <span class="stat-label">Projects</span>
-                                </div>
-                                <div class="stat-item">
-                                    <span class="stat-number" data-target="15">0</span>
-                                    <span class="stat-label">Happy Clients</span>
-                                </div>
-                                <div class="stat-item">
-                                    <span class="stat-number" data-target="98">0</span>
-                                    <span class="stat-label">% Quality</span>
-                                </div>
+                    <div class="about-content about-content-v2" data-aos="fade-left" data-aos-delay="180">
+                        <p class="about-kicker">Front-End Developer & Software Engineering Student</p>
+                        <h3>Building clean, scalable interfaces for real users.</h3>
+                        <p>I&rsquo;m a Front-End Developer and Software Engineering student focused on building modern,
+                            responsive, and high-performance web applications.</p>
+                        <p>I specialize in React.js, Next.js, TypeScript, and Tailwind CSS, with hands-on experience
+                            creating educational platforms, productivity applications, business websites, and full-stack
+                            web solutions.</p>
+                        <p>I enjoy transforming complex requirements into clean, scalable, and user-friendly digital
+                            experiences.</p>
+
+                        <div class="stats-row stats-row-v2" aria-label="Portfolio statistics">
+                            <div class="stat-item">
+                                <span class="stat-value"><span class="stat-number" data-target="20">0</span>+</span>
+                                <span class="stat-label">Completed Projects</span>
                             </div>
-                            
-                            <div class="row mt-4">
-                                <div class="col-md-6 mb-3">
-                                    <div class="info-item">
-                                        <i class="fas fa-envelope"></i>
-                                        <span><a href="mailto:mohamedabdelnaser1010@gmail.com">m.abdelnaser1010@gmail.com</a></span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <div class="info-item">
-                                        <i class="fas fa-phone"></i>
-                                        <span><a href="tel:+201207166536" class="phone-link">+20 1207166536</a></span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <div class="info-item">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <span>Sohag, Egypt</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <div class="info-item">
-                                        <i class="fas fa-calendar-alt"></i>
-                                        <span>Available for Freelance</span>
-                                    </div>
-                                </div>
+                            <div class="stat-item">
+                                <span class="stat-value"><span class="stat-number" data-target="3">0</span>+</span>
+                                <span class="stat-label">Years Learning and Building</span>
                             </div>
-                            <div class="mt-4">
-                                <a href="#contact" class="btn btn-primary me-3">Hire Me</a>
-                                <a href="#" class="btn btn-outline cv-hidden">Download CV</a>
+                            <div class="stat-item">
+                                <span class="stat-value"><span class="stat-number" data-target="10">0</span>+</span>
+                                <span class="stat-label">Technologies and Tools</span>
                             </div>
+                        </div>
+
+                        <div class="availability-card">
+                            <span>Available for</span>
+                            <strong>Freelance, Remote, Internship, and Junior Front-End Opportunities</strong>
+                        </div>
+
+                        <div class="about-actions">
+                            <a href="#contact" class="btn btn-primary">Start a Project</a>
+                            <a href="assets/Mohamed-Abdelnaser-CV.pdf" class="btn btn-outline" target="_blank"
+                                rel="noopener">View CV</a>
+                            <a href="assets/Mohamed-Abdelnaser-CV.pdf" class="btn btn-outline" download>Download CV</a>
                         </div>
                     </div>
                 </div>
@@ -986,217 +1300,176 @@
         <section id="skills" class="section bg-alt" aria-label="Technical Skills">
             <div class="container">
                 <div class="section-header" data-aos="fade-up">
-                    <h2>My Skills</h2>
+                    <h2><span>02</span> &mdash; Skills</h2>
+                    <p class="section-description">The tools and practices I use to build responsive, performant, and
+                        maintainable products.</p>
                     <div class="section-line"></div>
                 </div>
-                <div class="row skills-container">
-                    <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="skill-card">
-                            <div class="skill-icon">
-                                <i class="fab fa-html5"></i>
-                            </div>
-                            <h3>HTML5</h3>
-                            <div class="progress-container">
-                                <div class="progress-bar progress-95"></div>
-                                <span class="progress-text">95%</span>
-                            </div>
-                            <p>Semantic markup, accessibility, forms</p>
+                <div class="skills-icon-system">
+                    <div class="skill-group" data-aos="fade-up">
+                        <h3>Front-End</h3>
+                        <div class="skill-icon-grid">
+                            <div class="skill-item"><i class="fab fa-html5 html"
+                                    aria-hidden="true"></i><span>HTML5</span></div>
+                            <div class="skill-item"><i class="fab fa-css3-alt css"
+                                    aria-hidden="true"></i><span>CSS3</span></div>
+                            <div class="skill-item"><i class="fab fa-js js"
+                                    aria-hidden="true"></i><span>JavaScript</span></div>
+                            <div class="skill-item"><i class="skill-icon-text ts"
+                                    aria-hidden="true">TS</i><span>TypeScript</span></div>
+                            <div class="skill-item"><i class="fab fa-react react"
+                                    aria-hidden="true"></i><span>React.js</span></div>
+                            <div class="skill-item"><i class="skill-icon-text next"
+                                    aria-hidden="true">N</i><span>Next.js</span></div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="skill-card">
-                            <div class="skill-icon">
-                                <i class="fab fa-css3-alt"></i>
-                            </div>
-                            <h3>CSS3</h3>
-                            <div class="progress-container">
-                                <div class="progress-bar progress-90"></div>
-                                <span class="progress-text">90%</span>
-                            </div>
-                            <p>Flexbox, Grid, Animations, Responsive design</p>
+                    <div class="skill-group" data-aos="fade-up">
+                        <h3>Styling & UI</h3>
+                        <div class="skill-icon-grid">
+                            <div class="skill-item"><i class="skill-icon-text tailwind"
+                                    aria-hidden="true">TW</i><span>Tailwind CSS</span></div>
+                            <div class="skill-item"><i class="fab fa-bootstrap bootstrap"
+                                    aria-hidden="true"></i><span>Bootstrap</span></div>
+                            <div class="skill-item"><i class="skill-icon-text motion"
+                                    aria-hidden="true">M</i><span>Framer Motion</span></div>
+                            <div class="skill-item"><i class="fas fa-mobile-screen responsive"
+                                    aria-hidden="true"></i><span>Responsive Design</span></div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="skill-card">
-                            <div class="skill-icon">
-                                <i class="fab fa-js"></i>
-                            </div>
-                            <h3>JavaScript</h3>
-                            <div class="progress-container">
-                                <div class="progress-bar progress-85"></div>
-                                <span class="progress-text">85%</span>
-                            </div>
-                            <p>ES6+, DOM manipulation, Fetch API</p>
+                    <div class="skill-group" data-aos="fade-up">
+                        <h3>State & APIs</h3>
+                        <div class="skill-icon-grid">
+                            <div class="skill-item"><i class="skill-icon-text redux"
+                                    aria-hidden="true">RTK</i><span>Redux Toolkit</span></div>
+                            <div class="skill-item"><i class="skill-icon-text zustand"
+                                    aria-hidden="true">Z</i><span>Zustand</span></div>
+                            <div class="skill-item"><i class="skill-icon-text query"
+                                    aria-hidden="true">RQ</i><span>React Query</span></div>
+                            <div class="skill-item"><i class="skill-icon-text axios"
+                                    aria-hidden="true">AX</i><span>Axios</span></div>
+                            <div class="skill-item"><i class="fas fa-plug api" aria-hidden="true"></i><span>REST
+                                    APIs</span></div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="400">
-                        <div class="skill-card">
-                            <div class="skill-icon">
-                                <i class="fab fa-bootstrap"></i>
-                            </div>
-                            <h3>Bootstrap</h3>
-                            <div class="progress-container">
-                                <div class="progress-bar progress-90"></div>
-                                <span class="progress-text">90%</span>
-                            </div>
-                            <p>Grid system, Components, Utilities</p>
+                    <div class="skill-group" data-aos="fade-up">
+                        <h3>Backend & Database</h3>
+                        <div class="skill-icon-grid">
+                            <div class="skill-item"><i class="fab fa-node-js node"
+                                    aria-hidden="true"></i><span>Node.js</span></div>
+                            <div class="skill-item"><i class="skill-icon-text express"
+                                    aria-hidden="true">EX</i><span>Express.js</span></div>
+                            <div class="skill-item"><i class="fas fa-leaf mongo"
+                                    aria-hidden="true"></i><span>MongoDB</span></div>
+                            <div class="skill-item"><i class="skill-icon-text supabase"
+                                    aria-hidden="true">SB</i><span>Supabase</span></div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="450">
-                        <div class="skill-card">
-                            <div class="skill-icon">
-                                <svg class="tailwind-icon" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
-                                    <path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"/>
-                                </svg>
-                            </div>
-                            <h3>Tailwind CSS</h3>
-                            <div class="progress-container">
-                                <div class="progress-bar progress-85"></div>
-                                <span class="progress-text">85%</span>
-                            </div>
-                            <p>Utility-first, Custom config, Responsive</p>
+                    <div class="skill-group" data-aos="fade-up">
+                        <h3>Tools & Deployment</h3>
+                        <div class="skill-icon-grid">
+                            <div class="skill-item"><i class="fab fa-git-alt git"
+                                    aria-hidden="true"></i><span>Git</span></div>
+                            <div class="skill-item"><i class="fab fa-github github"
+                                    aria-hidden="true"></i><span>GitHub</span></div>
+                            <div class="skill-item"><i class="skill-icon-text postman"
+                                    aria-hidden="true">PM</i><span>Postman</span></div>
+                            <div class="skill-item"><i class="skill-icon-text vercel"
+                                    aria-hidden="true">▲</i><span>Vercel</span></div>
+                            <div class="skill-item"><i class="skill-icon-text netlify"
+                                    aria-hidden="true">NF</i><span>Netlify</span></div>
+                            <div class="skill-item"><i class="skill-icon-text render"
+                                    aria-hidden="true">R</i><span>Render</span></div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="500">
-                        <div class="skill-card">
-                            <div class="skill-icon">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                            <h3>Responsive Design</h3>
-                            <div class="progress-container">
-                                <div class="progress-bar progress-95"></div>
-                                <span class="progress-text">95%</span>
-                            </div>
-                            <p>Mobile-first approach, Media queries</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="600">
-                        <div class="skill-card">
-                            <div class="skill-icon">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <h3>Web Performance</h3>
-                            <div class="progress-container">
-                                <div class="progress-bar progress-80"></div>
-                                <span class="progress-text">80%</span>
-                            </div>
-                            <p>Optimization, Best practices</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="700">
-                        <div class="skill-card">
-                            <div class="skill-icon">
-                                <i class="fab fa-react"></i>
-                            </div>
-                            <h3>React</h3>
-                            <div class="progress-container">
-                                <div class="progress-bar progress-85"></div>
-                                <span class="progress-text">85%</span>
-                            </div>
-                            <p>Components, Hooks, State Management</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="800">
-                        <div class="skill-card">
-                            <div class="skill-icon">
-                                <i class="fab fa-node-js"></i>
-                            </div>
-                            <h3>Node.js</h3>
-                            <div class="progress-container">
-                                <div class="progress-bar progress-75"></div>
-                                <span class="progress-text">75%</span>
-                            </div>
-                            <p>Express.js, API Development, NPM</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="900">
-                        <div class="skill-card">
-                            <div class="skill-icon">
-                                <i class="fas fa-database"></i>
-                            </div>
-                            <h3>MongoDB</h3>
-                            <div class="progress-container">
-                                <div class="progress-bar progress-70"></div>
-                                <span class="progress-text">70%</span>
-                            </div>
-                            <p>NoSQL, Mongoose, Database Design</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="1000">
-                        <div class="skill-card">
-                            <div class="skill-icon">
-                                <svg viewBox="0 0 24 24" fill="currentColor" width="48" height="48" aria-hidden="true">
-                                    <path d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.063v2.166H9.0v9.646H6.863v-9.646H3.375z"/>
-                                </svg>
-                            </div>
-                            <h3>TypeScript</h3>
-                            <div class="progress-container">
-                                <div class="progress-bar progress-80"></div>
-                                <span class="progress-text">80%</span>
-                            </div>
-                            <p>Type safety, Interfaces, Generics</p>
+                    <div class="skill-group" data-aos="fade-up">
+                        <h3>Engineering</h3>
+                        <div class="skill-icon-grid">
+                            <div class="skill-item"><i class="fas fa-cubes oop"
+                                    aria-hidden="true"></i><span>Object-Oriented Programming</span></div>
+                            <div class="skill-item"><i class="fas fa-diagram-project ds"
+                                    aria-hidden="true"></i><span>Data Structures</span></div>
+                            <div class="skill-item"><i class="fas fa-code-branch algo"
+                                    aria-hidden="true"></i><span>Algorithms</span></div>
+                            <div class="skill-item"><i class="fas fa-code clean" aria-hidden="true"></i><span>Clean
+                                    Code</span></div>
+                            <div class="skill-item"><i class="fas fa-magnifying-glass-chart seo"
+                                    aria-hidden="true"></i><span>Technical SEO</span></div>
+                            <div class="skill-item"><i class="fas fa-gauge-high perf"
+                                    aria-hidden="true"></i><span>Performance Optimization</span></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- What I Can Do Section -->
+        <!-- Services Section -->
         <section id="experience" class="section" aria-label="Services Offered">
             <div class="container">
                 <div class="section-header" data-aos="fade-up">
-                    <h2>What I Can Do</h2>
+                    <h2><span>03</span> &mdash; Services</h2>
+                    <p class="section-description">Practical front-end services for clean websites, web apps, and
+                        performance-focused improvements.</p>
                     <div class="section-line"></div>
                 </div>
-                <div class="capabilities-grid">
-                    <div class="capability-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="card-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3>Build Websites</h3>
-                        <p>I create responsive, modern websites from scratch using HTML, CSS, JavaScript and React. Every site is optimized for performance and user experience.</p>
-                    </div>
-                    
-                    <div class="capability-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="card-icon">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <h3>Web Applications</h3>
-                        <p>I develop interactive web applications with dynamic functionality, user authentication, databases, and real-time features for enhanced user engagement.</p>
-                    </div>
-                    
-                    <div class="capability-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="card-icon">
-                            <i class="fas fa-paint-brush"></i>
-                        </div>
-                        <h3>UI/UX Design</h3>
-                        <p>I create intuitive user interfaces and seamless user experiences with modern design principles, wireframing, and user-centered design approach.</p>
-                    </div>
-                    
-                    <div class="capability-card" data-aos="fade-up" data-aos-delay="400">
-                        <div class="card-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3>Mobile-First Design</h3>
-                        <p>I design with mobile users in mind first, ensuring your website looks perfect and functions smoothly on all devices and screen sizes.</p>
-                    </div>
-                    
-                    <div class="capability-card" data-aos="fade-up" data-aos-delay="500">
-                        <div class="card-icon">
-                            <i class="fas fa-search-plus"></i>
-                        </div>
-                        <h3>SEO Optimization</h3>
-                        <p>I implement proven SEO strategies to improve your website's visibility on search engines and drive more organic traffic to your business.</p>
-                    </div>
-                    
-                    <div class="capability-card" data-aos="fade-up" data-aos-delay="600">
-                        <div class="card-icon">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <h3>Maintenance & Support</h3>
-                        <p>I provide ongoing website maintenance, updates, and technical support to keep your site secure, fast, and running smoothly.</p>
-                    </div>
+                <div class="services-grid-v2">
+                    <article class="service-card-v2" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-code" aria-hidden="true"></i>
+                        <h3>Front-End Development</h3>
+                        <p>Modern, responsive, and high-performance web applications built with React, Next.js, and
+                            TypeScript.</p>
+                        <ul>
+                            <li>Responsive Design</li>
+                            <li>API Integration</li>
+                            <li>Clean Code</li>
+                            <li>Performance Optimization</li>
+                            <li>Technical SEO</li>
+                            <li>Cross-Browser Compatibility</li>
+                        </ul>
+                    </article>
+                    <article class="service-card-v2" data-aos="fade-up" data-aos-delay="160">
+                        <i class="fas fa-bullseye" aria-hidden="true"></i>
+                        <h3>Landing Pages & Business Websites</h3>
+                        <p>Professional landing pages and business websites designed to present brands clearly and
+                            convert visitors into clients.</p>
+                        <ul>
+                            <li>Mobile-First Design</li>
+                            <li>Modern User Interface</li>
+                            <li>Fast Loading Speed</li>
+                            <li>Contact Forms</li>
+                            <li>SEO-Friendly Structure</li>
+                            <li>Deployment Support</li>
+                        </ul>
+                    </article>
+                    <article class="service-card-v2" data-aos="fade-up" data-aos-delay="220">
+                        <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                        <h3>E-Learning Platforms</h3>
+                        <p>Educational platforms with course browsing, authentication, student dashboards, progress
+                            tracking, and responsive experiences.</p>
+                        <ul>
+                            <li>Authentication Flow</li>
+                            <li>Course Browsing</li>
+                            <li>Student Dashboard</li>
+                            <li>Instructor Pages</li>
+                            <li>Progress Tracking</li>
+                            <li>Responsive Design</li>
+                        </ul>
+                    </article>
+                    <article class="service-card-v2" data-aos="fade-up" data-aos-delay="280">
+                        <i class="fas fa-gauge-high" aria-hidden="true"></i>
+                        <h3>Performance & SEO Optimization</h3>
+                        <p>Improving existing websites for performance, responsiveness, usability, accessibility, and
+                            search visibility.</p>
+                        <ul>
+                            <li>Performance Audit</li>
+                            <li>Responsive Fixes</li>
+                            <li>Technical SEO</li>
+                            <li>Accessibility Improvements</li>
+                            <li>Code Cleanup</li>
+                            <li>Image Optimization</li>
+                        </ul>
+                    </article>
                 </div>
+                <div class="section-action"><a href="#contact" class="btn btn-primary">Start a Project</a></div>
             </div>
         </section>
 
@@ -1204,276 +1477,151 @@
         <section id="projects" class="section" aria-label="Portfolio Projects">
             <div class="container">
                 <div class="section-header" data-aos="fade-up">
-                    <h2>My Projects</h2>
+                    <h2><span>04</span> &mdash; Projects</h2>
+                    <p class="section-description">Selected work showing real interfaces, technical decisions, and
+                        useful product experiences.</p>
                     <div class="section-line"></div>
                 </div>
-                <div class="project-filters" data-aos="fade-up" data-aos-delay="200">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="fullstack">Fullstack</button>
-                    <button class="filter-btn" data-filter="front">Front-End</button>
-                    <button class="filter-btn" data-filter="back">Back-End</button>
-                </div>
-                <div class="row project-container">
-                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="fullstack front back" data-aos="flip-left" data-aos-delay="100">
-                        <div class="project-card">
-                            <div class="project-img">
-                                <img src="images/WhatsApp Image 2026-03-09 at 4.34.56 PM.jpeg" alt="Masar - E-Learning Platform" class="img-fluid" width="400" height="225" loading="lazy">
-                                <div class="project-overlay">
-                                    <div class="project-links">
-                                        <a href="https://masar-zsel.onrender.com/" target="_blank" rel="noopener" aria-label="Visit Masar E-Learning Platform Live Demo"><i class="fas fa-link"></i></a>
-                                        <a href="https://github.com/Mo7amed-3bnaser/e-learning-platform" target="_blank" rel="noopener" aria-label="View Masar Source Code on GitHub"><i class="fab fa-github"></i></a>
-                                    </div>
-                                </div>
+                <div class="project-slider" data-aos="fade-up" aria-roledescription="carousel"
+                    aria-label="Selected portfolio projects">
+                    <div class="project-slider-track">
+                        <article class="project-slide active" aria-hidden="false">
+                            <div class="project-slide-media"><img
+                                    src="images/WhatsApp Image 2026-03-09 at 4.34.56 PM.jpeg"
+                                    alt="Masar e-learning platform preview" width="760" height="428" loading="lazy">
                             </div>
-                            <div class="project-info">
-                                <h3>Masar — Full-Stack E-Learning Platform</h3>
-                                <p>A production-ready e-learning platform built with a real product mindset. Features a full course management system, teacher/student/admin roles, course purchase flow with payment sandbox, email verification, video integration, course certification, and a multi-layer content protection system including watermarking and device session limits to minimize content piracy.</p>
+                            <div class="project-slide-content">
+                                <p class="project-meta">E-Learning Platform &middot; 2026</p>
+                                <h3>Masar &mdash; E-Learning Platform</h3>
+                                <p class="project-role">Front-End Developer &middot; Team Project</p>
+                                <p class="project-summary">A complete learning platform with authentication, course
+                                    management, payments, certificates, and protected educational content.</p>
+                                <ul class="project-features">
+                                    <li>Role-based dashboards</li>
+                                    <li>Course browsing and purchase flow</li>
+                                    <li>Email verification and JWT auth</li>
+                                    <li>Protected video content</li>
+                                </ul>
                                 <div class="tech-stack">
-                                    <span>React</span>
-                                    <span>TypeScript</span>
-                                    <span>Node.js</span>
-                                    <span>Express.js</span>
-                                    <span>MongoDB</span>
-                                    <span>REST APIs</span>
-                                    <span>YouTube API</span>
-                                    <span>JWT Auth</span>
-                                </div>
-                                <div class="project-mobile-buttons">
-                                    <a href="https://masar-zsel.onrender.com/" target="_blank" rel="noopener" class="project-mobile-btn demo-btn">
-                                        <i class="fas fa-external-link-alt"></i>Live Demo
-                                    </a>
-                                    <a href="https://github.com/Mo7amed-3bnaser/e-learning-platform" target="_blank" rel="noopener" class="project-mobile-btn github-btn">
-                                        <i class="fab fa-github"></i>GitHub
-                                    </a>
-                                </div>
+                                    <span>React</span><span>TypeScript</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>REST
+                                        API</span></div>
+                                <div class="project-actions"><a href="https://masar-zsel.onrender.com/" target="_blank"
+                                        rel="noopener">Live Demo</a><a
+                                        href="https://github.com/Mo7amed-3bnaser/e-learning-platform" target="_blank"
+                                        rel="noopener">GitHub</a></div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="front" data-aos="flip-left" data-aos-delay="200">
-                        <div class="project-card">
-                            <div class="project-img">
-                                <img src="images/WhatsApp Image 2025-12-07 at 04.58.55_7fa9786e.jpg" alt="TradePulse - Real-time Cryptocurrency and Gold Prices Platform" class="img-fluid" width="400" height="225" loading="lazy">
-                                <div class="project-overlay">
-                                    <div class="project-links">
-                                        <a href="https://goldpulse.netlify.app/" target="_blank" rel="noopener" aria-label="Visit TradePulse Live Demo"><i class="fas fa-link"></i></a>
-                                        <a href="https://github.com/Mo7amed-3bnaser/TradePulse" target="_blank" rel="noopener" aria-label="View TradePulse Source Code on GitHub"><i class="fab fa-github"></i></a>
-                                    </div>
-                                </div>
+                        </article>
+                        <article class="project-slide" aria-hidden="true">
+                            <div class="project-slide-media"><img
+                                    src="images/WhatsApp Image 2025-12-07 at 04.58.55_7fa9786e.jpg"
+                                    alt="TradePulse market prices interface preview" width="760" height="428"
+                                    loading="lazy"></div>
+                            <div class="project-slide-content">
+                                <p class="project-meta">Finance Dashboard &middot; 2025</p>
+                                <h3>TradePulse</h3>
+                                <p class="project-role">Front-End Developer &middot; Solo Project</p>
+                                <p class="project-summary">A real-time crypto and gold prices platform with charts,
+                                    calculators, alerts, and responsive market views.</p>
+                                <ul class="project-features">
+                                    <li>Live market data</li>
+                                    <li>Interactive charts</li>
+                                    <li>Calculator and alerts</li>
+                                    <li>PWA-friendly experience</li>
+                                </ul>
+                                <div class="tech-stack"><span>React</span><span>Zustand</span><span>React
+                                        Query</span><span>Tailwind CSS</span><span>Recharts</span><span>PWA</span></div>
+                                <div class="project-actions"><a href="https://goldpulse.netlify.app/" target="_blank"
+                                        rel="noopener">Live Demo</a><a
+                                        href="https://github.com/Mo7amed-3bnaser/TradePulse" target="_blank"
+                                        rel="noopener">GitHub</a></div>
                             </div>
-                            <div class="project-info">
-                                <h3>TradePulse — Real-Time Crypto & Gold Prices.</h3>
-                                <p>A comprehensive real-time platform for tracking cryptocurrency and gold prices in one place. Built to solve the problem of checking multiple websites for accurate prices. Features include live prices for 100+ cryptocurrencies, gold and silver prices in Egyptian Pounds, interactive charts with historical data, smart calculator, price alerts, portfolio tracker, offline mode, and full Arabic/English support with RTL.</p>
-                                <div class="tech-stack">
-                                    <span>React 18</span>
-                                    <span>Vite</span>
-                                    <span>Zustand</span>
-                                    <span>React Query</span>
-                                    <span>Tailwind CSS</span>
-                                    <span>Framer Motion</span>
-                                    <span>Recharts</span>
-                                    <span>PWA</span>
-                                    <span>i18next</span>
-                                </div>
-                                <div class="project-mobile-buttons">
-                                    <a href="https://goldpulse.netlify.app/" target="_blank" rel="noopener" class="project-mobile-btn demo-btn">
-                                        <i class="fas fa-external-link-alt"></i>Live Demo
-                                    </a>
-                                    <a href="https://github.com/Mo7amed-3bnaser/TradePulse" target="_blank" rel="noopener" class="project-mobile-btn github-btn">
-                                        <i class="fab fa-github"></i>GitHub
-                                    </a>
-                                </div>
+                        </article>
+                        <article class="project-slide" aria-hidden="true">
+                            <div class="project-slide-media"><img
+                                    src="images/ChatGPT Image Oct 14, 2025, 03_00_33 AM.png"
+                                    alt="FocusFlow productivity app preview" width="760" height="428" loading="lazy">
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="front" data-aos="flip-left" data-aos-delay="200">
-                        <div class="project-card">
-                            <div class="project-img">
-                                <img src="images/ChatGPT Image Oct 14, 2025, 03_00_33 AM.png" alt="FocusFlow - Productivity Ecosystem with Pomodoro Technique and Gamification" class="img-fluid" width="400" height="225" loading="lazy">
-                                <div class="project-overlay">
-                                    <div class="project-links">
-                                        <a href="https://focusflow-system.netlify.app/" target="_blank" rel="noopener" aria-label="Visit FocusFlow Live Demo"><i class="fas fa-link"></i></a>
-                                        <a href="https://github.com/Mo7amed-3bnaser/focusflow-ecosystem.git" target="_blank" rel="noopener" aria-label="View FocusFlow Source Code on GitHub"><i class="fab fa-github"></i></a>
-                                    </div>
+                            <div class="project-slide-content">
+                                <p class="project-meta">Productivity App &middot; 2025</p>
+                                <h3>FocusFlow</h3>
+                                <p class="project-role">Front-End Developer &middot; Solo Project</p>
+                                <p class="project-summary">A productivity ecosystem combining Pomodoro sessions, task
+                                    management, analytics, and gamified progress.</p>
+                                <ul class="project-features">
+                                    <li>Pomodoro timer</li>
+                                    <li>Task management</li>
+                                    <li>Analytics dashboard</li>
+                                    <li>Achievement system</li>
+                                </ul>
+                                <div class="tech-stack"><span>React</span><span>Vite</span><span>Redux
+                                        Toolkit</span><span>Chart.js</span><span>CSS3</span><span>LocalStorage</span>
                                 </div>
+                                <div class="project-actions"><a href="https://focusflow-system.netlify.app/"
+                                        target="_blank" rel="noopener">Live Demo</a><a
+                                        href="https://github.com/Mo7amed-3bnaser/focusflow-ecosystem.git"
+                                        target="_blank" rel="noopener">GitHub</a></div>
                             </div>
-                            <div class="project-info">
-                                <h3>FocusFlow - Productivity Ecosystem</h3>
-                                <p>A comprehensive productivity ecosystem that combines Pomodoro Technique with task management and gamification to help users achieve maximum focus and productivity. Features include customizable timers, smart task categorization, analytics dashboard, achievement system, and responsive design optimized for all devices.</p>
-                                <div class="tech-stack">
-                                    <span>React 18</span>
-                                    <span>Vite</span>
-                                    <span>Redux Toolkit</span>
-                                    <span>CSS3</span>
-                                    <span>Chart.js</span>
-                                    <span>LocalStorage API</span>
-                                </div>
-                                <div class="project-mobile-buttons">
-                                    <a href="https://focusflow-system.netlify.app/" target="_blank" rel="noopener" class="project-mobile-btn demo-btn">
-                                        <i class="fas fa-external-link-alt"></i>Live Demo
-                                    </a>
-                                    <a href="https://github.com/Mo7amed-3bnaser/focusflow-ecosystem.git" target="_blank" rel="noopener" class="project-mobile-btn github-btn">
-                                        <i class="fab fa-github"></i>GitHub
-                                    </a>
-                                </div>
+                        </article>
+                        <article class="project-slide" aria-hidden="true">
+                            <div class="project-slide-media"><img
+                                    src="images/ChatGPT Image Aug 6, 2025, 05_16_59 PM.png"
+                                    alt="ShopZone ecommerce website preview" width="760" height="428" loading="lazy">
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="fullstack front back" data-aos="flip-left" data-aos-delay="300">
-                        <div class="project-card">
-                            <div class="project-img">
-                                <img src="images/ChatGPT Image Aug 6, 2025, 05_16_59 PM.png" alt="ShopZone E-commerce Website - Full-stack JavaScript Project by Mohamed Abdelnaser" class="img-fluid" width="400" height="225" loading="lazy">
-                                <div class="project-overlay">
-                                    <div class="project-links">
-                                        <a href="https://shopzone-1-mcnz.onrender.com" target="_blank" rel="noopener" aria-label="Visit ShopZone E-commerce Live Demo"><i class="fas fa-link"></i></a>
-                                        <a href="https://github.com/Mo7amed-3bnaser/ShopZone.git" target="_blank" rel="noopener" aria-label="View ShopZone Source Code on GitHub"><i class="fab fa-github"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-info">
+                            <div class="project-slide-content">
+                                <p class="project-meta">E-Commerce &middot; 2025</p>
                                 <h3>ShopZone</h3>
-                                <p>A comprehensive full-stack e-commerce solution featuring modern UI/UX design, secure authentication system, real-time shopping cart functionality, and responsive mobile-first architecture. Built with vanilla JavaScript and optimized for performance across all devices.</p>
+                                <p class="project-role">Full-Stack Developer &middot; Solo Project</p>
+                                <p class="project-summary">A responsive e-commerce experience with authentication, cart
+                                    flow, product browsing, and server-backed data.</p>
+                                <ul class="project-features">
+                                    <li>Product browsing</li>
+                                    <li>Authentication flow</li>
+                                    <li>Shopping cart</li>
+                                    <li>Responsive commerce UI</li>
+                                </ul>
                                 <div class="tech-stack">
-                                    <span>HTML5</span>
-                                    <span>CSS3</span>
-                                    <span>JavaScript ES6+</span>
-                                    <span>Fetch API</span>
-                                    <span>MongoDB</span>
-                                    <span>Node.js</span>
-                                </div>
-                                <div class="project-mobile-buttons">
-                                    <a href="https://shopzone-1-mcnz.onrender.com" target="_blank" rel="noopener" class="project-mobile-btn demo-btn">
-                                        <i class="fas fa-external-link-alt"></i>Live Demo
-                                    </a>
-                                    <a href="https://github.com/Mo7amed-3bnaser/ShopZone.git" target="_blank" rel="noopener" class="project-mobile-btn github-btn">
-                                        <i class="fab fa-github"></i>GitHub
-                                    </a>
-                                </div>
+                                    <span>JavaScript</span><span>Node.js</span><span>MongoDB</span><span>Fetch
+                                        API</span><span>HTML5</span><span>CSS3</span></div>
+                                <div class="project-actions"><a href="https://shopzone-1-mcnz.onrender.com"
+                                        target="_blank" rel="noopener">Live Demo</a><a
+                                        href="https://github.com/Mo7amed-3bnaser/ShopZone.git" target="_blank"
+                                        rel="noopener">GitHub</a></div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="front" data-aos="flip-left" data-aos-delay="300">
-                        <div class="project-card">
-                            <div class="project-img">
-                                <img src="images/ChatGPT Image Jun 17, 2025, 02_31_07 AM.png" alt="AI Image Generator" class="img-fluid" width="400" height="225" loading="lazy">
-                                <div class="project-overlay">
-                                    <div class="project-links">
-                                        <a href="https://mo7amed-3bnaser.github.io/Ai-Image-Generator/" target="_blank" rel="noopener" aria-label="Visit AI Image Generator Project"><i class="fas fa-link"></i></a>
-                                        <a href="https://github.com/Mo7amed-3bnaser/Ai-Image-Generator" target="_blank" rel="noopener" aria-label="View AI Image Generator Source Code"><i class="fab fa-github"></i></a>
-                                    </div>
-                                </div>
+                        </article>
+                        <article class="project-slide" aria-hidden="true">
+                            <div class="project-slide-media"><img
+                                    src="images/ChatGPT Image Jun 17, 2025, 02_31_07 AM.png"
+                                    alt="AI Image Generator interface preview" width="760" height="428" loading="lazy">
                             </div>
-                            <div class="project-info">
+                            <div class="project-slide-content">
+                                <p class="project-meta">AI Tool &middot; 2025</p>
                                 <h3>AI Image Generator</h3>
-                                <p>A web application that generates images using AI technology and allows users to customize outputs.</p>
+                                <p class="project-role">Front-End Developer &middot; Solo Project</p>
+                                <p class="project-summary">A lightweight AI generation interface with prompt controls,
+                                    API integration, output preview, and responsive states.</p>
+                                <ul class="project-features">
+                                    <li>Prompt-based generation</li>
+                                    <li>API request handling</li>
+                                    <li>Output preview</li>
+                                    <li>Loading and error states</li>
+                                </ul>
                                 <div class="tech-stack">
-                                    <span>HTML</span>
-                                    <span>CSS</span>
-                                    <span>JavaScript</span>
-                                    <span>API Integration</span>
-                                </div>
-                                <div class="project-mobile-buttons">
-                                    <a href="https://mo7amed-3bnaser.github.io/Ai-Image-Generator/" target="_blank" rel="noopener" class="project-mobile-btn demo-btn">
-                                        <i class="fas fa-external-link-alt"></i>Live Demo
-                                    </a>
-                                    <a href="https://github.com/Mo7amed-3bnaser/Ai-Image-Generator" target="_blank" rel="noopener" class="project-mobile-btn github-btn">
-                                        <i class="fab fa-github"></i>GitHub
-                                    </a>
-                                </div>
+                                    <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>API</span></div>
+                                <div class="project-actions"><a
+                                        href="https://mo7amed-3bnaser.github.io/Ai-Image-Generator/" target="_blank"
+                                        rel="noopener">Live Demo</a><a
+                                        href="https://github.com/Mo7amed-3bnaser/Ai-Image-Generator" target="_blank"
+                                        rel="noopener">GitHub</a></div>
                             </div>
-                        </div>
+                        </article>
                     </div>
-                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="front" data-aos="flip-left" data-aos-delay="500">
-                        <div class="project-card">
-                            <div class="project-img">
-                                <img src="images/ChatGPT Image Jun 17, 2025, 01_25_30 AM.png" alt="BigPizza" class="img-fluid" width="400" height="225" loading="lazy">
-                                <div class="project-overlay">
-                                    <div class="project-links">
-                                        <a href="https://mo7amed-3bnaser.github.io/BigPizza/" target="_blank" rel="noopener" aria-label="Visit BigPizza Project"><i class="fas fa-link"></i></a>
-                                        <a href="https://github.com/Mo7amed-3bnaser/BigPizza" target="_blank" rel="noopener" aria-label="View BigPizza Source Code"><i class="fab fa-github"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-info">
-                                <h3>BigPizza</h3>
-                                <p>A responsive website for a pizza restaurant with online ordering system and menu customization.</p>
-                                <div class="tech-stack">
-                                    <span>HTML</span>
-                                    <span>CSS</span>
-                                    <span>JavaScript</span>
-                                    <span>Bootstrap</span>
-                                </div>
-                                <div class="project-mobile-buttons">
-                                    <a href="https://mo7amed-3bnaser.github.io/BigPizza/" target="_blank" rel="noopener" class="project-mobile-btn demo-btn">
-                                        <i class="fas fa-external-link-alt"></i>Live Demo
-                                    </a>
-                                    <a href="https://github.com/Mo7amed-3bnaser/BigPizza" target="_blank" rel="noopener" class="project-mobile-btn github-btn">
-                                        <i class="fab fa-github"></i>GitHub
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="front" data-aos="flip-left" data-aos-delay="600">
-                        <div class="project-card">
-                            <div class="project-img">
-                                <img src="images/WhatsApp Image 2025-06-17 at 01.12.37_6af52af5.jpg" alt="Movie Website" class="img-fluid" width="400" height="225" loading="lazy">
-                                <div class="project-overlay">
-                                    <div class="project-links">
-                                        <a href="https://mo7amed-3bnaser.github.io/Movie-Website/" target="_blank" rel="noopener" aria-label="Visit Movie Website Project"><i class="fas fa-link"></i></a>
-                                        <a href="https://github.com/Mo7amed-3bnaser/Movie-Website" target="_blank" rel="noopener" aria-label="View Movie Website Source Code"><i class="fab fa-github"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-info">
-                                <h3>Movie Website</h3>
-                                <p>A movie database website with search functionality, ratings, and reviews for various films.</p>
-                                <div class="tech-stack">
-                                    <span>HTML</span>
-                                    <span>CSS</span>
-                                    <span>JavaScript</span>
-                                    <span>API Integration</span>
-                                </div>
-                                <div class="project-mobile-buttons">
-                                    <a href="https://mo7amed-3bnaser.github.io/Movie-Website/" target="_blank" rel="noopener" class="project-mobile-btn demo-btn">
-                                        <i class="fas fa-external-link-alt"></i>Live Demo
-                                    </a>
-                                    <a href="https://github.com/Mo7amed-3bnaser/Movie-Website" target="_blank" rel="noopener" class="project-mobile-btn github-btn">
-                                        <i class="fab fa-github"></i>GitHub
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="front" data-aos="flip-left" data-aos-delay="800">
-                        <div class="project-card">
-                            <div class="project-img">
-                                <img src="images/ChatGPT Image Jun 16, 2025, 05_57_05 AM.png" alt="AI Student Helper" class="img-fluid" width="400" height="225" loading="lazy">
-                                <div class="project-overlay">
-                                    <div class="project-links">
-                                        <a href="http://mo7amed-3bnaser.github.io/AI-Student-Helper" target="_blank" rel="noopener" aria-label="Visit AI Student Helper Project"><i class="fas fa-link"></i></a>
-                                        <a href="http://github.com/Mo7amed-3bnaser/AI-Student-Helper" target="_blank" rel="noopener" aria-label="View AI Student Helper Source Code"><i class="fab fa-github"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-info">
-                                <h3>AI Student Helper</h3>
-                                <p>An intelligent companion for academic success featuring text summarizer, essay ideas generator, concept explainer, grammar checker, MCQ generator, and universal translator.</p>
-                                <div class="tech-stack">
-                                    <span>JavaScript ES6+</span>
-                                    <span>HTML5</span>
-                                    <span>CSS3</span>
-                                    <span>API Integration</span>
-                                </div>
-                                <div class="project-mobile-buttons">
-                                    <a href="http://mo7amed-3bnaser.github.io/AI-Student-Helper" target="_blank" rel="noopener" class="project-mobile-btn demo-btn">
-                                        <i class="fas fa-external-link-alt"></i>Live Demo
-                                    </a>
-                                    <a href="http://github.com/Mo7amed-3bnaser/AI-Student-Helper" target="_blank" rel="noopener" class="project-mobile-btn github-btn">
-                                        <i class="fab fa-github"></i>GitHub
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                    <button class="project-slider-btn prev" type="button" aria-label="Previous project"><i
+                            class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                    <button class="project-slider-btn next" type="button" aria-label="Next project"><i
+                            class="fas fa-chevron-right" aria-hidden="true"></i></button>
+                    <div class="project-slider-footer">
+                        <div class="project-slider-dots" aria-label="Project pagination"></div>
+                        <div class="project-slider-progress" aria-hidden="true"><span></span></div>
                     </div>
                 </div>
             </div>
@@ -1483,66 +1631,76 @@
         <section id="contact" class="section bg-alt" aria-label="Contact Information">
             <div class="container">
                 <div class="section-header" data-aos="fade-up">
-                    <h2>Get In Touch</h2>
+                    <h2><span>05</span> &mdash; Contact</h2>
+                    <p class="section-description">Tell me about your project, role, or opportunity and I will get back
+                        to you clearly.</p>
                     <div class="section-line"></div>
                 </div>
-                <div class="row contact-section-container">
-                    <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right" data-aos-delay="200">
-                        <div class="contact-info">
-                            <h3>Contact Information</h3>
-                            <p>Feel free to reach out to me for any inquiries or collaboration opportunities.</p>
-                            <div class="info-item">
-                                <i class="fas fa-envelope"></i>
-                                <div>
-                                    <h4>Email</h4>
-                                    <p><a href="mailto:mohamedabdelnaser1010@gmail.com">m.abdelnaser1010@gmail.com</a></p>
-                                </div>
+                <div class="contact-section-container row align-items-stretch">
+                    <div class="col-lg-5" data-aos="fade-right" data-aos-delay="120">
+                        <div class="contact-info contact-icons-panel">
+                            <h3>Let&rsquo;s Talk</h3>
+                            <p>Open to freelance projects, remote collaboration, contract work, internships, and junior
+                                front-end opportunities.</p>
+                            <div class="contact-quick-meta" aria-label="Quick contact details">
+                                <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Sohag, Egypt</span>
+                                <span><i class="fas fa-clock" aria-hidden="true"></i>Usually within 24 hours</span>
                             </div>
-                            <div class="info-item">
-                                <i class="fas fa-phone"></i>
-                                <div>
-                                    <h4>Phone</h4>
-                                    <p><a href="tel:+201207166536" class="phone-link">+20 1207166536</a></p>
-                                </div>
-                            </div>
-                            <div class="info-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div>
-                                    <h4>Location</h4>
-                                    <p>Sohag, Egypt</p>
-                                </div>
-                            </div>
-                            <div class="social-links">
-                                <a href="https://www.instagram.com/m_3bdelnaser/profilecard/?igsh=ZG42NG93ZTl5NWIx" target="_blank" rel="noopener" title="Follow on Instagram" class="instagram"><i class="fab fa-instagram"></i></a>
-                                <a href="https://www.facebook.com/share/12CPZ2MdKTb/" target="_blank" rel="noopener" title="Connect on Facebook" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                                <a href="https://github.com/Mo7amed-3bnaser" target="_blank" rel="noopener" title="View GitHub Profile" class="github"><i class="fab fa-github"></i></a>
-                                <a href="https://www.linkedin.com/in/3bnaser?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" title="Connect on LinkedIn" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                            <div class="contact-icon-grid" aria-label="Contact links">
+                                <a href="mailto:mohamedabdelnaser1010@gmail.com" aria-label="Email Mohamed"><i
+                                        class="fas fa-envelope" aria-hidden="true"></i><span>Email</span></a>
+                                <a href="https://www.linkedin.com/in/3bnaser?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                    target="_blank" rel="noopener" aria-label="Open LinkedIn profile"><i
+                                        class="fab fa-linkedin-in" aria-hidden="true"></i><span>LinkedIn</span></a>
+                                <a href="https://github.com/Mo7amed-3bnaser" target="_blank" rel="noopener"
+                                    aria-label="Open GitHub profile"><i class="fab fa-github"
+                                        aria-hidden="true"></i><span>GitHub</span></a>
+                                <a href="tel:+201207166536" aria-label="Call Mohamed"><i class="fas fa-phone"
+                                        aria-hidden="true"></i><span>Phone</span></a>
+                                <a href="https://wa.me/201207166536" target="_blank" rel="noopener"
+                                    aria-label="Open WhatsApp chat"><i class="fab fa-whatsapp"
+                                        aria-hidden="true"></i><span>WhatsApp</span></a>
+                                <a href="https://www.instagram.com/m_3bdelnaser/profilecard/?igsh=ZG42NG93ZTl5NWIx"
+                                    target="_blank" rel="noopener" aria-label="Open Instagram profile"><i
+                                        class="fab fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
+                                <a href="https://www.facebook.com/share/12CPZ2MdKTb/" target="_blank" rel="noopener"
+                                    aria-label="Open Facebook profile"><i class="fab fa-facebook-f"
+                                        aria-hidden="true"></i><span>Facebook</span></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
-                        <div class="contact-form">
+                    <div class="col-lg-7" data-aos="fade-left" data-aos-delay="180">
+                        <div class="contact-form" id="contact-form">
                             <form id="my-form" action="https://formspree.io/f/xjkwageb" method="POST">
                                 <div class="row">
-                                    <div class="col-md-6 mb-4">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="name" placeholder="Your Name" required>
-                                        </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="form-group"><label for="contact-name">Name</label><input
+                                                id="contact-name" type="text" class="form-control" name="name"
+                                                autocomplete="name" required></div>
                                     </div>
-                                    <div class="col-md-6 mb-4">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                                        </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="form-group"><label for="contact-email">Email</label><input
+                                                id="contact-email" type="email" class="form-control" name="email"
+                                                autocomplete="email" required></div>
                                     </div>
                                 </div>
-                                <div class="form-group mb-4">
-                                    <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="form-group"><label for="contact-subject">Subject</label><input
+                                                id="contact-subject" type="text" class="form-control" name="subject"
+                                                autocomplete="off" required></div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="form-group"><label for="contact-company">Company / Link</label><input
+                                                id="contact-company" type="text" class="form-control" name="company_or_link"
+                                                autocomplete="organization"></div>
+                                    </div>
                                 </div>
-                                <div class="form-group mb-4">
-                                    <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
-                                </div>
+                                <div class="form-group mb-3"><label for="contact-message">Message</label><textarea
+                                        id="contact-message" class="form-control" name="message" rows="5"
+                                        autocomplete="off" required></textarea></div>
                                 <button type="submit" id="my-form-button" class="btn btn-primary">Send Message</button>
-                                <p id="my-form-status" class="form-status mt-3"></p>
+                                <p id="my-form-status" class="form-status mt-3" role="status" aria-live="polite"></p>
                             </form>
                         </div>
                     </div>
@@ -1551,56 +1709,30 @@
         </section>
 
         <!-- Footer -->
-        <footer class="footer">
+        <footer class="footer footer-compact">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                        <div class="footer-logo">
-                            <a href="#home" class="footer-logo-link">
-                                <h3>Mohamed Abdelnaser</h3>
-                            </a>
-                            <p>Front-End Web Developer specializing in creating responsive and interactive websites with modern technologies.</p>
-                        </div>
-                        <div class="footer-social">
-                            <a href="https://www.instagram.com/m_3bdelnaser/profilecard/?igsh=ZG42NG93ZTl5NWIx" target="_blank" rel="noopener" title="Follow on Instagram" class="instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.facebook.com/share/12CPZ2MdKTb/" target="_blank" rel="noopener" title="Connect on Facebook" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://github.com/Mo7amed-3bnaser" target="_blank" rel="noopener" title="View GitHub Profile" class="github"><i class="fab fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/3bnaser?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" title="Connect on LinkedIn" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
+                <div class="footer-compact-grid">
+                    <div><a href="#home" class="footer-logo-link">
+                            <h3>Mohamed Abdelnaser</h3>
+                        </a>
+                        <p>Front-End Developer</p>
                     </div>
-                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                        <h4 class="footer-title">Quick Links</h4>
-                        <ul class="footer-links">
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#skills">Skills</a></li>
-                            <li><a href="#experience">Services</a></li>
-                            <li><a href="#projects">Projects</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <h4 class="footer-title">Contact Info</h4>
-                        <div class="footer-contact">
-                            <div class="info-item">
-                                <i class="fas fa-envelope"></i>
-                                <span><a href="mailto:mohamedabdelnaser1010@gmail.com">m.abdelnaser1010@gmail.com</a></span>
-                            </div>
-                            <div class="info-item">
-                                <i class="fas fa-phone"></i>
-                                <span><a href="tel:+201207166536" class="phone-link">+20 1207166536</a></span>
-                            </div>
-                            <div class="info-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Sohag, Egypt</span>
-                            </div>
-                        </div>
+                    <div class="footer-social-icons" aria-label="Social links">
+                        <a href="https://www.linkedin.com/in/3bnaser?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                            target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Mo7amed-3bnaser" target="_blank" rel="noopener" aria-label="GitHub"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://wa.me/201207166536" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/m_3bdelnaser/profilecard/?igsh=ZG42NG93ZTl5NWIx" target="_blank"
+                            rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/12CPZ2MdKTb/" target="_blank" rel="noopener"
+                            aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="mailto:mohamedabdelnaser1010@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <div class="copyright text-center mt-4 pt-4 border-top">
-                        <p>&copy; 2025 All Rights Reserved | Developed by <a href="#home" class="developer-name-link"><span class="developer-name">Mohamed Abdelnaser</span></a></p>
-                    </div>
+                    <p>&copy; <span id="current-year"></span> Mohamed Abdelnaser. All rights reserved.</p>
                 </div>
             </div>
         </footer>
@@ -1614,44 +1746,17 @@
     <!-- JavaScript Libraries - Optimized for Mobile -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
-    
+
     <!-- Custom JavaScript -->
     <script src="js/script.js" defer></script>
-    
-    <!-- Loading Screen and Form Handling Scripts -->
+
+    <!-- Form Handling Scripts -->
     <script>
         // Application initialization and utilities
         const App = {
-            // Loading Screen Script - Performance Optimized
-            initLoadingScreen: function() {
-                window.addEventListener('load', function() {
-                    const loadingScreen = document.getElementById('loading-screen');
-                    if (loadingScreen) {
-                        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-                        const isFromGoogle = document.referrer.includes('google');
-                        
-                        // Determine delay based on device and referrer
-                        let delay = 1000; 
-                        if (isMobile) {
-                            delay = isFromGoogle ? 1200 : 1000; 
-                        }
-                        
-                        setTimeout(function() {
-                            loadingScreen.style.transition = "opacity 0.3s ease-out"; 
-                            loadingScreen.style.opacity = "0"; 
-                            loadingScreen.classList.add("hidden");
-                            document.documentElement.style.overflow = ''; // Re-enable scrolling
-                        }, delay);
-                    }
-                });
-            },
 
             // Scroll Progress Indicator
-            initScrollProgress: function() {
+            initScrollProgress: function () {
                 function updateScrollProgress() {
                     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
                     const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -1661,25 +1766,25 @@
                         progressLine.style.width = scrolled + '%';
                     }
                 }
-                
+
                 window.addEventListener('scroll', updateScrollProgress);
             },
 
             // Counter Animation for Stats
-            initCounters: function() {
+            initCounters: function () {
                 let hasAnimated = false;
-                
+
                 function animateCounters() {
                     if (hasAnimated) return; // منع التكرار
                     hasAnimated = true;
-                    
+
                     const counters = document.querySelectorAll('.stat-number');
-                    
+
                     counters.forEach(counter => {
                         const target = parseInt(counter.getAttribute('data-target'));
                         const increment = target / 100;
                         let current = 0;
-                        
+
                         const timer = setInterval(() => {
                             current += increment;
                             if (current >= target) {
@@ -1690,7 +1795,7 @@
                         }, 20);
                     });
                 }
-                
+
                 // Run counter animation when about section is in view
                 const aboutSection = document.querySelector('#about');
                 if (aboutSection) {
@@ -1701,30 +1806,30 @@
                                 observer.unobserve(entry.target);
                             }
                         });
-                    }, { 
+                    }, {
                         threshold: 0.3, // تقليل threshold للجوال
                         rootMargin: '0px 0px -50px 0px' // تحسين التشغيل على الجوال
                     });
-                    
+
                     observer.observe(aboutSection);
                 }
             },
 
             // Form Handling
-            initFormHandling: function() {
+            initFormHandling: function () {
                 const form = document.getElementById("my-form");
-                
+
                 if (!form) return;
 
                 async function handleSubmit(event) {
                     event.preventDefault();
                     const status = document.getElementById("my-form-status");
                     const formElement = document.getElementById("my-form");
-                    
+
                     // Add loading state
                     formElement.classList.add("form-submitting");
                     status.innerHTML = "Sending...";
-                    
+
                     const data = new FormData(event.target);
                     try {
                         const response = await fetch(event.target.action, {
@@ -1734,11 +1839,11 @@
                                 'Accept': 'application/json'
                             }
                         });
-                        
+
                         if (response.ok) {
                             status.innerHTML = "Thanks for your message! I'll get back to you soon.";
-                            status.style.color = "#28a745";
-                            status.style.backgroundColor = "rgba(40, 167, 69, 0.1)";
+                            status.style.color = "#60A5FA";
+                            status.style.backgroundColor = "rgba(96, 165, 250, 0.10)";
                             form.reset();
                         } else {
                             const responseData = await response.json();
@@ -1758,21 +1863,24 @@
                         formElement.classList.remove("form-submitting");
                     }
                 }
-                
+
                 form.addEventListener("submit", handleSubmit);
             },
 
             // Initialize all components
-            init: function() {
-                this.initLoadingScreen();
+            init: function () {
                 this.initScrollProgress();
                 this.initCounters();
-                this.initFormHandling();
+                // Form submission is handled by js/script.js to avoid duplicate requests.
             }
         };
+
+        const currentYear = document.getElementById("current-year");
+        if (currentYear) currentYear.textContent = new Date().getFullYear();
 
         // Start the application
         App.init();
     </script>
 </body>
+
 </html>

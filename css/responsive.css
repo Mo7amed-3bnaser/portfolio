@@ -92,12 +92,12 @@
         width: 40px;
         height: 40px;
         border-radius: 8px;
-        background: rgba(88, 166, 255, 0.1);
+        background: rgba(47, 129, 217, 0.1);
         transition: all 0.3s ease;
     }
     
     .nav-toggle-btn:active {
-        background: rgba(88, 166, 255, 0.2);
+        background: rgba(47, 129, 217, 0.2);
         transform: scale(0.95);
     }
     
@@ -177,7 +177,7 @@
     
     .nav-links a:hover,
     .nav-links a.active {
-        background: rgba(88, 166, 255, 0.15);
+        background: rgba(47, 129, 217, 0.15);
         border-left-color: var(--primary-color);
     }
     
@@ -239,8 +239,8 @@
     }
     
     .hero-content .cta-buttons .btn-primary {
-        background: linear-gradient(135deg, var(--primary-color), #4a9eff);
-        box-shadow: 0 4px 20px rgba(88, 166, 255, 0.4);
+        background: linear-gradient(135deg, var(--primary-color), #2f81d9);
+        box-shadow: 0 4px 20px rgba(47, 129, 217, 0.4);
     }
     
     .hero-content .cta-buttons .btn-outline {

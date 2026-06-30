@@ -1,0 +1,201 @@
+/* ===== SKILLS CATEGORIES STYLES ===== */
+
+/* Skills Category Container */
+.skills-category {
+    margin-bottom: 60px;
+}
+
+.skills-category:last-child {
+    margin-bottom: 0;
+}
+
+/* Category Title */
+.skills-category-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--light-color);
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.skills-category-title i {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Category Title Line */
+.skills-category-title::before,
+.skills-category-title::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    max-width: 150px;
+}
+
+.skills-category-title::before {
+    margin-right: 20px;
+}
+
+.skills-category-title::after {
+    margin-left: 20px;
+}
+
+/* Front-End Category Styling */
+.skills-category:first-child .skills-category-title {
+    color: var(--primary-color);
+}
+
+.skills-category:first-child .skills-category-title i {
+    color: var(--primary-color);
+}
+
+.skills-category:first-child .skills-category-title::before,
+.skills-category:first-child .skills-category-title::after {
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+}
+
+/* Back-End Category Styling */
+.skills-category:last-child .skills-category-title {
+    color: var(--secondary-color);
+}
+
+.skills-category:last-child .skills-category-title i {
+    color: var(--secondary-color);
+    background: var(--secondary-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.skills-category:last-child .skills-category-title::before,
+.skills-category:last-child .skills-category-title::after {
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+}
+
+/* Enhanced Skill Cards for Categories */
+.skills-category .skill-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.skills-category .skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.skills-category .skill-card:hover::before {
+    opacity: 1;
+}
+
+/* Front-End Cards */
+.skills-category:first-child .skill-card::before {
+    background: var(--primary-color);
+}
+
+.skills-category:first-child .skill-card:hover {
+    border-color: rgba(47, 129, 217, 0.3);
+    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.2);
+}
+
+/* Back-End Cards */
+.skills-category:last-child .skill-card::before {
+    background: var(--secondary-color);
+}
+
+.skills-category:last-child .skill-card:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .skills-category {
+        margin-bottom: 50px;
+    }
+    
+    .skills-category-title {
+        font-size: 1.6rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .skills-category-title::before,
+    .skills-category-title::after {
+        display: none;
+    }
+    
+    .skills-category-title i {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .skills-category {
+        margin-bottom: 40px;
+    }
+    
+    .skills-category-title {
+        font-size: 1.4rem;
+        margin-bottom: 30px;
+    }
+    
+    .skills-category-title i {
+        font-size: 1.3rem;
+    }
+}
+
+/* Animation Enhancement */
+.skills-category-title {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.skills-category:nth-child(1) .skills-category-title {
+    animation-delay: 0.2s;
+}
+
+.skills-category:nth-child(2) .skills-category-title {
+    animation-delay: 0.4s;
+}
+
+/* Category Separator */
+.skills-category + .skills-category {
+    position: relative;
+    padding-top: 40px;
+}
+
+.skills-category + .skills-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(47, 129, 217, 0.3), transparent);
+}
+
+@media (max-width: 768px) {
+    .skills-category + .skills-category {
+        padding-top: 30px;
+    }
+    
+    .skills-category + .skills-category::before {
+        width: 80px;
+    }
+}

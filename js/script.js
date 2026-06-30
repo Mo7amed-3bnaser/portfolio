@@ -1,63 +1,132 @@
-// Main document ready function with enhanced loading screen support
+// Main document ready function
 document.addEventListener("DOMContentLoaded", function () {
-  // Loading screen handling
-  const loadingScreen = document.getElementById("loading-screen");
-  if (loadingScreen) {
-    loadingScreen.style.display = "flex";
-    loadingScreen.style.opacity = "1";
-    loadingScreen.style.visibility = "visible";
-
-    // Special handling for mobile devices
-    if (
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent,
-      )
-    ) {
-      document.documentElement.style.overflow = "hidden";
-
-      // Special handling for Google referrals on mobile
-      if (document.referrer.includes("google")) {
-        setTimeout(function () {
-          loadingScreen.style.opacity = "1";
-          loadingScreen.style.visibility = "visible";
-        }, 100);
-      }
-    }
-  }
-
   // Initialize site functionality
   // Initialize AOS animation library with mobile optimizations
   const isMobile = window.innerWidth < 768;
-  AOS.init({
-    duration: isMobile ? 500 : 1000,
-    once: true,
-    mirror: false,
-    disable: isMobile, // Disable animations on mobile for better performance
-  });
+  if (window.AOS) {
+    AOS.init({
+      duration: isMobile ? 500 : 1000,
+      once: true,
+      mirror: false,
+      disable: isMobile, // Disable animations on mobile for better performance
+    });
+  }
 
-  // Initialize Typed.js for typing animation
-  const typed = new Typed(".typed-text", {
-    strings: ["Front-End Developer", "Full-Stack Developer", "Freelancer"],
-    typeSpeed: 100,
-    backSpeed: 50,
-    backDelay: 2000,
-    loop: true,
-  });
+  // Subtle hero parallax for the unified hero scene
+  const heroSection = document.querySelector(".hero-section");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Initialize particles.js with significantly reduced particles for mobile
-  if (document.getElementById("particles-js")) {
-    const isMobile = window.innerWidth < 768;
+  // Loop the hero role one title at a time.
+  const heroGreeting = document.querySelector(".hero-greeting[data-hero-roles]");
+  if (heroGreeting) {
+    const heroRoles = (heroGreeting.dataset.heroRoles || heroGreeting.textContent.trim())
+      .split("|")
+      .map(function (role) { return role.trim(); })
+      .filter(Boolean);
+    let activeRole = 0;
+    let roleIndex = heroRoles[0] ? heroRoles[0].length : 0;
+    let isDeletingRole = true;
+
+    heroGreeting.textContent = heroRoles[0] || "FRONT-END DEVELOPER";
+
+    if (!prefersReducedMotion && heroRoles.length > 1) {
+      const typeDelay = 76;
+      const deleteDelay = 42;
+      const fullPause = 1550;
+      const emptyPause = 320;
+
+      function tickHeroGreeting() {
+        const currentRole = heroRoles[activeRole];
+        heroGreeting.textContent = currentRole.slice(0, roleIndex);
+
+        if (isDeletingRole) {
+          if (roleIndex > 0) {
+            roleIndex -= 1;
+            window.setTimeout(tickHeroGreeting, deleteDelay);
+          } else {
+            activeRole = (activeRole + 1) % heroRoles.length;
+            isDeletingRole = false;
+            window.setTimeout(tickHeroGreeting, emptyPause);
+          }
+          return;
+        }
+
+        const nextRole = heroRoles[activeRole];
+        if (roleIndex < nextRole.length) {
+          roleIndex += 1;
+          window.setTimeout(tickHeroGreeting, typeDelay);
+        } else {
+          isDeletingRole = true;
+          window.setTimeout(tickHeroGreeting, fullPause);
+        }
+      }
+
+      window.setTimeout(tickHeroGreeting, fullPause);
+    }
+  }
+
+  // Keep the 3 fixed, then hide/show the remaining logo letters from the end.
+  const logoAnimatedChars = Array.from(document.querySelectorAll(".side-nav .logo .logo-letter, .side-nav .logo .logo-symbol.s2"));
+  if (logoAnimatedChars.length && !prefersReducedMotion) {
+    const charDelay = 72;
+    const cyclePause = 1450;
+    const hiddenPause = 360;
+
+    function hideLogoChar(index) {
+      if (index < 0) {
+        window.setTimeout(function () { showLogoChar(0); }, hiddenPause);
+        return;
+      }
+
+      logoAnimatedChars[index].classList.add("is-hidden");
+      window.setTimeout(function () { hideLogoChar(index - 1); }, charDelay);
+    }
+
+    function showLogoChar(index) {
+      if (index >= logoAnimatedChars.length) {
+        window.setTimeout(function () { hideLogoChar(logoAnimatedChars.length - 1); }, cyclePause);
+        return;
+      }
+
+      logoAnimatedChars[index].classList.remove("is-hidden");
+      window.setTimeout(function () { showLogoChar(index + 1); }, charDelay);
+    }
+
+    window.setTimeout(function () { hideLogoChar(logoAnimatedChars.length - 1); }, cyclePause);
+  }
+  if (heroSection && !isMobile && !prefersReducedMotion) {
+    let frameId = null;
+    heroSection.addEventListener("mousemove", function (event) {
+      if (frameId) return;
+      frameId = requestAnimationFrame(function () {
+        const rect = heroSection.getBoundingClientRect();
+        const x = event.clientX - rect.left - rect.width / 2;
+        const y = event.clientY - rect.top - rect.height / 2;
+        heroSection.style.setProperty("--hero-x", `${Math.max(-36, Math.min(36, x / 18))}px`);
+        heroSection.style.setProperty("--hero-y", `${Math.max(-36, Math.min(36, y / 18))}px`);
+        frameId = null;
+      });
+    });
+    heroSection.addEventListener("mouseleave", function () {
+      heroSection.style.setProperty("--hero-x", "0px");
+      heroSection.style.setProperty("--hero-y", "0px");
+    });
+  }
+
+  // Initialize particles.js as a very subtle hero texture
+  if (document.getElementById("particles-js") && window.particlesJS) {
+    const isMobileDevice = window.innerWidth < 768;
     particlesJS("particles-js", {
       particles: {
         number: {
-          value: isMobile ? 20 : 80, // Reduce particles count on mobile
+          value: isMobileDevice ? 8 : 22, // Keep the hero texture quiet
           density: {
             enable: true,
-            value_area: isMobile ? 1200 : 800, // Increase area on mobile
+            value_area: isMobileDevice ? 1400 : 1100,
           },
         },
         color: {
-          value: "#58a6ff",
+          value: "#6EA8FF",
         },
         shape: {
           type: "circle",
@@ -70,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
           },
         },
         opacity: {
-          value: isMobile ? 0.3 : 0.5, // Reduce opacity on mobile
+          value: isMobileDevice ? 0.08 : 0.12,
           random: false,
           anim: {
             enable: false,
@@ -80,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
           },
         },
         size: {
-          value: 3,
+          value: 2,
           random: true,
           anim: {
             enable: false,
@@ -92,13 +161,13 @@ document.addEventListener("DOMContentLoaded", function () {
         line_linked: {
           enable: true,
           distance: 150,
-          color: "#58a6ff",
-          opacity: 0.4,
+          color: "#6EA8FF",
+          opacity: 0.08,
           width: 1,
         },
         move: {
           enable: true,
-          speed: isMobile ? 3 : 6,
+          speed: isMobileDevice ? 1.2 : 2,
           direction: "none",
           random: false,
           straight: false,
@@ -115,11 +184,11 @@ document.addEventListener("DOMContentLoaded", function () {
         detect_on: "canvas",
         events: {
           onhover: {
-            enable: !isMobile,
+            enable: !isMobileDevice,
             mode: "grab",
           },
           onclick: {
-            enable: true,
+            enable: false,
             mode: "push",
           },
           resize: true,
@@ -128,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
           grab: {
             distance: 140,
             line_linked: {
-              opacity: 1,
+              opacity: 0.16,
             },
           },
           bubble: {
@@ -154,186 +223,108 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Add toggle functionality for top navigation on mobile
-  const sideNav = document.querySelector(".side-nav");
-  const toggleBtn = document.createElement("button");
-  toggleBtn.classList.add("nav-toggle-btn");
-  toggleBtn.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
-  toggleBtn.setAttribute("aria-label", "Toggle navigation menu");
-  toggleBtn.setAttribute("aria-expanded", "false");
-  document.body.appendChild(toggleBtn);
+  // ============================================================
+  // UNIFIED SCROLL HANDLER — single listener for everything
+  // ============================================================
+  const navbarEl = document.querySelector(".side-nav");
+  const navLinks = document.querySelectorAll(".nav-links a");
+  const sections = document.querySelectorAll("section");
+  const backToTopBtn = document.querySelector(".scroll-top-btn");
+  const NAVBAR_HEIGHT = 108;
 
-  toggleBtn.addEventListener("click", function () {
-    const isExpanded = sideNav.classList.contains("collapsed");
-    sideNav.classList.toggle("collapsed");
-    this.classList.toggle("active");
-    this.setAttribute("aria-expanded", isExpanded ? "false" : "true");
+  let ticking = false;
 
-    // Toggle between bars and times icon
-    const icon = this.querySelector("i");
-    if (icon.classList.contains("fa-bars")) {
-      icon.classList.remove("fa-bars");
-      icon.classList.add("fa-times");
-    } else {
-      icon.classList.remove("fa-times");
-      icon.classList.add("fa-bars");
+  function onScroll() {
+    const scrollY = window.scrollY;
+
+    // 1. Navbar scroll effect (add/remove "scrolled" class)
+    if (navbarEl) {
+      navbarEl.classList.toggle("scrolled", scrollY > 50);
     }
-  });
 
-  // Use debounced scroll event for better performance
-  let scrollTimeout;
-  const debounceTime = 10; // ms
+    // 2. Active nav link based on scroll position
+    let currentId = "";
+    sections.forEach(function (section) {
+      const sectionTop = section.offsetTop - NAVBAR_HEIGHT;
+      const sectionBottom = sectionTop + section.clientHeight;
+      if (scrollY >= sectionTop && scrollY < sectionBottom) {
+        currentId = section.getAttribute("id");
+      }
+    });
 
-  function debounceScroll(callback) {
-    if (!scrollTimeout) {
-      scrollTimeout = setTimeout(function () {
-        scrollTimeout = null;
-        callback();
-      }, debounceTime);
+    navLinks.forEach(function (link) {
+      const isActive = link.getAttribute("href") === "#" + currentId;
+      link.classList.toggle("active", isActive);
+      if (isActive) {
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+
+    // 3. Back-to-top button visibility
+    if (backToTopBtn) {
+      backToTopBtn.classList.toggle("active", scrollY > 300);
     }
+
+    ticking = false;
   }
 
-  // Make side nav links active on scroll with debounce
   window.addEventListener("scroll", function () {
-    debounceScroll(function () {
-      const scrollPosition = window.scrollY;
+    if (!ticking) {
+      requestAnimationFrame(onScroll);
+      ticking = true;
+    }
+  }, { passive: true });
 
-      // Navbar scroll effect
-      const navbar = document.querySelector(".side-nav");
-      if (scrollPosition > 50) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
-
-      // Ensure active nav link stays active
-      const navLinks = document.querySelectorAll(".nav-links a");
-      const sections = document.querySelectorAll("section");
-
-      let current = "";
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 100;
-        const sectionHeight = section.clientHeight;
-        if (
-          scrollPosition >= sectionTop &&
-          scrollPosition < sectionTop + sectionHeight
-        ) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      navLinks.forEach((link) => {
-        link.classList.remove("active");
-        const linkHref = link.getAttribute("href");
-        if (linkHref === `#${current}`) {
-          link.classList.add("active");
-          link.setAttribute("aria-current", "page");
-        } else {
-          link.removeAttribute("aria-current");
-        }
-      });
-    });
-  });
-
-  // Smooth scrolling for navigation links
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  // ============================================================
+  // SMOOTH SCROLLING
+  // ============================================================
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
 
       const targetId = this.getAttribute("href");
-      const targetElement = document.querySelector(targetId);
+      if (!targetId || targetId === "#") return;
 
+      const targetElement = document.querySelector(targetId);
       if (targetElement) {
         window.scrollTo({
-          top: targetElement.offsetTop - 70, // Adjust for navbar height
+          top: targetElement.offsetTop - NAVBAR_HEIGHT,
           behavior: "smooth",
         });
-
-        // Update active nav link
-        document.querySelectorAll(".nav-link").forEach((navLink) => {
-          navLink.classList.remove("active");
-          navLink.removeAttribute("aria-current");
-        });
-        this.classList.add("active");
-        this.setAttribute("aria-current", "page");
 
         // Reset scroll-down-btn style if this is the button
         if (this.classList.contains("scroll-down-btn")) {
           this.classList.add("clicked");
-          setTimeout(() => {
-            this.classList.remove("clicked");
+          setTimeout(function () {
+            anchor.classList.remove("clicked");
           }, 300);
         }
       }
     });
   });
 
-  // Specific handler for scroll-down-btn
-  const scrollDownBtn = document.querySelector(".scroll-down-btn");
-  if (scrollDownBtn) {
-    scrollDownBtn.addEventListener("click", function () {
-      // Reset button style after click
-      setTimeout(() => {
-        this.style.background =
-          "linear-gradient(145deg, rgba(78, 158, 255, 0.4), rgba(46, 160, 67, 0.4))";
-        this.style.boxShadow = "0 4px 15px rgba(78, 158, 255, 0.5)";
+  // ============================================================
+  // BACK TO TOP BUTTON
+  // ============================================================
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+      this.classList.add("clicked");
+      setTimeout(function () {
+        backToTopBtn.classList.remove("clicked");
       }, 300);
     });
   }
 
-  // Update active nav link on scroll with debouncing
-  window.addEventListener("scroll", function () {
-    debounceScroll(function () {
-      let current = "";
-      const sections = document.querySelectorAll("section");
-      const navLinks = document.querySelectorAll(".nav-link");
-
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-
-        if (window.scrollY >= sectionTop - 100) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      navLinks.forEach((navLink) => {
-        navLink.classList.remove("active");
-        navLink.removeAttribute("aria-current");
-        if (navLink.getAttribute("href") === `#${current}`) {
-          navLink.classList.add("active");
-          navLink.setAttribute("aria-current", "page");
-        }
-      });
-    });
-  });
-
-  // Back to top button functionality
-  const backToTopBtn = document.querySelector(".scroll-top-btn");
-
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 300) {
-      backToTopBtn.classList.add("active");
-    } else {
-      backToTopBtn.classList.remove("active");
-    }
-  });
-
-  backToTopBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-
-    // Reset button style after click
-    this.classList.add("clicked");
-    setTimeout(() => {
-      this.classList.remove("clicked");
-    }, 300);
-  });
-
-  // Form submission handling - Formspree AJAX
+  // ============================================================
+  // FORM SUBMISSION (Formspree AJAX)
+  // ============================================================
   const contactForm = document.getElementById("my-form");
   const formStatus = document.getElementById("my-form-status");
   const formButton = document.getElementById("my-form-button");
@@ -358,7 +349,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (response.ok) {
           formStatus.textContent =
             "Message sent successfully! I'll get back to you soon.";
-          formStatus.style.color = "#2ea043";
+          formStatus.style.color = "#3B82F6";
           contactForm.reset();
         } else {
           formStatus.textContent = "Something went wrong. Please try again.";
@@ -374,12 +365,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Project Filters with optimization for touch devices
+  // ============================================================
+  // PROJECT FILTERS
+  // ============================================================
   const filterButtons = document.querySelectorAll(".filter-btn");
   const projectItems = document.querySelectorAll(".project-item");
 
-  filterButtons.forEach((button) => {
-    // Add accessibility attributes
+  filterButtons.forEach(function (button) {
     button.setAttribute("role", "button");
     button.setAttribute(
       "aria-pressed",
@@ -387,19 +379,17 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
     button.addEventListener("click", function () {
-      // Remove active class from all buttons
-      filterButtons.forEach((btn) => {
+      filterButtons.forEach(function (btn) {
         btn.classList.remove("active");
         btn.setAttribute("aria-pressed", "false");
       });
 
-      // Add active class to clicked button
       this.classList.add("active");
       this.setAttribute("aria-pressed", "true");
 
       const filterValue = this.getAttribute("data-filter");
 
-      projectItems.forEach((item) => {
+      projectItems.forEach(function (item) {
         const itemCategories = item.getAttribute("data-category");
         if (filterValue === "all" || itemCategories.includes(filterValue)) {
           item.style.display = "block";
@@ -409,122 +399,168 @@ document.addEventListener("DOMContentLoaded", function () {
           item.setAttribute("aria-hidden", "true");
         }
       });
-
-      // Force the button to maintain its active state
-      requestAnimationFrame(() => {
-        this.classList.add("active");
-        this.setAttribute("aria-pressed", "true");
-        // Reset other buttons to ensure they don't stay in focus state
-        filterButtons.forEach((btn) => {
-          if (btn !== this) {
-            btn.blur();
-          }
-        });
-      });
     });
   });
 
-  // Fix for project filter buttons to maintain their state after click
-  document.addEventListener("click", function (e) {
-    if (!e.target.closest(".filter-btn")) {
-      // When clicking outside buttons, ensure active button stays active
-      const activeButton = document.querySelector(".filter-btn.active");
-      if (activeButton) {
-        activeButton.classList.add("active");
-        activeButton.setAttribute("aria-pressed", "true");
-      }
-    }
-  });
+  // ============================================================
+  // PROJECT SLIDER
+  // ============================================================
+  const projectSlider = document.querySelector(".project-slider");
+  if (projectSlider) {
+    const slides = Array.from(projectSlider.querySelectorAll(".project-slide"));
+    const prevButton = projectSlider.querySelector(".project-slider-btn.prev");
+    const nextButton = projectSlider.querySelector(".project-slider-btn.next");
+    const dotsContainer = projectSlider.querySelector(".project-slider-dots");
+    const progressBar = projectSlider.querySelector(".project-slider-progress span");
+    const sliderReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const AUTOPLAY_MS = 5000;
+    let activeSlide = 0;
+    let autoplayTimer = null;
+    let isPaused = false;
+    let touchStartX = 0;
 
-  // Handle nav link clicks with improved persistence and accessibility
-  const allNavLinks = document.querySelectorAll(".nav-links a");
-  allNavLinks.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      // Store the clicked link in session storage
-      sessionStorage.setItem("activeNavLink", this.getAttribute("href"));
-
-      // Remove active class from all links
-      allNavLinks.forEach((lnk) => {
-        lnk.classList.remove("active");
-        lnk.removeAttribute("aria-current");
-      });
-
-      // Add active class to clicked link
-      this.classList.add("active");
-      this.setAttribute("aria-current", "page");
-
-      // Force active state to persist with requestAnimationFrame for better performance
-      requestAnimationFrame(() => {
-        this.classList.add("active");
-        // Ensure the link stays active even after page interactions
-        const handleClick = function () {
-          const activeHref = sessionStorage.getItem("activeNavLink");
-          if (activeHref) {
-            const activeLink = document.querySelector(
-              `.nav-links a[href="${activeHref}"]`,
-            );
-            if (activeLink) {
-              activeLink.classList.add("active");
-              activeLink.setAttribute("aria-current", "page");
-            }
-          }
-          document.removeEventListener("click", handleClick);
-        };
-
-        document.addEventListener("click", handleClick, { once: true });
-      });
+    slides.forEach(function (_, index) {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.setAttribute("aria-label", "Go to project " + (index + 1));
+      dot.addEventListener("click", function () { showSlide(index, true); });
+      dotsContainer.appendChild(dot);
     });
-  });
 
-  // Check for stored active link on page load
-  const activeHref = sessionStorage.getItem("activeNavLink");
-  if (activeHref) {
-    const activeLink = document.querySelector(
-      `.nav-links a[href="${activeHref}"]`,
-    );
-    if (activeLink) {
-      allNavLinks.forEach((lnk) => lnk.classList.remove("active"));
-      activeLink.classList.add("active");
-      activeLink.setAttribute("aria-current", "page");
+    const dots = Array.from(dotsContainer.querySelectorAll("button"));
+
+    function restartProgress() {
+      if (!progressBar) return;
+      progressBar.style.animation = "none";
+      progressBar.offsetHeight;
+      progressBar.style.animation = "";
     }
+
+    function updateSliderState() {
+      slides.forEach(function (slide, index) {
+        var isActive = index === activeSlide;
+        slide.classList.toggle("active", isActive);
+        slide.setAttribute("aria-hidden", isActive ? "false" : "true");
+      });
+      dots.forEach(function (dot, index) {
+        dot.classList.toggle("active", index === activeSlide);
+        dot.setAttribute("aria-current", index === activeSlide ? "true" : "false");
+      });
+      restartProgress();
+    }
+
+    function stopAutoplay() {
+      window.clearTimeout(autoplayTimer);
+      autoplayTimer = null;
+      projectSlider.classList.remove("is-playing");
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+      if (sliderReducedMotion.matches || isPaused || document.hidden || slides.length < 2) return;
+      projectSlider.classList.add("is-playing");
+      restartProgress();
+      autoplayTimer = window.setTimeout(function () { showSlide(activeSlide + 1, false); }, AUTOPLAY_MS);
+    }
+
+    function showSlide(index, userInitiated) {
+      activeSlide = (index + slides.length) % slides.length;
+      updateSliderState();
+      startAutoplay();
+    }
+
+    if (prevButton) prevButton.addEventListener("click", function () { showSlide(activeSlide - 1, true); });
+    if (nextButton) nextButton.addEventListener("click", function () { showSlide(activeSlide + 1, true); });
+
+    projectSlider.addEventListener("mouseenter", function () {
+      isPaused = true;
+      stopAutoplay();
+    });
+    projectSlider.addEventListener("mouseleave", function () {
+      isPaused = false;
+      startAutoplay();
+    });
+
+    projectSlider.addEventListener("keydown", function (event) {
+      if (event.key === "ArrowLeft") showSlide(activeSlide - 1, true);
+      if (event.key === "ArrowRight") showSlide(activeSlide + 1, true);
+    });
+    projectSlider.setAttribute("tabindex", "0");
+
+    projectSlider.addEventListener("touchstart", function (event) {
+      touchStartX = event.changedTouches[0].clientX;
+      isPaused = true;
+      stopAutoplay();
+    }, { passive: true });
+
+    projectSlider.addEventListener("touchend", function (event) {
+      var deltaX = event.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(deltaX) > 45) showSlide(activeSlide + (deltaX < 0 ? 1 : -1), true);
+      isPaused = false;
+      startAutoplay();
+    }, { passive: true });
+
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) stopAutoplay();
+      else startAutoplay();
+    });
+
+    if (sliderReducedMotion.addEventListener) {
+      sliderReducedMotion.addEventListener("change", function () {
+        updateSliderState();
+        startAutoplay();
+      });
+    }
+
+    updateSliderState();
+    startAutoplay();
   }
 
-  // Add hover effect for project cards with hardware acceleration for better performance
-  const projectCards = document.querySelectorAll(".project-card");
-  projectCards.forEach((card) => {
-    // Add accessibility attributes
-    card.setAttribute("tabindex", "0");
+  // ============================================================
+  // SCROLL REVEAL — IntersectionObserver
+  // ============================================================
+  const revealTargets = document.querySelectorAll(
+    ".section-header, .about-visual, .about-content-v2, " +
+    ".stats-row-v2 .stat-item, .skill-item, .skill-group, .service-card, .service-card-v2, " +
+    ".project-slider, .project-slide, .project-actions a, .contact-info, .contact-form, " +
+    ".contact-icon-grid a, .footer-compact, .capability-card, .availability-card, " +
+    ".contact-method-card, .about-img-wrapper, .about-actions .btn, .skills-category"
+  );
 
-    const handleHoverStart = function () {
-      this.style.transform = "translateY(-10px)";
-      this.style.willChange = "transform";
-    };
+  if ("IntersectionObserver" in window && !prefersReducedMotion) {
+    const revealObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -50px 0px" }
+    );
 
-    const handleHoverEnd = function () {
-      this.style.transform = "translateY(0)";
-      this.style.willChange = "auto";
-    };
+    revealTargets.forEach(function (element, index) {
+      element.classList.add("reveal-on-scroll");
+      element.style.setProperty("--reveal-delay", Math.min(index % 6, 5) * 60 + "ms");
+      revealObserver.observe(element);
+    });
+  } else {
+    // For users who prefer reduced motion, show everything immediately
+    revealTargets.forEach(function (element) {
+      element.classList.add("is-visible");
+    });
+  }
 
-    // Mouse events for desktop
-    card.addEventListener("mouseenter", handleHoverStart);
-    card.addEventListener("mouseleave", handleHoverEnd);
-
-    // Touch events for mobile with passive option for better performance
-    card.addEventListener("touchstart", handleHoverStart, { passive: true });
-    card.addEventListener("touchend", handleHoverEnd, { passive: true });
-
-    // Keyboard navigation for accessibility
-    card.addEventListener("focus", handleHoverStart);
-    card.addEventListener("blur", handleHoverEnd);
-  });
-
-  // Add intersection observer for lazy-loading elements
+  // ============================================================
+  // LAZY LOADING
+  // ============================================================
   if ("IntersectionObserver" in window) {
     const lazyElements = document.querySelectorAll(".lazy");
 
     const lazyObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+      function (entries) {
+        entries.forEach(function (entry) {
           if (entry.isIntersecting) {
             if (entry.target.tagName.toLowerCase() === "img") {
               entry.target.src = entry.target.dataset.src;
@@ -542,14 +578,8 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     );
 
-    lazyElements.forEach((element) => {
+    lazyElements.forEach(function (element) {
       lazyObserver.observe(element);
     });
-  }
-
-  // Add event listeners only on the elements that need them
-  function addEventListenersToVisibleElements() {
-    // This function could be called when elements enter the viewport
-    // Using the Intersection Observer API
   }
 });

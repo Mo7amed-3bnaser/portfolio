@@ -1,35 +1,62 @@
-# VS Code
-.vscode/
-.vs/
-
-# System Files
+# Operating System Files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+desktop.ini
 
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Dependencies
-node_modules/
-
-# Build outputs
-dist/
-build/
-
-# Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# IDE specific files
-*.sublime-workspace
-*.sublime-project
+# Editor/IDE Files
+.vscode/
 .idea/
 *.swp
 *.swo
+*~
+.project
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Node Modules (if using npm in future)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Build & Temp Files
+*.log
+*.tmp
+*.cache
+dist/
+build/
+
+# Backup Files
+*_backup.*
+*_old.*
+*.bak
+
+# Image Originals (keep optimized only)
+images/original/
+*.psd
+*.ai
+*.sketch
+
+# Environment Files
+.env
+.env.local
+.env.*.local
+
+# Test Files
+test/
+tests/
+*.test.js
+*.spec.js
+
+# Documentation Drafts
+*.draft.md
+TODO.md
+NOTES.md

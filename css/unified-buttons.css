@@ -1,0 +1,323 @@
+/* ===== UNIFIED BUTTON STYLES ===== */
+
+/* Base Button Styles */
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Ripple Effect */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Primary Button (Main Style) */
+.btn-primary,
+.btn.btn-primary {
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.3);
+}
+
+.btn-primary:hover,
+.btn.btn-primary:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.5) !important;
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* Outline Button (Same as Primary but transparent) */
+.btn-outline,
+.btn.btn-outline,
+.btn-outline-primary,
+.btn.btn-outline-primary {
+    background: transparent !important;
+    border: 2px solid #2f81d9 !important;
+    color: #2f81d9 !important;
+}
+
+.btn-outline:hover,
+.btn.btn-outline:hover,
+.btn-outline-primary:hover,
+.btn.btn-outline-primary:hover {
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+    border: 2px solid transparent !important;
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.4) !important;
+}
+
+/* Secondary Button (Same as Primary) */
+.btn-secondary,
+.btn.btn-secondary {
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.3);
+}
+
+.btn-secondary:hover,
+.btn.btn-secondary:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.5) !important;
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+}
+
+/* Success Button (Same as Primary) */
+.btn-success,
+.btn.btn-success {
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.3);
+}
+
+.btn-success:hover,
+.btn.btn-success:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.5) !important;
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+}
+
+/* Info Button (Same as Primary) */
+.btn-info,
+.btn.btn-info {
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.3);
+}
+
+.btn-info:hover,
+.btn.btn-info:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.5) !important;
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+}
+
+/* Warning Button (Same as Primary) */
+.btn-warning,
+.btn.btn-warning {
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.3);
+}
+
+.btn-warning:hover,
+.btn.btn-warning:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.5) !important;
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+}
+
+/* Danger Button (Same as Primary) */
+.btn-danger,
+.btn.btn-danger {
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.3);
+}
+
+.btn-danger:hover,
+.btn.btn-danger:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.5) !important;
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+}
+
+/* Light Button (Same as Primary) */
+.btn-light,
+.btn.btn-light {
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.3);
+}
+
+.btn-light:hover,
+.btn.btn-light:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.5) !important;
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+}
+
+/* Dark Button (Same as Primary) */
+.btn-dark,
+.btn.btn-dark {
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.3);
+}
+
+.btn-dark:hover,
+.btn.btn-dark:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.5) !important;
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+}
+
+/* Form Buttons */
+form .btn,
+.contact-form .btn,
+#my-form-button {
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.3);
+}
+
+form .btn:hover,
+.contact-form .btn:hover,
+#my-form-button:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.5) !important;
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+}
+
+/* CTA Buttons */
+.cta-buttons .btn {
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.3);
+}
+
+.cta-buttons .btn:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.5) !important;
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+}
+
+/* About Section Buttons */
+.about-content .btn {
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.3);
+}
+
+.about-content .btn:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.5) !important;
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+}
+
+/* Hero Content Buttons */
+.hero-content .btn {
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.3);
+}
+
+.hero-content .btn:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.5) !important;
+    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
+    color: white !important;
+}
+
+/* Small Buttons */
+.btn-sm,
+.btn.btn-sm {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+}
+
+/* Large Buttons */
+.btn-lg,
+.btn.btn-lg {
+    padding: 20px 50px;
+    font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .btn {
+        padding: 12px 30px;
+        font-size: 0.95rem;
+    }
+    
+    .btn-sm {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+    }
+    
+    .btn-lg {
+        padding: 15px 35px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Focus States */
+.btn:focus,
+.btn:active {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(47, 129, 217, 0.3) !important;
+}
+
+/* Disabled State */
+.btn:disabled,
+.btn.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.btn:disabled:hover,
+.btn.disabled:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
