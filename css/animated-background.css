@@ -7,22 +7,9 @@ body {
     overflow-x: hidden;
 }
 
-/* Animated Background Gradient — contained inside viewport */
+/* Animated Background Gradient — DISABLED for uniform dark background */
 body::before {
-    content: '';
-    position: fixed;
-    top: -5%;
-    left: -5%;
-    width: 110%;
-    height: 110%;
-    background: 
-        radial-gradient(circle at 20% 30%, rgba(47, 129, 217, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.12) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(110, 168, 255, 0.08) 0%, transparent 60%);
-    animation: backgroundMove 20s ease-in-out infinite;
-    pointer-events: none;
-    z-index: 0;
-    will-change: transform, opacity;
+    display: none;
 }
 
 @keyframes backgroundMove {
@@ -44,29 +31,9 @@ body::before {
     }
 }
 
-/* Floating Particles Background — contained inside viewport */
+/* Floating Particles Background — DISABLED for uniform dark background */
 body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        radial-gradient(2px 2px at 20% 30%, rgba(110, 168, 255, 0.4), transparent),
-        radial-gradient(2px 2px at 60% 70%, rgba(47, 129, 217, 0.3), transparent),
-        radial-gradient(1px 1px at 50% 50%, rgba(59, 130, 246, 0.3), transparent),
-        radial-gradient(1px 1px at 80% 10%, rgba(110, 168, 255, 0.4), transparent),
-        radial-gradient(2px 2px at 90% 60%, rgba(47, 129, 217, 0.3), transparent),
-        radial-gradient(1px 1px at 33% 50%, rgba(59, 130, 246, 0.3), transparent),
-        radial-gradient(1px 1px at 70% 30%, rgba(110, 168, 255, 0.4), transparent);
-    background-size: 200% 200%;
-    background-position: 0% 0%;
-    animation: floatingParticles 30s ease-in-out infinite;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.6;
-    will-change: background-position;
+    display: none;
 }
 
 @keyframes floatingParticles {
@@ -78,7 +45,7 @@ body::after {
     }
 }
 
-/* Ensure all sections have unified background */
+/* Ensure all sections use the same dark background as the navbar */
 section,
 section.section,
 .section,
@@ -90,7 +57,7 @@ section.section,
 #contact,
 .bg-alt,
 .bg-light {
-    background: transparent !important;
+    background: #060a10 !important;
     position: relative;
 }
 
@@ -101,21 +68,9 @@ section > .container {
     z-index: 1;
 }
 
-/* Subtle Grid Pattern */
+/* Subtle Grid Pattern - DISABLED for uniform dark background */
 .hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        linear-gradient(rgba(47, 129, 217, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(47, 129, 217, 0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
-    animation: gridMove 30s linear infinite;
-    pointer-events: none;
-    z-index: 0;
+    display: none;
 }
 
 @keyframes gridMove {
@@ -127,42 +82,9 @@ section > .container {
     }
 }
 
-/* Glowing Orbs Animation */
+/* Glowing Orbs Animation - DISABLED for uniform dark background */
 .animated-orb {
-    position: fixed;
-    border-radius: 50%;
-    filter: blur(60px);
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.4;
-}
-
-.orb-1 {
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(47, 129, 217, 0.3), transparent);
-    top: 10%;
-    left: -10%;
-    animation: floatOrb1 25s ease-in-out infinite;
-}
-
-.orb-2 {
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.25), transparent);
-    bottom: 15%;
-    right: -5%;
-    animation: floatOrb2 30s ease-in-out infinite;
-}
-
-.orb-3 {
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(110, 168, 255, 0.2), transparent);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: floatOrb3 35s ease-in-out infinite;
+    display: none;
 }
 
 @keyframes floatOrb1 {
@@ -233,6 +155,28 @@ section > .container {
 /* Remove section separators */
 section.section::after {
     display: none !important;
+}
+
+/* Remove gap between hero and the section below it */
+.hero-section {
+    margin-bottom: 0 !important;
+}
+
+/* Remove section margins so there are no gaps showing body through */
+section.section {
+    margin-bottom: 0 !important;
+}
+
+/* Hide background decorations on all sections */
+#contact::before,
+#contact::after {
+    display: none !important;
+}
+
+/* Prevent AOS fade-left/fade-right from causing scrollbar flash on page load */
+section.section,
+#contact {
+    overflow: hidden !important;
 }
 
 /* Mobile Optimization */

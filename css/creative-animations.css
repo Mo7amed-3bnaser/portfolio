@@ -1,0 +1,145 @@
+/* ===== CREATIVE ANIMATIONS ===== */
+
+/* 1. Continuous Floating Animation */
+.float-animation {
+    animation: floatAnim 6s ease-in-out infinite;
+    will-change: transform;
+}
+
+.float-animation-delayed {
+    animation: floatAnim 6s ease-in-out 3s infinite;
+    will-change: transform;
+}
+
+@keyframes floatAnim {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* 2. Continuous Subtle Glow Pulse */
+.pulse-glow {
+    animation: pulseGlowAnim 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlowAnim {
+    0% { box-shadow: 0 0 10px rgba(47, 129, 217, 0.2); }
+    50% { box-shadow: 0 0 25px rgba(47, 129, 217, 0.5); }
+    100% { box-shadow: 0 0 10px rgba(47, 129, 217, 0.2); }
+}
+
+/* 3. Creative Hover Effects */
+.hover-tilt {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.hover-tilt:hover {
+    transform: translateY(-8px) rotateX(5deg) rotateY(-5deg);
+    box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.4), -5px -5px 20px rgba(47, 129, 217, 0.15);
+}
+
+/* 4. Glowing Border Effect */
+.glow-border {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glow-border:hover {
+    border-color: rgba(47, 129, 217, 0.5);
+    box-shadow: inset 0 0 20px rgba(47, 129, 217, 0.2), 0 0 20px rgba(47, 129, 217, 0.2);
+}
+
+/* 5. Animated Gradient Text */
+.text-gradient-animated {
+    background: linear-gradient(270deg, #2f81d9, #93c5fd, #8B5CF6, #2f81d9);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 8s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Apply floating to specific elements automatically */
+.about-img-wrapper {
+    animation: floatAnim 8s ease-in-out infinite;
+}
+
+.experience-card {
+    transition: all 0.4s ease;
+}
+
+.experience-card:hover {
+    animation: pulseGlowAnim 2s infinite;
+}
+
+.skill-item {
+    transition: all 0.4s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(47, 129, 217, 0.2);
+}
+
+/* Make section headers stand out more */
+.section-header h2 span {
+    display: inline-block;
+    animation: floatAnim 4s ease-in-out infinite;
+}
+
+/* Hero elements floating */
+.hero-avatar {
+    animation: floatAnim 7s ease-in-out infinite;
+}
+
+/* Project cards creative hover */
+.project-slide {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.project-slide:hover {
+    transform: translateY(-12px) scale(1.02) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(47, 129, 217, 0.2) !important;
+}
+
+/* Enhance global animated background - DISABLED for uniform dark background */
+body::before {
+    display: none !important;
+}
+/* ===== GLOBAL NOISE TEXTURE ===== */
+.global-noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    mix-blend-mode: overlay;
+}
+
+/* ===== GLOBAL MOUSE RADIAL GLOW ===== */
+.global-mouse-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1000px;
+    height: 1000px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9997; /* High z-index to appear above backgrounds */
+    background: radial-gradient(circle, rgba(47, 129, 217, 0.12) 0%, rgba(47, 129, 217, 0) 70%);
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+    will-change: transform;
+    mix-blend-mode: screen; /* Blends nicely without blocking content */
+}

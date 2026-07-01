@@ -18,245 +18,53 @@
     text-align: center;
 }
 
-/* Ripple Effect */
+/* Remove Ripple Effect as it conflicts with this sleek design */
 .btn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
+    display: none !important;
 }
 
-.btn:hover::before {
-    width: 300px;
-    height: 300px;
-}
-
-/* Primary Button (Main Style) */
-.btn-primary,
-.btn.btn-primary {
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
-    border: none !important;
-    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.3);
-}
-
-.btn-primary:hover,
-.btn.btn-primary:hover {
-    transform: translateY(-5px) !important;
-    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.5) !important;
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
-    border: none !important;
-}
-
-/* Outline Button (Same as Primary but transparent) */
-.btn-outline,
-.btn.btn-outline,
-.btn-outline-primary,
-.btn.btn-outline-primary {
-    background: transparent !important;
-    border: 2px solid #2f81d9 !important;
-    color: #2f81d9 !important;
-}
-
-.btn-outline:hover,
-.btn.btn-outline:hover,
-.btn-outline-primary:hover,
-.btn.btn-outline-primary:hover {
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
-    border: 2px solid transparent !important;
-    transform: translateY(-5px) !important;
-    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.4) !important;
-}
-
-/* Secondary Button (Same as Primary) */
-.btn-secondary,
-.btn.btn-secondary {
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
-    border: none !important;
-    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.3);
-}
-
-.btn-secondary:hover,
-.btn.btn-secondary:hover {
-    transform: translateY(-5px) !important;
-    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.5) !important;
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
-}
-
-/* Success Button (Same as Primary) */
-.btn-success,
-.btn.btn-success {
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
-    border: none !important;
-    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.3);
-}
-
-.btn-success:hover,
-.btn.btn-success:hover {
-    transform: translateY(-5px) !important;
-    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.5) !important;
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
-}
-
-/* Info Button (Same as Primary) */
-.btn-info,
-.btn.btn-info {
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
-    border: none !important;
-    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.3);
-}
-
-.btn-info:hover,
-.btn.btn-info:hover {
-    transform: translateY(-5px) !important;
-    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.5) !important;
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
-}
-
-/* Warning Button (Same as Primary) */
-.btn-warning,
-.btn.btn-warning {
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
-    border: none !important;
-    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.3);
-}
-
-.btn-warning:hover,
-.btn.btn-warning:hover {
-    transform: translateY(-5px) !important;
-    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.5) !important;
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
-}
-
-/* Danger Button (Same as Primary) */
-.btn-danger,
-.btn.btn-danger {
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
-    border: none !important;
-    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.3);
-}
-
-.btn-danger:hover,
-.btn.btn-danger:hover {
-    transform: translateY(-5px) !important;
-    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.5) !important;
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
-}
-
-/* Light Button (Same as Primary) */
-.btn-light,
-.btn.btn-light {
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
-    border: none !important;
-    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.3);
-}
-
-.btn-light:hover,
-.btn.btn-light:hover {
-    transform: translateY(-5px) !important;
-    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.5) !important;
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
-}
-
-/* Dark Button (Same as Primary) */
-.btn-dark,
-.btn.btn-dark {
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
-    border: none !important;
-    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.3);
-}
-
-.btn-dark:hover,
-.btn.btn-dark:hover {
-    transform: translateY(-5px) !important;
-    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.5) !important;
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
-}
-
-/* Form Buttons */
-form .btn,
-.contact-form .btn,
-#my-form-button {
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
-    border: none !important;
-    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.3);
-}
-
-form .btn:hover,
-.contact-form .btn:hover,
-#my-form-button:hover {
-    transform: translateY(-5px) !important;
-    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.5) !important;
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
-}
-
-/* CTA Buttons */
-.cta-buttons .btn {
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
-    border: none !important;
-    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.3);
-}
-
-.cta-buttons .btn:hover {
-    transform: translateY(-5px) !important;
-    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.5) !important;
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
-}
-
-/* About Section Buttons */
-.about-content .btn {
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
-    border: none !important;
-    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.3);
-}
-
-.about-content .btn:hover {
-    transform: translateY(-5px) !important;
-    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.5) !important;
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
-}
-
-/* Hero Content Buttons */
+/* Universal Button Style (Dark, sleek, transparent) */
+.btn,
+.btn-primary, .btn.btn-primary,
+.btn-outline, .btn.btn-outline, .btn-outline-primary, .btn.btn-outline-primary,
+.btn-secondary, .btn.btn-secondary,
+.btn-success, .btn.btn-success,
+.btn-info, .btn.btn-info,
+.btn-warning, .btn.btn-warning,
+.btn-danger, .btn.btn-danger,
+.btn-light, .btn.btn-light,
+.btn-dark, .btn.btn-dark,
+form .btn, .contact-form .btn, #my-form-button,
+.cta-buttons .btn,
+.about-content .btn,
 .hero-content .btn {
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
-    border: none !important;
-    box-shadow: 0 10px 30px rgba(47, 129, 217, 0.3);
+    background: rgba(255, 255, 255, 0.03) !important;
+    color: #f0f6fc !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
 }
 
+.btn:hover,
+.btn-primary:hover, .btn.btn-primary:hover,
+.btn-outline:hover, .btn.btn-outline:hover, .btn-outline-primary:hover, .btn.btn-outline-primary:hover,
+.btn-secondary:hover, .btn.btn-secondary:hover,
+.btn-success:hover, .btn.btn-success:hover,
+.btn-info:hover, .btn.btn-info:hover,
+.btn-warning:hover, .btn.btn-warning:hover,
+.btn-danger:hover, .btn.btn-danger:hover,
+.btn-light:hover, .btn.btn-light:hover,
+.btn-dark:hover, .btn.btn-dark:hover,
+form .btn:hover, .contact-form .btn:hover, #my-form-button:hover,
+.cta-buttons .btn:hover,
+.about-content .btn:hover,
 .hero-content .btn:hover {
-    transform: translateY(-5px) !important;
-    box-shadow: 0 15px 40px rgba(47, 129, 217, 0.5) !important;
-    background: linear-gradient(135deg, #2f81d9, #3B82F6) !important;
-    color: white !important;
+    background: #2a2a2a !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
 }
 
 /* Small Buttons */

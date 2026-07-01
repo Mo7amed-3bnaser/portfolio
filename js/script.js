@@ -582,4 +582,77 @@ document.addEventListener("DOMContentLoaded", function () {
       lazyObserver.observe(element);
     });
   }
+
+  // ============================================================
+  // ADVANCED HERO ANIMATIONS
+  // ============================================================
+  
+  // 1. Vanilla Tilt for Hero Avatar
+  if (typeof VanillaTilt !== "undefined") {
+    const avatar = document.querySelector(".hero-avatar-wrap");
+    if (avatar) {
+      VanillaTilt.init(avatar, {
+        max: 12,
+        speed: 400,
+        glare: false,
+        scale: 1.05
+      });
+    }
+  }
+
+  // 1.5 Staggered Letters for Hero Name
+  const heroLetters = document.querySelectorAll(".hero-name .hero-letter");
+  heroLetters.forEach(function(letter, index) {
+    letter.style.animationDelay = (index * 0.05) + "s";
+  });
+
+  // 3. Magnetic Hover Effect for Buttons and Social Icons
+  const magneticElements = document.querySelectorAll(".hero-social a, .cta-buttons a");
+  
+  magneticElements.forEach(function (elem) {
+    elem.addEventListener("mousemove", function (e) {
+      const rect = elem.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      elem.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+    });
+    
+    elem.addEventListener("mouseleave", function () {
+      elem.style.transform = "";
+    });
+  });
+
+  // ============================================================
+  // GLOBAL MOUSE GLOW EFFECT
+  // ============================================================
+  const mouseGlow = document.querySelector('.global-mouse-glow');
+  if (mouseGlow && !prefersReducedMotion) {
+    let glowX = window.innerWidth / 2;
+    let glowY = window.innerHeight / 2;
+    let targetX = glowX;
+    let targetY = glowY;
+    let isMouseMoving = false;
+
+    document.addEventListener('mousemove', function(e) {
+      targetX = e.clientX;
+      targetY = e.clientY;
+      isMouseMoving = true;
+    }, { passive: true });
+
+    function animateGlow() {
+      // Slowed down interpolation from 0.15 to 0.05 for smoother/slower follow
+      glowX += (targetX - glowX) * 0.05;
+      glowY += (targetY - glowY) * 0.05;
+      
+      if (isMouseMoving) {
+        mouseGlow.style.transform = `translate(calc(${glowX}px - 50%), calc(${glowY}px - 50%))`;
+      }
+      
+      requestAnimationFrame(animateGlow);
+    }
+    
+    animateGlow();
+  }
+
 });

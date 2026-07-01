@@ -174,40 +174,22 @@
     }
 }
 
-/* ===== NAME TEXT SHIMMER EFFECT ===== */
-.hero-content h1 {
-    position: relative;
+/* ===== STAGGERED LETTER ENTRANCE ===== */
+.hero-letter {
     display: inline-block;
+    opacity: 0;
+    transform: translateY(20px) rotateX(-90deg);
+    animation: letterEntrance 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
-/* Animated shimmer on the hero name */
-.hero-content h1::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 60%;
-    height: 100%;
-    background: linear-gradient(90deg,
-            transparent,
-            rgba(255, 255, 255, 0.08),
-            transparent);
-    animation: nameShimmer 4s ease-in-out infinite;
-    animation-delay: 2s;
-    pointer-events: none;
-}
-
-@keyframes nameShimmer {
-    0% {
-        left: -100%;
+@keyframes letterEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(20px) rotateX(-90deg);
     }
-
-    50% {
-        left: 150%;
-    }
-
-    100% {
-        left: 150%;
+    to {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
     }
 }
 

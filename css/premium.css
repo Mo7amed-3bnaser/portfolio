@@ -6,25 +6,14 @@
 /* ===== HERO SECTION - PREMIUM REDESIGN ===== */
 .hero-section {
     min-height: 100vh;
-    background: linear-gradient(180deg, #080b10 0%, #0a0d12 100%);
+    background-color: var(--dark-color);
     position: relative;
     overflow: hidden;
 }
 
-/* Animated Background Gradient */
+/* Animated Background Gradient - Hidden to match other sections */
 .hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 80%, rgba(47, 129, 217, 0.06) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.04) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(47, 129, 217, 0.02) 0%, transparent 40%);
-    animation: gradientShift 15s ease-in-out infinite;
-    z-index: 0;
+    display: none;
 }
 
 @keyframes gradientShift {
@@ -32,18 +21,9 @@
     50% { opacity: 0.8; transform: scale(1.1); }
 }
 
-/* Floating Orbs */
+/* Floating Orbs - Hidden to match other sections */
 .hero-section::after {
-    content: '';
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(47, 129, 217, 0.2) 0%, transparent 70%);
-    border-radius: 50%;
-    top: 10%;
-    right: -100px;
-    animation: float 8s ease-in-out infinite;
-    z-index: 0;
+    display: none;
 }
 
 @keyframes float {
@@ -304,22 +284,13 @@
 
 /* ===== ABOUT SECTION - PREMIUM REDESIGN ===== */
 #about {
-    background: linear-gradient(180deg, var(--dark-color) 0%, var(--darker-color) 100%);
+    background-color: var(--dark-color);
     position: relative;
     overflow: hidden;
 }
 
 #about::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 10% 20%, rgba(47, 129, 217, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
-    pointer-events: none;
+    display: none;
 }
 
 /* About Image - Premium Card Style */
