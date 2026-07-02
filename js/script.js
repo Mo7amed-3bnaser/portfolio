@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize site functionality
   // Initialize AOS animation library with mobile optimizations
   const isMobile = window.innerWidth < 768;
+  const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches || navigator.maxTouchPoints > 0;
   if (window.AOS) {
     AOS.init({
       duration: isMobile ? 500 : 1000,
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Subtle hero parallax for the unified hero scene
   const heroSection = document.querySelector(".hero-section");
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const disableMouseMotionEffects = isMobile || isTouchDevice || prefersReducedMotion;
 
   // Loop the hero role one title at a time.
   const heroGreeting = document.querySelector(".hero-greeting[data-hero-roles]");
@@ -94,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.setTimeout(function () { hideLogoChar(logoAnimatedChars.length - 1); }, cyclePause);
   }
-  if (heroSection && !isMobile && !prefersReducedMotion) {
+  if (heroSection && !disableMouseMotionEffects) {
     let frameId = null;
     heroSection.addEventListener("mousemove", function (event) {
       if (frameId) return;
@@ -588,7 +590,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // ============================================================
   
   // 1. Vanilla Tilt for Hero Avatar
-  if (typeof VanillaTilt !== "undefined") {
+  if (typeof VanillaTilt !== "undefined" && !disableMouseMotionEffects) {
     const avatar = document.querySelector(".hero-avatar-wrap");
     if (avatar) {
       VanillaTilt.init(avatar, {
@@ -609,25 +611,27 @@ document.addEventListener("DOMContentLoaded", function () {
   // 3. Magnetic Hover Effect for Buttons and Social Icons
   const magneticElements = document.querySelectorAll(".hero-social a, .cta-buttons a");
   
-  magneticElements.forEach(function (elem) {
-    elem.addEventListener("mousemove", function (e) {
-      const rect = elem.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      
-      elem.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+  if (!disableMouseMotionEffects) {
+    magneticElements.forEach(function (elem) {
+      elem.addEventListener("mousemove", function (e) {
+        const rect = elem.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        elem.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+      });
+
+      elem.addEventListener("mouseleave", function () {
+        elem.style.transform = "";
+      });
     });
-    
-    elem.addEventListener("mouseleave", function () {
-      elem.style.transform = "";
-    });
-  });
+  }
 
   // ============================================================
   // GLOBAL MOUSE GLOW EFFECT
   // ============================================================
   const mouseGlow = document.querySelector('.global-mouse-glow');
-  if (mouseGlow && !prefersReducedMotion) {
+  if (mouseGlow && !disableMouseMotionEffects) {
     let glowX = window.innerWidth / 2;
     let glowY = window.innerHeight / 2;
     let targetX = glowX;
