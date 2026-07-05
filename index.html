@@ -1256,7 +1256,7 @@
             }
 
             .side-nav .logo {
-                transform: scale(0.78) !important;
+                transform: scale(0.84) !important;
                 transform-origin: left center !important;
             }
 
@@ -1528,7 +1528,7 @@
                 min-width: 0 !important;
                 padding: 0 !important;
                 margin: 0 !important;
-                transform: scale(0.8) !important;
+                transform: scale(0.86) !important;
                 transform-origin: left center !important;
             }
 
@@ -1681,7 +1681,7 @@
                 background: transparent !important;
                 border: 0 !important;
                 box-shadow: none !important;
-                transform: scale(0.76) !important;
+                transform: scale(0.88) !important;
                 transform-origin: left center !important;
             }
 
@@ -3189,7 +3189,7 @@
                 background: transparent !important;
                 border: 0 !important;
                 box-shadow: none !important;
-                transform: scale(0.82) !important;
+                transform: scale(0.88) !important;
                 transform-origin: left center !important;
             }
 
@@ -3771,6 +3771,129 @@
                 max-width: 300px !important;
             }
         }
+    </style>
+            <style id="final-contact-unified-width-fix">
+        #contact.contact-section-modern {
+            display: block !important;
+        }
+
+        #contact.contact-section-modern .container {
+            width: min(1220px, calc(100% - 48px)) !important;
+            max-width: 1220px !important;
+            margin-inline: auto !important;
+            padding-inline: 0 !important;
+        }
+
+        #contact.contact-section-modern .section-header {
+            max-width: 1220px !important;
+            margin: 0 auto 24px !important;
+            text-align: center !important;
+        }
+
+        #contact.contact-section-modern .section-header h2 {
+            margin-bottom: 10px !important;
+        }
+
+        #contact.contact-section-modern .section-header .section-description {
+            max-width: 640px !important;
+            margin-inline: auto !important;
+        }
+
+        #contact.contact-section-modern .contact-section-container.contact-unified-wrap {
+            display: block !important;
+            grid-template-columns: none !important;
+            width: 100% !important;
+            max-width: 1220px !important;
+            margin: 0 auto !important;
+            padding: 0 !important;
+        }
+
+        #contact.contact-section-modern .contact-unified-card {
+            width: 100% !important;
+            max-width: none !important;
+            padding: clamp(24px, 2.8vw, 38px) !important;
+            box-sizing: border-box !important;
+        }
+
+        #contact.contact-section-modern .contact-unified-header {
+            margin-bottom: 20px !important;
+        }
+
+        #contact.contact-section-modern .contact-unified-header h2 {
+            font-size: clamp(2rem, 3.8vw, 3rem) !important;
+            margin-bottom: 10px !important;
+        }
+
+        #contact.contact-section-modern .contact-unified-form {
+            width: 100% !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: 10px !important;
+            padding: clamp(14px, 2vw, 20px) !important;
+            box-sizing: border-box !important;
+        }
+
+        #contact.contact-section-modern .contact-unified-form .form-group:nth-of-type(3),
+        #contact.contact-section-modern .contact-unified-form .contact-send-btn,
+        #contact.contact-section-modern .contact-unified-form .form-status {
+            grid-column: 1 / -1 !important;
+        }
+
+        #contact.contact-section-modern .contact-unified-form .form-control {
+            width: 100% !important;
+            min-height: 42px !important;
+        }
+
+        #contact.contact-section-modern .contact-unified-form textarea.form-control {
+            min-height: 96px !important;
+        }
+
+        #contact.contact-section-modern .contact-send-btn {
+            width: fit-content !important;
+            min-height: 40px !important;
+            padding-inline: 16px !important;
+        }
+
+        #contact.contact-section-modern .contact-unified-meta {
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            margin-top: 22px !important;
+            padding-top: 20px !important;
+            gap: 18px !important;
+        }
+
+        @media (max-width: 768px) {
+            #contact.contact-section-modern .container {
+                width: min(100% - 28px, 1220px) !important;
+            }
+
+            #contact.contact-section-modern .section-header {
+                text-align: center !important;
+                margin-bottom: 22px !important;
+            }
+
+            #contact.contact-section-modern .section-header .section-description {
+                margin-inline: auto !important;
+            }
+
+            #contact.contact-section-modern .contact-section-container.contact-unified-wrap {
+                margin-top: 0 !important;
+            }
+
+            #contact.contact-section-modern .contact-unified-card {
+                padding: 22px 16px !important;
+            }
+
+            #contact.contact-section-modern .contact-unified-form {
+                grid-template-columns: 1fr !important;
+            }
+
+            #contact.contact-section-modern .contact-send-btn {
+                width: 100% !important;
+            }
+
+            #contact.contact-section-modern .contact-unified-meta {
+                grid-template-columns: 1fr !important;
+            }
+        }
     </style></head>
 
 <body>
@@ -4162,6 +4285,33 @@
                     aria-label="Selected portfolio projects">
                     <div class="project-slider-track">
                         <article class="project-slide active" aria-hidden="false">
+                            <div class="project-slide-media"><img src="images/tamkeen.png"
+                                    alt="Tamkeen educational platform preview" width="1931" height="913"
+                                    loading="lazy">
+                            </div>
+                            <div class="project-slide-content">
+                                <p class="project-meta">Educational Platform &middot; 2026</p>
+                                <h3>Tamkeen &mdash; Educational Platform</h3>
+                                <p class="project-role">Full-Stack Developer &middot; Co-built with <a
+                                        href="https://www.yasajaber.me/" target="_blank" rel="noopener">Yasa Jaber</a>
+                                </p>
+                                <p class="project-summary">An Arabic online learning platform for secondary students
+                                    with student accounts, teacher and course discovery, activation-code access, and
+                                    connected dashboards for admins and teachers.</p>
+                                <ul class="project-features">
+                                    <li>Login, register, and validation flows</li>
+                                    <li>Teachers, courses, and course details</li>
+                                    <li>Activation-code course access</li>
+                                    <li>Admin and teacher dashboards</li>
+                                </ul>
+                                <div class="tech-stack">
+                                    <span>Next.js</span><span>React</span><span>Authentication</span><span>Database
+                                        Integration</span><span>Dashboards</span><span>Activation Codes</span>
+                                </div>
+                                <div class="project-actions"><a href="https://www.tamkeeen.online/" target="_blank" rel="noopener" class="project-arrow-link" aria-label="Open Tamkeen live site"><i class="fas fa-arrow-up" aria-hidden="true"></i></a></div>
+                            </div>
+                        </article>
+                        <article class="project-slide" aria-hidden="true">
                             <div class="project-slide-media"><img
                                     src="images/WhatsApp Image 2026-03-09 at 4.34.56 PM.jpeg"
                                     alt="Masar e-learning platform preview" width="760" height="428" loading="lazy">
@@ -4169,7 +4319,9 @@
                             <div class="project-slide-content">
                                 <p class="project-meta">E-Learning Platform &middot; 2026</p>
                                 <h3>Masar &mdash; E-Learning Platform</h3>
-                                <p class="project-role">Front-End Developer &middot; Team Project</p>
+                                <p class="project-role">Front-End Developer &middot; Co-built with <a
+                                        href="https://www.yasajaber.me/" target="_blank" rel="noopener">Yasa Jaber</a>
+                                </p>
                                 <p class="project-summary">A complete learning platform with authentication, course
                                     management, payments, certificates, and protected educational content.</p>
                                 <ul class="project-features">
@@ -4182,10 +4334,7 @@
                                     <span>React</span><span>TypeScript</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>REST
                                         API</span>
                                 </div>
-                                <div class="project-actions"><a href="https://masar-zsel.onrender.com/" target="_blank"
-                                        rel="noopener">Live Demo</a><a
-                                        href="https://github.com/Mo7amed-3bnaser/e-learning-platform" target="_blank"
-                                        rel="noopener">GitHub</a></div>
+                                <div class="project-actions"><a href="https://masar-zsel.onrender.com/" target="_blank" rel="noopener" class="project-arrow-link" aria-label="Open Masar live demo"><i class="fas fa-arrow-up" aria-hidden="true"></i></a></div>
                             </div>
                         </article>
                         <article class="project-slide" aria-hidden="true">
@@ -4207,10 +4356,7 @@
                                 </ul>
                                 <div class="tech-stack"><span>React</span><span>Zustand</span><span>React
                                         Query</span><span>Tailwind CSS</span><span>Recharts</span><span>PWA</span></div>
-                                <div class="project-actions"><a href="https://goldpulse.netlify.app/" target="_blank"
-                                        rel="noopener">Live Demo</a><a
-                                        href="https://github.com/Mo7amed-3bnaser/TradePulse" target="_blank"
-                                        rel="noopener">GitHub</a></div>
+                                <div class="project-actions"><a href="https://goldpulse.netlify.app/" target="_blank" rel="noopener" class="project-arrow-link" aria-label="Open TradePulse live demo"><i class="fas fa-arrow-up" aria-hidden="true"></i></a></div>
                             </div>
                         </article>
                         <article class="project-slide" aria-hidden="true">
@@ -4233,10 +4379,7 @@
                                 <div class="tech-stack"><span>React</span><span>Vite</span><span>Redux
                                         Toolkit</span><span>Chart.js</span><span>CSS3</span><span>LocalStorage</span>
                                 </div>
-                                <div class="project-actions"><a href="https://focusflow-system.netlify.app/"
-                                        target="_blank" rel="noopener">Live Demo</a><a
-                                        href="https://github.com/Mo7amed-3bnaser/focusflow-ecosystem.git"
-                                        target="_blank" rel="noopener">GitHub</a></div>
+                                <div class="project-actions"><a href="https://focusflow-system.netlify.app/" target="_blank" rel="noopener" class="project-arrow-link" aria-label="Open FocusFlow live demo"><i class="fas fa-arrow-up" aria-hidden="true"></i></a></div>
                             </div>
                         </article>
                         <article class="project-slide" aria-hidden="true">
@@ -4260,10 +4403,7 @@
                                     <span>JavaScript</span><span>Node.js</span><span>MongoDB</span><span>Fetch
                                         API</span><span>HTML5</span><span>CSS3</span>
                                 </div>
-                                <div class="project-actions"><a href="https://shopzone-1-mcnz.onrender.com"
-                                        target="_blank" rel="noopener">Live Demo</a><a
-                                        href="https://github.com/Mo7amed-3bnaser/ShopZone.git" target="_blank"
-                                        rel="noopener">GitHub</a></div>
+                                <div class="project-actions"><a href="https://shopzone-1-mcnz.onrender.com" target="_blank" rel="noopener" class="project-arrow-link" aria-label="Open ShopZone live demo"><i class="fas fa-arrow-up" aria-hidden="true"></i></a></div>
                             </div>
                         </article>
                         <article class="project-slide" aria-hidden="true">
@@ -4286,11 +4426,7 @@
                                 <div class="tech-stack">
                                     <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>API</span>
                                 </div>
-                                <div class="project-actions"><a
-                                        href="https://mo7amed-3bnaser.github.io/Ai-Image-Generator/" target="_blank"
-                                        rel="noopener">Live Demo</a><a
-                                        href="https://github.com/Mo7amed-3bnaser/Ai-Image-Generator" target="_blank"
-                                        rel="noopener">GitHub</a></div>
+                                <div class="project-actions"><a href="https://mo7amed-3bnaser.github.io/Ai-Image-Generator/" target="_blank" rel="noopener" class="project-arrow-link" aria-label="Open AI Image Generator live demo"><i class="fas fa-arrow-up" aria-hidden="true"></i></a></div>
                             </div>
                         </article>
                     </div>
@@ -4307,84 +4443,61 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="section bg-alt" aria-label="Contact Information">
+        <section id="contact" class="section bg-alt contact-section-modern" aria-label="Contact Information">
             <div class="container">
                 <div class="section-header" data-aos="fade-up">
                     <h2><span>05</span> &mdash; Contact</h2>
-                    <p class="section-description">Tell me about your project, role, or opportunity and I will get back
-                        to you clearly.</p>
-                    <div class="section-line"></div>
+                    <p class="section-description">Tell me about the website, interface, or idea you want to turn into a clean working product.</p>
                 </div>
-                <div class="contact-section-container row align-items-stretch">
-                    <div class="col-lg-5" data-aos="fade-right" data-aos-delay="120">
-                        <div class="contact-info contact-icons-panel">
-                            <h3>Let&rsquo;s Talk</h3>
-                            <p>Open to freelance projects, remote collaboration, contract work, internships, and junior
-                                front-end opportunities.</p>
-                            <div class="contact-quick-meta" aria-label="Quick contact details">
-                                <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Sohag, Egypt</span>
-                                <span><i class="fas fa-clock" aria-hidden="true"></i>Usually within 24 hours</span>
-                            </div>
-                            <div class="contact-icon-grid" aria-label="Contact links">
-                                <a href="mailto:mohamedabdelnaser1010@gmail.com" aria-label="Email Mohamed"><i
-                                        class="fas fa-envelope" aria-hidden="true"></i><span>Email</span></a>
-                                <a href="https://www.linkedin.com/in/3bnaser?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-                                    target="_blank" rel="noopener" aria-label="Open LinkedIn profile"><i
-                                        class="fab fa-linkedin-in" aria-hidden="true"></i><span>LinkedIn</span></a>
-                                <a href="https://github.com/Mo7amed-3bnaser" target="_blank" rel="noopener"
-                                    aria-label="Open GitHub profile"><i class="fab fa-github"
-                                        aria-hidden="true"></i><span>GitHub</span></a>
-                                <a href="https://wa.me/201207166536" target="_blank" rel="noopener"
-                                    aria-label="Open WhatsApp chat"><i class="fab fa-whatsapp"
-                                        aria-hidden="true"></i><span>WhatsApp</span></a>
-                                <a href="https://www.instagram.com/m_3bdelnaser/profilecard/?igsh=ZG42NG93ZTl5NWIx"
-                                    target="_blank" rel="noopener" aria-label="Open Instagram profile"><i
-                                        class="fab fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
-                                <a href="https://www.facebook.com/share/12CPZ2MdKTb/" target="_blank" rel="noopener"
-                                    aria-label="Open Facebook profile"><i class="fab fa-facebook-f"
-                                        aria-hidden="true"></i><span>Facebook</span></a>
-                            </div>
+
+                <div class="contact-section-container contact-unified-wrap" data-aos="fade-up">
+                    <div class="contact-unified-card">
+                        <div class="contact-unified-header">
+                            <h2>Let's make it real.</h2>
+                            <p>Send the project details, the goal, and any links you already have. I will review it and get back with a clear next step.</p>
                         </div>
-                    </div>
-                    <div class="col-lg-7" data-aos="fade-left" data-aos-delay="180">
-                        <div class="contact-form" id="contact-form">
-                            <form id="my-form" action="https://formspree.io/f/xjkwageb" method="POST">
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <div class="form-group"><label for="contact-name">Name</label><input
-                                                id="contact-name" type="text" class="form-control" name="name"
-                                                autocomplete="name" required></div>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <div class="form-group"><label for="contact-email">Email</label><input
-                                                id="contact-email" type="email" class="form-control" name="email"
-                                                autocomplete="email" required></div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <div class="form-group"><label for="contact-subject">Subject</label><input
-                                                id="contact-subject" type="text" class="form-control" name="subject"
-                                                autocomplete="off" required></div>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <div class="form-group"><label for="contact-company">Company /
-                                                Link</label><input id="contact-company" type="text" class="form-control"
-                                                name="company_or_link" autocomplete="organization"></div>
-                                    </div>
-                                </div>
-                                <div class="form-group mb-3"><label for="contact-message">Message</label><textarea
-                                        id="contact-message" class="form-control" name="message" rows="5"
-                                        autocomplete="off" required></textarea></div>
-                                <button type="submit" id="my-form-button" class="btn btn-primary">Send Message</button>
-                                <p id="my-form-status" class="form-status mt-3" role="status" aria-live="polite"></p>
-                            </form>
+
+                        <form id="my-form" class="contact-unified-form" action="https://formspree.io/f/xjkwageb" method="POST">
+                            <input type="hidden" name="subject" value="Portfolio contact request">
+                            <div class="form-group">
+                                <label class="visually-hidden" for="contact-name">Name</label>
+                                <input id="contact-name" type="text" class="form-control" name="name"
+                                    autocomplete="name" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="visually-hidden" for="contact-email">Email</label>
+                                <input id="contact-email" type="email" class="form-control" name="email"
+                                    autocomplete="email" placeholder="Your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="visually-hidden" for="contact-message">Message</label>
+                                <textarea id="contact-message" class="form-control" name="message" rows="5"
+                                    autocomplete="off" placeholder="Tell me about your project" required></textarea>
+                            </div>
+                            <button type="submit" id="my-form-button" class="btn btn-primary contact-send-btn">
+                                <i class="fas fa-paper-plane" aria-hidden="true"></i><span>Send message</span>
+                            </button>
+                            <p id="my-form-status" class="form-status mt-3" role="status" aria-live="polite"></p>
+                        </form>
+
+                        <div class="contact-unified-meta" aria-label="Quick contact details">
+                            <div>
+                                <span>Location</span>
+                                <strong>Sohag, Egypt</strong>
+                            </div>
+                            <div>
+                                <span>Availability</span>
+                                <strong>Open to freelance &amp; contract</strong>
+                            </div>
+                            <div>
+                                <span>Response time</span>
+                                <strong>Within 24 hours</strong>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
         <!-- Footer -->
         <footer class="footer footer-compact">
             <div class="container">

@@ -2059,6 +2059,16 @@ section,
     font-size: 0.9rem;
 }
 
+.project-role a {
+    color: #93C5FD !important;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.project-role a:hover {
+    color: #F8FAFC !important;
+}
+
 .project-summary {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -5296,5 +5306,343 @@ body {
     #home.hero-section {
         padding-top: 82px !important;
         padding-bottom: 56px !important;
+    }
+}
+
+/* ===== Equal-size project showcase refresh ===== */
+.project-slider {
+    max-width: min(1040px, 100%) !important;
+    margin: clamp(28px, 4vw, 44px) auto 0 !important;
+    padding: 0 50px 70px !important;
+    overflow: visible !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+}
+
+.project-slider-track {
+    min-height: clamp(520px, 50vw, 590px) !important;
+}
+
+.project-slide {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    min-height: clamp(520px, 50vw, 590px) !important;
+    overflow: hidden !important;
+    border-radius: 16px !important;
+    background:
+        linear-gradient(180deg, rgba(10, 17, 29, 0.92), rgba(6, 10, 17, 0.96)),
+        radial-gradient(circle at 82% 0%, rgba(96, 165, 250, 0.12), transparent 34%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.105) !important;
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.34) !important;
+    transform: translateY(18px) scale(0.985) !important;
+}
+
+.project-slide.active {
+    transform: translateY(0) scale(1) !important;
+}
+
+.project-slide-media {
+    min-height: 0 !important;
+    aspect-ratio: 21 / 9 !important;
+    background: #050A11 !important;
+    border-bottom: 1px solid rgba(96, 165, 250, 0.24) !important;
+}
+
+.project-slide-media img {
+    object-fit: contain !important;
+    background: #050A11 !important;
+}
+
+.project-slide-content {
+    flex: 1 1 auto !important;
+    justify-content: flex-start !important;
+    min-height: 230px !important;
+    padding: clamp(18px, 2.6vw, 26px) !important;
+}
+
+.project-slide-content h3 {
+    font-size: clamp(1.55rem, 2.05vw, 2.05rem) !important;
+    line-height: 1.12 !important;
+    margin-bottom: 10px !important;
+}
+
+.project-role {
+    min-height: 24px !important;
+}
+
+.project-summary {
+    min-height: 3.3em !important;
+    -webkit-line-clamp: 3 !important;
+}
+
+.project-features {
+    min-height: 46px !important;
+}
+
+.tech-stack {
+    max-height: 40px !important;
+    overflow: hidden !important;
+}
+
+.project-actions {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    margin-top: auto !important;
+    padding-top: 16px !important;
+}
+
+.project-actions a {
+    border-radius: 999px !important;
+    background: rgba(255, 255, 255, 0.055) !important;
+}
+
+.project-slider-btn {
+    top: auto !important;
+    bottom: 18px !important;
+    transform: none !important;
+    width: 42px !important;
+    height: 42px !important;
+}
+
+.project-slider-btn.prev {
+    left: 0 !important;
+}
+
+.project-slider-btn.next {
+    right: 0 !important;
+}
+
+.project-slider-footer {
+    position: absolute !important;
+    left: 68px !important;
+    right: 68px !important;
+    bottom: 29px !important;
+    grid-template-columns: auto minmax(120px, 1fr) !important;
+}
+
+@media (max-width: 1024px) {
+    .project-slider {
+        max-width: min(920px, 100%) !important;
+        padding-inline: 50px !important;
+    }
+
+    .project-slider-track,
+    .project-slide {
+        min-height: clamp(560px, 78vw, 650px) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-slider {
+        padding: 0 0 76px !important;
+    }
+
+    .project-slider-track,
+    .project-slide {
+        min-height: 620px !important;
+    }
+
+    .project-slide-content {
+        min-height: 330px !important;
+        padding: 22px 18px 24px !important;
+    }
+
+    .project-features {
+        min-height: 92px !important;
+    }
+
+    .project-slider-btn.prev {
+        left: 0 !important;
+    }
+
+    .project-slider-btn.next {
+        right: 0 !important;
+    }
+
+    .project-slider-footer {
+        left: 58px !important;
+        right: 58px !important;
+        bottom: 25px !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .project-slider-track,
+    .project-slide {
+        min-height: 650px !important;
+    }
+
+    .project-summary {
+        min-height: 4.95em !important;
+        -webkit-line-clamp: 3 !important;
+    }
+}
+/* Slightly larger responsive logo */
+@media (max-width: 768px) {
+    .side-nav .logo {
+        transform: scale(0.96) !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .side-nav .logo {
+        transform: scale(0.88) !important;
+    }
+}
+.project-actions .project-arrow-link {
+    width: 44px !important;
+    min-width: 44px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+}
+
+.project-actions .project-arrow-link i {
+    transform: rotate(45deg);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .project-actions .project-arrow-link {
+        width: 44px !important;
+        min-width: 44px !important;
+    }
+}
+/* ===== Unified contact card refresh ===== */
+.contact-section-modern .container {
+    max-width: 1120px !important;
+}
+
+.contact-unified-wrap {
+    display: block !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+}
+
+.contact-unified-card {
+    width: 100% !important;
+    padding: clamp(28px, 4vw, 56px) !important;
+    border-radius: 16px !important;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.015)),
+        radial-gradient(circle at 100% 0%, rgba(96, 165, 250, 0.08), transparent 38%),
+        rgba(6, 10, 17, 0.84) !important;
+    border: 1px solid rgba(255, 255, 255, 0.11) !important;
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.32) !important;
+}
+
+.contact-unified-header {
+    max-width: 780px;
+    margin-bottom: 28px;
+}
+
+.contact-unified-header h2 {
+    color: #F8FAFC !important;
+    font-size: clamp(2rem, 4.6vw, 3.25rem) !important;
+    line-height: 1.05 !important;
+    letter-spacing: 0 !important;
+    margin: 0 0 14px !important;
+}
+
+.contact-unified-header p:not(.project-meta) {
+    color: var(--color-text-secondary) !important;
+    font-size: clamp(0.96rem, 1.5vw, 1.08rem) !important;
+    line-height: 1.7 !important;
+    margin: 0 !important;
+}
+
+.contact-unified-form {
+    display: grid;
+    gap: 14px;
+    padding: clamp(18px, 2.6vw, 28px) !important;
+    border-radius: 12px !important;
+    background: rgba(255, 255, 255, 0.025) !important;
+    border: 1px solid rgba(255, 255, 255, 0.105) !important;
+}
+
+.contact-unified-form .form-group {
+    margin: 0 !important;
+}
+
+.contact-unified-form .form-control {
+    min-height: 48px !important;
+    border-radius: 8px !important;
+    color: #F8FAFC !important;
+    background: rgba(2, 6, 23, 0.32) !important;
+    border: 1px solid rgba(255, 255, 255, 0.105) !important;
+    box-shadow: none !important;
+}
+
+.contact-unified-form textarea.form-control {
+    min-height: 132px !important;
+    resize: vertical;
+}
+
+.contact-unified-form .form-control::placeholder {
+    color: rgba(203, 213, 225, 0.58) !important;
+}
+
+.contact-unified-form .form-control:focus {
+    border-color: rgba(147, 197, 253, 0.48) !important;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.11) !important;
+}
+
+.contact-send-btn {
+    width: fit-content !important;
+    min-height: 44px !important;
+    padding: 0 18px !important;
+    border-radius: 999px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 9px !important;
+    justify-content: center !important;
+}
+
+.contact-send-btn i {
+    font-size: 0.92rem;
+}
+
+.contact-unified-meta {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: clamp(30px, 4vw, 48px);
+    padding-top: clamp(22px, 3vw, 34px);
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.contact-unified-meta span {
+    display: block;
+    margin-bottom: 8px;
+    color: rgba(203, 213, 225, 0.58) !important;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.contact-unified-meta strong {
+    display: block;
+    color: #E5E7EB !important;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .contact-unified-card {
+        padding: 24px 18px !important;
+    }
+
+    .contact-unified-meta {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .contact-send-btn {
+        width: 100% !important;
     }
 }

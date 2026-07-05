@@ -336,7 +336,7 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
 
       formButton.disabled = true;
-      formButton.textContent = "Sending...";
+      formButton.innerHTML = '<i class="fas fa-spinner fa-spin" aria-hidden="true"></i><span>Sending...</span>';
       formStatus.textContent = "";
 
       const data = new FormData(contactForm);
@@ -362,7 +362,7 @@ document.addEventListener("DOMContentLoaded", function () {
         formStatus.style.color = "#f85149";
       } finally {
         formButton.disabled = false;
-        formButton.textContent = "Send Message";
+        formButton.innerHTML = '<i class="fas fa-paper-plane" aria-hidden="true"></i><span>Send message</span>';
       }
     });
   }
