@@ -115,8 +115,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Initialize particles.js as a very subtle hero texture
-  if (document.getElementById("particles-js") && window.particlesJS) {
+  // Initialize particles.js as a very subtle hero texture after first paint.
+  function initHeroParticles() {
+    if (!document.getElementById("particles-js") || !window.particlesJS) return;
     const isMobileDevice = window.innerWidth < 768;
     particlesJS("particles-js", {
       particles: {
@@ -225,6 +226,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  if (document.getElementById("particles-js") && !prefersReducedMotion) {
+    window.addEventListener("load", function () {
+      window.setTimeout(function () {
+        if (window.particlesJS) {
+          initHeroParticles();
+          return;
+        }
+
+        const particlesScript = document.createElement("script");
+        particlesScript.src = "https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js";
+        particlesScript.defer = true;
+        particlesScript.onload = initHeroParticles;
+        document.body.appendChild(particlesScript);
+      }, isMobile ? 1800 : 500);
+    }, { once: true });
+  }
   // ============================================================
   // UNIFIED SCROLL HANDLER — single listener for everything
   // ============================================================
@@ -433,9 +450,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function restartProgress() {
       if (!progressBar) return;
-      progressBar.style.animation = "none";
-      progressBar.offsetHeight;
-      progressBar.style.animation = "";
+      projectSlider.classList.remove("is-playing");
+      requestAnimationFrame(function () {
+        if (!isPaused && !document.hidden && !sliderReducedMotion.matches) {
+          projectSlider.classList.add("is-playing");
+        }
+      });
     }
 
     function updateSliderState() {
@@ -460,9 +480,8 @@ document.addEventListener("DOMContentLoaded", function () {
     function startAutoplay() {
       stopAutoplay();
       if (sliderReducedMotion.matches || isPaused || document.hidden || slides.length < 2) return;
-      projectSlider.classList.add("is-playing");
-      restartProgress();
       autoplayTimer = window.setTimeout(function () { showSlide(activeSlide + 1, false); }, AUTOPLAY_MS);
+      restartProgress();
     }
 
     function showSlide(index, userInitiated) {

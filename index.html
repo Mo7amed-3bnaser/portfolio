@@ -4,7 +4,7 @@
 <head>
     <!-- Loading Screen CSS - Performance Optimized -->
     <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/3bnaser_logo_circle.webp">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/3bnaser-favicon-180.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -17,7 +17,8 @@
     <meta name="HandheldFriendly" content="true">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Mohamed Abdelnaser | Front-End Developer & Web Designer</title>
-    <link rel="icon" href="images/3bnaser_logo_circle.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/3bnaser-favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/3bnaser-favicon-16.png">
 
     <!-- Enhanced SEO Meta Tags -->
     <meta name="description"
@@ -80,12 +81,12 @@
         content="I build fast, responsive websites, landing pages, dashboards, and polished web interfaces that help brands look sharp and work better online.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.3bnaser.online/">
-    <meta property="og:image" content="https://www.3bnaser.online/images/3bnaserrr.jpeg?v=20260714-portrait">
-    <meta property="og:image:secure_url" content="https://www.3bnaser.online/images/3bnaserrr.jpeg?v=20260714-portrait">
+    <meta property="og:image" content="https://www.3bnaser.online/images/social-share.jpg?v=20260715">
+    <meta property="og:image:secure_url" content="https://www.3bnaser.online/images/social-share.jpg?v=20260715">
     <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:alt" content="Mohamed Abdelnaser - Front-End Developer Portrait">
-    <meta property="og:image:width" content="1600">
-    <meta property="og:image:height" content="1600">
+    <meta property="og:image:alt" content="Mohamed Abdelnaser - Front-End Developer Portfolio Preview">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Mohamed Abdelnaser Portfolio">
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="ar_EG">
@@ -95,8 +96,8 @@
     <meta name="twitter:title" content="Mohamed Abdelnaser | Front-End Developer">
     <meta name="twitter:description"
         content="I build fast, responsive websites, landing pages, dashboards, and polished web interfaces that help brands look sharp and work better online.">
-    <meta name="twitter:image" content="https://www.3bnaser.online/images/3bnaserrr.jpeg?v=20260714-portrait">
-    <meta name="twitter:image:alt" content="Mohamed Abdelnaser - Front-End Developer">
+    <meta name="twitter:image" content="https://www.3bnaser.online/images/social-share.jpg?v=20260715">
+    <meta name="twitter:image:alt" content="Mohamed Abdelnaser - Front-End Developer Portfolio Preview">
     <meta name="twitter:creator" content="@3bnaser">
     <meta name="twitter:site" content="@3bnaser">
 
@@ -119,9 +120,7 @@
     <link rel="author" href="humans.txt">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="//unpkg.com">
 
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="3bnaser">
@@ -132,10 +131,6 @@
     <!-- PWA Manifest -->
     <link rel="manifest" href="/manifest.json">
 
-    <!-- Additional Favicon Sizes -->
-    <link rel="icon" type="image/png" sizes="32x32" href="images/3bnaser_logo_circle.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/3bnaser_logo_circle.ico">
-
     <!-- Security Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -143,9 +138,7 @@
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://unpkg.com">
 
     <!-- Resource Hints for Performance -->
     <link rel="prefetch" href="https://www.3bnaser.online/#about">
@@ -156,7 +149,7 @@
     <!-- Preload Critical Resources -->
     <link rel="preload" href="css/main.css" as="style">
     <link rel="preload" href="js/script.js" as="script">
-    <link rel="preload" href="images/3bnaserrr.jpeg" as="image" type="image/jpeg">
+    <link rel="preload" href="images/hero-avatar-320.jpg" as="image" type="image/jpeg" fetchpriority="high">
     <link rel="preload"
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
         as="style">
@@ -336,36 +329,48 @@
     </style>
 
     <!-- Mobile Performance Optimization - Load early for immediate effect -->
-    <script src="js/optimize.js"></script>
+    <script src="js/optimize.js" defer></script>
 
     <!-- Critical CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="css/main.css">
     <!-- Unified Responsive Styles -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preload" href="css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <!-- Premium Styles -->
-    <link rel="stylesheet" href="css/premium.css">
+    <link rel="preload" href="css/premium.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <!-- Unified Button Styles -->
-    <link rel="stylesheet" href="css/unified-buttons.css">
+    <link rel="preload" href="css/unified-buttons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <!-- Skills Categories -->
-    <link rel="stylesheet" href="css/skills-categories.css">
+    <link rel="preload" href="css/skills-categories.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <!-- Mobile Responsive Fixes -->
-    <link rel="stylesheet" href="css/mobile-responsive-fixes.css">
+    <link rel="preload" href="css/mobile-responsive-fixes.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <!-- Hero Animations - NEW -->
-    <link rel="stylesheet" href="css/hero-animations.css">
+    <link rel="preload" href="css/hero-animations.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <!-- Site-wide Animations - NEW -->
-    <link rel="stylesheet" href="css/site-animations.css">
+    <link rel="preload" href="css/site-animations.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <!-- Animated Background - NEW -->
-    <link rel="stylesheet" href="css/animated-background.css">
+    <link rel="preload" href="css/animated-background.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <!-- Creative Hover and Floating Animations -->
-    <link rel="stylesheet" href="css/creative-animations.css">
+    <link rel="preload" href="css/creative-animations.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
 
 
+    <noscript>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/premium.css">
+        <link rel="stylesheet" href="css/unified-buttons.css">
+        <link rel="stylesheet" href="css/skills-categories.css">
+        <link rel="stylesheet" href="css/mobile-responsive-fixes.css">
+        <link rel="stylesheet" href="css/hero-animations.css">
+        <link rel="stylesheet" href="css/site-animations.css">
+        <link rel="stylesheet" href="css/animated-background.css">
+        <link rel="stylesheet" href="css/creative-animations.css">
+    </noscript>
     <!-- Custom Scrollbar Styles -->
     <style>
         /* Keep only one visible page scrollbar. */
@@ -608,11 +613,8 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
         rel="stylesheet" media="print" onload="this.media='all'">
 
-    <!-- Deferred JavaScript -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
-
     <!-- Font Awesome is needed above the fold for the hero social icons. -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <!-- Preload AOS with low importance for mobile -->
     <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style"
@@ -3903,9 +3905,6 @@
     <div class="global-noise"></div>
     <!-- Global Mouse Radial Glow -->
     <div class="global-mouse-glow"></div>
-    <!-- Preload critical images -->
-    <link rel="preload" as="image" href="images/3bnaser_logo_circle.ico">
-    <link rel="preload" as="image" href="images/3bnaserrr.jpeg">
     <!-- Animated Orbs Background -->
     <div class="animated-orb orb-1"></div>
     <div class="animated-orb orb-2"></div>
@@ -3965,8 +3964,8 @@
                                 <span class="hero-ring hero-ring-4"></span>
                                 <span class="hero-ring hero-ring-5"></span>
                                 <span class="hero-ring hero-ring-6"></span>
-                                <img src="images/3bnaserrr.jpeg" alt="Mohamed Abdelnaser" class="hero-avatar"
-                                    width="230" height="230" loading="eager">
+                                <img src="images/hero-avatar-320.jpg" alt="Mohamed Abdelnaser" class="hero-avatar"
+                                    width="230" height="230" loading="eager" decoding="async" fetchpriority="high">
                                 <span class="hero-status-dot"></span>
                             </div>
                             <p class="hero-greeting" data-hero-roles="FRONT-END DEVELOPER|FREELANCER" aria-live="off">
@@ -4511,16 +4510,16 @@
                     </div>
                     <div class="footer-social-icons" aria-label="Social links">
                         <a href="https://www.linkedin.com/in/3bnaser?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-                            target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            target="_blank" rel="noopener" aria-label="LinkedIn" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://github.com/Mo7amed-3bnaser" target="_blank" rel="noopener"
-                            aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://wa.me/201207166536" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+                            aria-label="GitHub" class="github"><i class="fab fa-github"></i></a>
+                        <a href="https://wa.me/201207166536" target="_blank" rel="noopener" aria-label="WhatsApp" class="whatsapp"><i
                                 class="fab fa-whatsapp"></i></a>
                         <a href="https://www.instagram.com/m_3bdelnaser/profilecard/?igsh=ZG42NG93ZTl5NWIx"
-                            target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            target="_blank" rel="noopener" aria-label="Instagram" class="instagram"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.facebook.com/share/12CPZ2MdKTb/" target="_blank" rel="noopener"
-                            aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="mailto:mohamedabdelnaser1010@gmail.com" aria-label="Email"><i
+                            aria-label="Facebook" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="mailto:mohamedabdelnaser1010@gmail.com" aria-label="Email" class="email"><i
                                 class="fas fa-envelope"></i></a>
                     </div>
                 </div>
@@ -4537,14 +4536,10 @@
     </a>
 
     <!-- JavaScript Libraries - Optimized for Mobile -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
 
     <!-- Vanilla Tilt for 3D Hero Effect -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js" defer></script>
-
-    <!-- Typed.js for Hero Text Animation -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" defer></script>
 
     <!-- Custom JavaScript -->
     <script src="js/script.js" defer></script>

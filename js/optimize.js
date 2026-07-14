@@ -68,14 +68,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function updateHeroIconMode() {
-        if (!document.fonts) return;
+        if (!document.fonts || !document.fonts.check) return;
 
-        const loadedFamilies = Array.from(document.fonts)
-            .filter(fontFace => fontFace.status === 'loaded')
-            .map(fontFace => fontFace.family.replace(/["']/g, ''));
-
-        const hasBrandIcons = loadedFamilies.includes('Font Awesome 6 Brands');
-        const hasSolidIcons = loadedFamilies.includes('Font Awesome 6 Free');
+        const hasBrandIcons = document.fonts.check('400 1em "Font Awesome 6 Brands"');
+        const hasSolidIcons = document.fonts.check('900 1em "Font Awesome 6 Free"');
         document.documentElement.classList.toggle('fa-icons-ready', hasBrandIcons && hasSolidIcons);
     }
 
@@ -93,14 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('load', updateHeroIconMode);
     setTimeout(updateHeroIconMode, 1500);
     setTimeout(updateHeroIconMode, 4000);
-
-    // Load AOS CSS
-    const aosLink = document.createElement('link');
-    aosLink.rel = 'stylesheet';
-    aosLink.href = 'https://unpkg.com/aos@2.3.1/dist/aos.css';
-    if (isMobile) aosLink.setAttribute('importance', 'low');
-    document.head.appendChild(aosLink);
-    
     // Add performance optimizations
     const style = document.createElement('style');
     style.textContent = `

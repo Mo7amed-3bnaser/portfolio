@@ -4,19 +4,21 @@
   "description": "Professional front-end developer portfolio showcasing modern web development projects and skills",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#151515",
-  "theme_color": "#58a6ff",
+  "background_color": "#060a10",
+  "theme_color": "#060a10",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "images/3bnaser_logo_circle.ico",
-      "sizes": "48x48 72x72 96x96 144x144 192x192 256x256 384x384 512x512",
-      "type": "image/x-icon"
+      "src": "images/3bnaser-favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "images/3bnaser_logo_circle.webp",
-      "sizes": "192x192",
-      "type": "image/webp"
+      "src": "images/3bnaser-favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "categories": ["business", "productivity", "utilities"],
@@ -25,8 +27,8 @@
   "scope": "/",
   "screenshots": [
     {
-      "src": "images/Mohamed-3bdelnaser.jpg",
-      "sizes": "400x400",
+      "src": "images/social-share.jpg",
+      "sizes": "1200x630",
       "type": "image/jpeg"
     }
   ]

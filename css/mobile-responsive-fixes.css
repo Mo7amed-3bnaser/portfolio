@@ -5646,3 +5646,109 @@ body {
         width: 100% !important;
     }
 }
+/* Final polish: larger hero portrait and platform-colored footer social hover. */
+#home .hero-avatar-wrap {
+    width: 380px !important;
+    height: 380px !important;
+    max-width: 42vw !important;
+    max-height: 42vw !important;
+}
+
+#home .hero-avatar {
+    width: 292px !important;
+    height: 292px !important;
+    max-width: 32vw !important;
+    max-height: 32vw !important;
+}
+
+@media (max-width: 992px) {
+    #home .hero-avatar-wrap {
+        width: 330px !important;
+        height: 330px !important;
+        max-width: 74vw !important;
+        max-height: 74vw !important;
+    }
+
+    #home .hero-avatar {
+        width: 254px !important;
+        height: 254px !important;
+        max-width: 58vw !important;
+        max-height: 58vw !important;
+    }
+}
+
+@media (max-width: 576px) {
+    #home .hero-avatar-wrap {
+        width: 250px !important;
+        height: 250px !important;
+        max-width: 72vw !important;
+        max-height: 72vw !important;
+    }
+
+    #home .hero-avatar {
+        width: 196px !important;
+        height: 196px !important;
+        max-width: 56vw !important;
+        max-height: 56vw !important;
+    }
+}
+
+@media (max-width: 380px) {
+    #home .hero-avatar-wrap {
+        width: 228px !important;
+        height: 228px !important;
+    }
+
+    #home .hero-avatar {
+        width: 178px !important;
+        height: 178px !important;
+    }
+}
+
+.footer-social-icons a:hover,
+.footer-social-icons a:focus-visible {
+    transform: translateY(-2px) !important;
+    color: #fff !important;
+}
+
+.footer-social-icons a.linkedin:hover,
+.footer-social-icons a.linkedin:focus-visible {
+    background: #0A66C2 !important;
+    border-color: rgba(10, 102, 194, 0.78) !important;
+    box-shadow: 0 12px 28px rgba(10, 102, 194, 0.28) !important;
+}
+
+.footer-social-icons a.github:hover,
+.footer-social-icons a.github:focus-visible {
+    background: #24292f !important;
+    border-color: rgba(248, 250, 252, 0.28) !important;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32) !important;
+}
+
+.footer-social-icons a.whatsapp:hover,
+.footer-social-icons a.whatsapp:focus-visible {
+    background: #25D366 !important;
+    border-color: rgba(37, 211, 102, 0.78) !important;
+    box-shadow: 0 12px 28px rgba(37, 211, 102, 0.25) !important;
+}
+
+.footer-social-icons a.instagram:hover,
+.footer-social-icons a.instagram:focus-visible {
+    background: linear-gradient(135deg, #833AB4, #E1306C 48%, #FCAF45) !important;
+    border-color: rgba(225, 48, 108, 0.78) !important;
+    box-shadow: 0 12px 28px rgba(225, 48, 108, 0.25) !important;
+}
+
+.footer-social-icons a.facebook:hover,
+.footer-social-icons a.facebook:focus-visible {
+    background: #1877F2 !important;
+    border-color: rgba(24, 119, 242, 0.78) !important;
+    box-shadow: 0 12px 28px rgba(24, 119, 242, 0.26) !important;
+}
+
+.footer-social-icons a.email:hover,
+.footer-social-icons a.email:focus-visible {
+    background: linear-gradient(135deg, #EA4335, #FBBC05) !important;
+    border-color: rgba(251, 188, 5, 0.72) !important;
+    box-shadow: 0 12px 28px rgba(234, 67, 53, 0.24) !important;
+}
