@@ -5,8 +5,8 @@
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <!-- Main Page -->
   <url>
-    <loc>https://3bnaser.tech/</loc>
-    <lastmod>2026-01-24</lastmod>
+    <loc>https://www.3bnaser.online/</loc>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

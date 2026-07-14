@@ -72,7 +72,7 @@ ErrorDocument 404 /index.html
 <IfModule mod_rewrite.c>
     RewriteEngine on
     RewriteCond %{HTTP_REFERER} !^$
-    RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?3bnaser.tech [NC]
+    RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?3bnaser.online [NC]
     RewriteRule \.(jpg|jpeg|png|gif|webp)$ - [NC,F,L]
 </IfModule>
 

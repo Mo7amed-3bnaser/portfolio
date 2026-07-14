@@ -4,7 +4,7 @@
 
 ![Portfolio Banner](./images/3bnaser_logo_circle.webp)
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge)](https://3bnaser.tech/)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge)](https://www.3bnaser.online/)
 [![GitHub](https://img.shields.io/badge/GitHub-Profile-black?style=for-the-badge&logo=github)](https://github.com/Mo7amed-3bnaser)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/3bnaser)
 
@@ -212,7 +212,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Mohamed Abdelnaser** (3bnaser)
 
-- Website: [3bnaser.tech](https://3bnaser.tech)
+- Website: [3bnaser.online](https://www.3bnaser.online)
 - GitHub: [@Mo7amed-3bnaser](https://github.com/Mo7amed-3bnaser)
 - LinkedIn: [Mohamed Abdelnaser](https://www.linkedin.com/in/3bnaser)
 - Email: mohamedabdelnaser1010@gmail.com
