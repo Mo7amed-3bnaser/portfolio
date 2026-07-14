@@ -5752,3 +5752,61 @@ body {
     border-color: rgba(251, 188, 5, 0.72) !important;
     box-shadow: 0 12px 28px rgba(234, 67, 53, 0.24) !important;
 }
+/* Final request: make the hero portrait more prominent. */
+#home .hero-avatar-wrap {
+    width: 420px !important;
+    height: 420px !important;
+    max-width: 46vw !important;
+    max-height: 46vw !important;
+}
+
+#home .hero-avatar {
+    width: 324px !important;
+    height: 324px !important;
+    max-width: 35vw !important;
+    max-height: 35vw !important;
+}
+
+@media (max-width: 992px) {
+    #home .hero-avatar-wrap {
+        width: 360px !important;
+        height: 360px !important;
+        max-width: 78vw !important;
+        max-height: 78vw !important;
+    }
+
+    #home .hero-avatar {
+        width: 278px !important;
+        height: 278px !important;
+        max-width: 62vw !important;
+        max-height: 62vw !important;
+    }
+}
+
+@media (max-width: 576px) {
+    #home .hero-avatar-wrap {
+        width: 278px !important;
+        height: 278px !important;
+        max-width: 76vw !important;
+        max-height: 76vw !important;
+    }
+
+    #home .hero-avatar {
+        width: 218px !important;
+        height: 218px !important;
+        max-width: 60vw !important;
+        max-height: 60vw !important;
+    }
+}
+
+@media (max-width: 380px) {
+    #home .hero-avatar-wrap {
+        width: 248px !important;
+        height: 248px !important;
+    }
+
+    #home .hero-avatar {
+        width: 194px !important;
+        height: 194px !important;
+    }
+}
